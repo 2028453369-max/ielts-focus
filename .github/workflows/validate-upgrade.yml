@@ -1,0 +1,70 @@
+name: Validate IELTS Focus Upgrade
+
+on:
+  push:
+    branches: [atlas-inspired-upgrade]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          node --check src/core-store.js
+          node --check src/material-library.js
+          node --check src/progress-engine.js
+          node --check src/cloud-materials-ui.js
+
+      - name: Check inline application script and HTML references
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, subprocess, sys
+
+          html = Path("index.html").read_text(encoding="utf-8")
+          srcs = re.findall(r'<script\s+src="([^"]+)"', html)
+          missing = [p for p in srcs if not p.startswith(("http://","https://")) and not Path(p).exists()]
+          if missing:
+              raise SystemExit("Missing script files: " + ", ".join(missing))
+
+          css = re.findall(r'<link[^>]+href="([^"]+\.css)"', html)
+          missing_css = [p for p in css if not p.startswith(("http://","https://")) and not Path(p).exists()]
+          if missing_css:
+              raise SystemExit("Missing CSS files: " + ", ".join(missing_css))
+
+          scripts = re.findall(r'<script(?:\s+[^>]*)?>(.*?)</script>', html, flags=re.S)
+          js_blocks = []
+          for block in scripts:
+              text = block.strip()
+              if not text or text.startswith(("{","[")):
+                  continue
+              js_blocks.append(text)
+          Path("/tmp/inline-app.js").write_text("\n".join(js_blocks), encoding="utf-8")
+          subprocess.run(["node","--check","/tmp/inline-app.js"], check=True)
+
+          ids = re.findall(r'\bid="([^"]+)"', html)
+          dup = sorted({x for x in ids if ids.count(x) > 1})
+          if dup:
+              raise SystemExit("Duplicate element ids: " + ", ".join(dup[:20]))
+
+      - name: Validate cloud materials manifest
+        shell: bash
+        run: |
+          git fetch origin main
+          git show origin/main:materials-manifest.json > /tmp/materials-manifest.json
+          python - <<'PY'
+          import json
+          p="/tmp/materials-manifest.json"
+          data=json.load(open(p,encoding="utf-8"))
+          files=data.get("files",data if isinstance(data,list) else [])
+          assert files, "manifest has no files"
+          assets=[x.get("asset") for x in files if x.get("asset")]
+          assert len(assets)==len(set(assets)), "duplicate asset names"
+          print("manifest files:",len(files))
+          PY
