@@ -59,6 +59,8 @@
       const title = $('cloudPlayerTitle');
       const audio = $('cloudAudioPlayer');
       title.textContent = item.name;
+      audio.pause();
+      if (typeof global.stopOtherAudio === 'function') global.stopOtherAudio(audio);
       audio.src = url;
       panel.classList.remove('hidden');
       audio.play().catch(() => {});
