@@ -568,7 +568,7 @@ function revealFlash(){document.getElementById('flashMeaning').classList.remove(
 
 
 // Black Eyes Listening Upper
-let bluIndex=0,bluPdfUrl='blackeyes-listening-upper/book.pdf';
+let bluIndex=0,bluPdfUrl='https://chatgpt.com/api/library/files/libfile_476f1b8efc58819198aab1c1e355b3f5/download';
 function bluInfo(){return BLACKLISTEN.sections[bluIndex]}
 function setupBlackListening(){if(!document.getElementById('bluSectionList'))return;renderBluList();renderBlackListening()}
 function renderBluList(){
@@ -943,7 +943,7 @@ function renderDailySettings(){
 }
 
 // Core vocabulary + oral textbook
-let currentCore=null,oralIndex=0,oralPdfUrl='oralbook/book.pdf';
+let currentCore=null,oralIndex=0,oralPdfUrl='https://chatgpt.com/api/library/files/libfile_57da7b4e7db48191bf90e38dfc6f16f0/download';
 const topicName=n=>{const x=ORAL.find(t=>t.topic===Number(n));return x?`Topic ${x.topic} · ${x.title}`:`Topic ${n}`};
 function coreKey(x){return `${x.topic}::${x.word.toLowerCase()}`}
 
