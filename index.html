@@ -255,9 +255,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
    <div class="card c4">
     <div class="row between">
       <h3>黑眼睛听力</h3>
-      <span class="badge green" id="bluProgress">0 / 17</span>
+      <span class="badge green" id="bluProgress">读取中</span>
     </div>
-    <div class="note">教材和现有音频都直接在本页使用，不需要下载文件。后续 Unit 音频可以继续补充。</div>
+    <div class="note">上册、下册教材和音频都已整合在这里，直接在本页使用，不需要下载文件。</div>
 
     <div class="row" style="margin:12px 0">
       <button class="btn small outline" onclick="playBluIntro()">播放教材音频说明</button>
@@ -672,7 +672,7 @@ function bluNatural(a,b){return String(a).localeCompare(String(b),undefined,{num
 function bluInfo(){return bluGroups[bluIndex]||null}
 
 function bluGroupForPath(path){
- const upperMark='/黑眼睛听力音频/';
+ const upperMark='/黑眼睛听力（上）音频/';
  const lowerMark='/黑眼睛（下）听力音频/';
  let volume='',rel='';
  if(path.includes(upperMark)){volume='上';rel=path.split(upperMark)[1]||''}
