@@ -1269,13 +1269,22 @@ function stopAllAudio(){
   if(!a.paused){try{a.pause()}catch(e){}}
  })
 }
+function bindExclusiveAudioElement(a){
+ if(!a||a.dataset.exclusiveAudioBound==='1')return;
+ a.dataset.exclusiveAudioBound='1';
+ a.addEventListener('play',()=>stopOtherAudio(a));
+}
 function installExclusiveAudio(){
- if(document.documentElement.dataset.exclusiveAudioBound==='1')return;
- document.documentElement.dataset.exclusiveAudioBound='1';
- document.addEventListener('play',e=>{
-  const a=e.target;
-  if(a&&a.tagName==='AUDIO')stopOtherAudio(a)
- },true)
+ document.querySelectorAll('audio').forEach(bindExclusiveAudioElement);
+ if(document.documentElement.dataset.exclusiveAudioObserver==='1')return;
+ document.documentElement.dataset.exclusiveAudioObserver='1';
+ new MutationObserver(mutations=>{
+  mutations.forEach(m=>m.addedNodes.forEach(node=>{
+   if(node.nodeType!==1)return;
+   if(node.matches&&node.matches('audio'))bindExclusiveAudioElement(node);
+   if(node.querySelectorAll)node.querySelectorAll('audio').forEach(bindExclusiveAudioElement);
+  }))
+ }).observe(document.body,{childList:true,subtree:true});
 }
 
 function prepareLazyAudio(){
