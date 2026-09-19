@@ -30,7 +30,17 @@ jobs:
         with:
           enablement: true
 
+      - name: Restore prepared study media
+        id: media-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            study-pages
+            media
+          key: ielts-focus-study-media-v1-${{ hashFiles('materials-manifest.json') }}
+
       - name: Prepare in-app textbooks and mobile audio
+        if: steps.media-cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
           sudo apt-get update >/dev/null
