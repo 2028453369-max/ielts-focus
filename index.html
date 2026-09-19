@@ -100,7 +100,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
   <button data-page="writing">写作 Task 2</button>
   <button data-page="speaking">口语训练</button>
   <button data-page="blackeyes">黑眼睛口语</button>
-  <button data-page="blacklisten">黑眼睛听力（上）</button>
+  <button data-page="blacklisten">黑眼睛听力</button>
   <button data-page="cambridge21">剑21真题</button>
   <button data-page="lr">听力 / 阅读</button>
   <button data-page="vocab">我的生词</button>
@@ -254,7 +254,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
   <div class="grid">
    <div class="card c4">
     <div class="row between">
-      <h3>黑眼睛听力（上）</h3>
+      <h3>黑眼睛听力</h3>
       <span class="badge green" id="bluProgress">0 / 17</span>
     </div>
     <div class="note">教材和现有音频都直接在本页使用，不需要下载文件。后续 Unit 音频可以继续补充。</div>
@@ -594,7 +594,7 @@ function toast(t){const e=document.getElementById('toast');e.textContent=t;e.cla
 function dayKey(){return new Date().toISOString().slice(0,10)}
 function seeded(n,salt){let s=dayKey()+salt,h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return Math.abs(h)%n}
 document.getElementById('dateText').textContent=new Date().toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
-const names={home:'今日学习',writing:'写作 Task 2',speaking:'口语训练',blackeyes:'黑眼睛口语',blacklisten:'黑眼睛听力（上）',cambridge21:'剑21真题',lr:'听力 / 阅读',vocab:'我的生词',corevocab:'核心词汇',oralbook:'口语教材',materials:'资料库',settings:'备份 / 设置'};
+const names={home:'今日学习',writing:'写作 Task 2',speaking:'口语训练',blackeyes:'黑眼睛口语',blacklisten:'黑眼睛听力',cambridge21:'剑21真题',lr:'听力 / 阅读',vocab:'我的生词',corevocab:'核心词汇',oralbook:'口语教材',materials:'资料库',settings:'备份 / 设置'};
 document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
 function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));document.getElementById('pageTitle').textContent=names[id];if(id==='home')renderDailyPlan();if(id==='materials'&&window.IELTSCloudMaterials)IELTSCloudMaterials.load();if(id==='blackeyes')setupBlackEyes();if(id==='blacklisten')setupBlackListening();if(id==='cambridge21')setupC21();prepareLazyAudio();scrollTo(0,0)}
 function saveTarget(){state.targetMonth=document.getElementById('targetMonth').value||'2027-02';persist();renderTarget();toast('目标已保存')}
@@ -672,7 +672,7 @@ function bluNatural(a,b){return String(a).localeCompare(String(b),undefined,{num
 function bluInfo(){return bluGroups[bluIndex]||null}
 
 function bluGroupForPath(path){
- const upperMark='/黑眼睛听力（上）音频/';
+ const upperMark='/黑眼睛听力音频/';
  const lowerMark='/黑眼睛（下）听力音频/';
  let volume='',rel='';
  if(path.includes(upperMark)){volume='上';rel=path.split(upperMark)[1]||''}
