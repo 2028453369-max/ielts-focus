@@ -29,7 +29,7 @@ jobs:
             echo "tag=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Download ZIP asset
+      - name: Download ZIP assets
         shell: bash
         run: |
           mkdir -p work
@@ -37,18 +37,22 @@ jobs:
             --repo "${{ github.repository }}" \
             --pattern "*.zip" \
             --dir work
-          ZIP_FILE="$(find work -maxdepth 1 -type f -name '*.zip' | head -n 1)"
-          if [ -z "$ZIP_FILE" ]; then
-            echo "No ZIP asset found in release."
+          ZIP_COUNT="$(find work -maxdepth 1 -type f -name '*.zip' | wc -l)"
+          if [ "$ZIP_COUNT" -eq 0 ]; then
+            echo "No ZIP assets found in release."
             exit 1
           fi
-          echo "ZIP_FILE=$ZIP_FILE" >> "$GITHUB_ENV"
+          echo "Found $ZIP_COUNT ZIP asset(s)."
 
-      - name: Unpack and build manifest
+      - name: Unpack all ZIPs and build manifest
         shell: bash
         run: |
           mkdir -p extracted upload
-          unzip -q "$ZIP_FILE" -d extracted
+          while IFS= read -r z; do
+            echo "Unpacking $z"
+            unzip -q -o "$z" -d extracted
+          done < <(find work -maxdepth 1 -type f -name '*.zip' | sort)
+
           python3 - <<'PY'
           from pathlib import Path
           import json, mimetypes, shutil, hashlib
