@@ -538,7 +538,7 @@ const BLACKLISTEN=JSON.parse(document.getElementById('blackListeningData').textC
 const CORE=JSON.parse(document.getElementById('coreVocabData').textContent);
 const ORAL=JSON.parse(document.getElementById('oralTopicData').textContent);
 const CLOUD_RELEASE_BASE='https://github.com/2028453369-max/ielts-focus/releases/download/materials-v1/';
-const STUDY_PAGE_BASE='https://github.com/2028453369-max/ielts-focus/releases/download/study-pages-v1/';
+const STUDY_PAGE_BASE='./study-pages/';
 function studyPageUrl(prefix,page){return STUDY_PAGE_BASE+`${prefix}-${String(page).padStart(3,'0')}.jpg`}
 function setStudyPage(imgId,statusId,labelId,prefix,page,total){
  const img=document.getElementById(imgId),status=document.getElementById(statusId),label=document.getElementById(labelId);
@@ -794,8 +794,8 @@ function renderBePdf(){
  }
  beViewPage=x.pdfPage;renderBePage()
 }
-function renderBePage(){setStudyPage('bePageImg','bePageStatus','bePageLabel','be',beViewPage,165)}
-function moveBePage(delta){beViewPage=Math.max(1,Math.min(165,beViewPage+delta));renderBePage()}
+function renderBePage(){setStudyPage('bePageImg','bePageStatus','bePageLabel','be',beViewPage,224)}
+function moveBePage(delta){beViewPage=Math.max(1,Math.min(224,beViewPage+delta));renderBePage()}
 function toggleBeDone(){state.blackEyesDone[beUnit]=!state.blackEyesDone[beUnit];persist();renderBlackEyes()}
 function playBeIntro(){
  const p=document.getElementById('beAudio');p.src=BLACK.intro.src;p.playbackRate=1;p.play();
