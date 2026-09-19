@@ -229,12 +229,16 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     </div>
 
     <hr>
-    <div class="row between">
-      <h3>教材页面</h3>
-      <button class="btn small outline" onclick="openBePdfTab()">新窗口打开</button>
+    <h3>教材页面</h3>
+    <div class="study-page-viewer">
+      <div class="study-page-toolbar">
+        <button class="btn small" onclick="moveBePage(-1)">上一页</button>
+        <b id="bePageLabel">教材页</b>
+        <button class="btn small" onclick="moveBePage(1)">下一页</button>
+      </div>
+      <div id="bePageStatus" class="study-page-status hidden"></div>
+      <div class="study-page-canvas"><img id="bePageImg" class="study-page-img" alt="黑眼睛口语教材页"></div>
     </div>
-    <div id="bePdfMessage" class="prompt hidden"></div>
-    <iframe id="bePdf" style="width:100%;height:720px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
 
     <hr>
     <h3>建议练法</h3>
@@ -253,7 +257,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
       <h3>黑眼睛听力（上）</h3>
       <span class="badge green" id="bluProgress">0 / 17</span>
     </div>
-    <div class="note">教材和现有音频均从云端按需加载，不占用手机整包存储。后续 Unit 音频可以继续补充。</div>
+    <div class="note">教材和现有音频都直接在本页使用，不需要下载文件。后续 Unit 音频可以继续补充。</div>
 
     <div class="row" style="margin:12px 0">
       <button class="btn small outline" onclick="playBluIntro()">播放教材音频说明</button>
@@ -289,12 +293,16 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     </div>
 
     <hr>
-    <div class="row between">
-      <h3>教材页面</h3>
-      <button class="btn small outline" onclick="openBluPdfTab()">新窗口打开当前页</button>
+    <h3>教材页面</h3>
+    <div class="study-page-viewer">
+      <div class="study-page-toolbar">
+        <button class="btn small" onclick="moveBluPage(-1)">上一页</button>
+        <b id="bluPageLabel">教材页</b>
+        <button class="btn small" onclick="moveBluPage(1)">下一页</button>
+      </div>
+      <div id="bluPageStatus" class="study-page-status hidden"></div>
+      <div class="study-page-canvas"><img id="bluPageImg" class="study-page-img" alt="黑眼睛听力教材页"></div>
     </div>
-    <div id="bluPdfMessage" class="prompt">正在加载教材当前页…</div>
-    <iframe id="bluPdf" class="hidden" style="width:100%;height:720px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
    </div>
   </div>
  </section>
@@ -348,7 +356,15 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
         <button class="btn small" onclick="c21Rate(1.5)">1.5×</button>
       </div>
     </div>
-    <div id="c21PdfMessage" class="prompt" style="margin-bottom:10px">教材已连接。 <button class="btn small outline" onclick="loadC21Pdf()">查看当前教材页</button></div>\n    <iframe id="c21Pdf" class="hidden" style="width:100%;height:690px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
+    <div class="study-page-viewer">
+      <div class="study-page-toolbar">
+        <button class="btn small" onclick="moveC21Page(-1)">上一页</button>
+        <b id="c21PageLabel">教材页</b>
+        <button class="btn small" onclick="moveC21Page(1)">下一页</button>
+      </div>
+      <div id="c21PageStatus" class="study-page-status hidden"></div>
+      <div class="study-page-canvas"><img id="c21PageImg" class="study-page-img" alt="剑桥雅思21教材页"></div>
+    </div>
    </div>
 
    <div class="card c12" id="c21AnswerCard">
@@ -522,6 +538,18 @@ const BLACKLISTEN=JSON.parse(document.getElementById('blackListeningData').textC
 const CORE=JSON.parse(document.getElementById('coreVocabData').textContent);
 const ORAL=JSON.parse(document.getElementById('oralTopicData').textContent);
 const CLOUD_RELEASE_BASE='https://github.com/2028453369-max/ielts-focus/releases/download/materials-v1/';
+const STUDY_PAGE_BASE='https://github.com/2028453369-max/ielts-focus/releases/download/study-pages-v1/';
+function studyPageUrl(prefix,page){return STUDY_PAGE_BASE+`${prefix}-${String(page).padStart(3,'0')}.jpg`}
+function setStudyPage(imgId,statusId,labelId,prefix,page,total){
+ const img=document.getElementById(imgId),status=document.getElementById(statusId),label=document.getElementById(labelId);
+ if(!img)return;
+ const safe=Math.max(1,Math.min(total,Number(page)||1));
+ if(label)label.textContent=`第 ${safe} / ${total} 页`;
+ if(status){status.textContent='';status.classList.add('hidden')}
+ img.onload=()=>{if(status){status.textContent='';status.classList.add('hidden')}};
+ img.onerror=()=>{if(status){status.textContent='教材页正在准备中，稍后刷新即可。';status.classList.remove('hidden')}};
+ img.src=studyPageUrl(prefix,safe);
+}
 function cloudAsset(name){return CLOUD_RELEASE_BASE+name}
 
 // Cloud replacements for the old local-media paths.
@@ -674,19 +702,13 @@ function renderBlackListening(){
  }
  renderBluList();updateBluPdf()
 }
+let bluViewPage=1;
 function updateBluPdf(){
- const x=bluInfo(),frame=document.getElementById('bluPdf'),msg=document.getElementById('bluPdfMessage');
- frame.removeAttribute('src');frame.classList.add('hidden');
- frame.dataset.src=bluPdfUrl+`#page=${x.pdfPage}&zoom=page-width`;
- msg.classList.remove('hidden');
- msg.innerHTML=`教材已连接。<button class="btn small outline" onclick="loadBluPdf()">查看当前教材页</button>`
+ const x=bluInfo();if(!x)return;
+ bluViewPage=x.pdfPage;renderBluPage()
 }
-function loadBluPdf(){
- const frame=document.getElementById('bluPdf'),msg=document.getElementById('bluPdfMessage');
- if(!frame.dataset.src)return;
- frame.src=frame.dataset.src;frame.classList.remove('hidden');msg.classList.add('hidden')
-}
-function openBluPdfTab(){window.open(bluPdfUrl+`#page=${bluInfo().pdfPage}`,'_blank')}
+function renderBluPage(){setStudyPage('bluPageImg','bluPageStatus','bluPageLabel','blu',bluViewPage,278)}
+function moveBluPage(delta){bluViewPage=Math.max(1,Math.min(278,bluViewPage+delta));renderBluPage()}
 function toggleBluDone(){const x=bluInfo();state.blackListeningDone[x.id]=!state.blackListeningDone[x.id];persist();renderBlackListening()}
 function playBluCurrent(){
  const p=document.getElementById('bluAudio');
@@ -762,24 +784,18 @@ function loadBeTrack(i){
 }
 function beSeek(sec){const p=document.getElementById('beAudio');if(!p.src)return;p.currentTime=Math.max(0,Math.min(p.duration||999999,p.currentTime+sec))}
 function beRate(r){const p=document.getElementById('beAudio');p.playbackRate=r;toast('速度 '+r+'×')}
+let beViewPage=1;
 function renderBePdf(){
- const x=beInfo(),frame=document.getElementById('bePdf'),msg=document.getElementById('bePdfMessage');
- frame.removeAttribute('src');frame.classList.add('hidden');
- if(x.pdfPage){
-  frame.dataset.src=`${BLACK.pdf}#page=${x.pdfPage}&zoom=page-width`;
-  msg.classList.remove('hidden');
-  msg.innerHTML=`教材已连接。<button class="btn small outline" onclick="loadBePdf()">查看 Unit ${x.unit} 教材页</button>`
- }else{
-  delete frame.dataset.src;msg.classList.remove('hidden');
-  msg.textContent='这份 PDF 没有包含这个 Unit 的教材页面。'
+ const x=beInfo();
+ if(!x||!x.pdfPage){
+  const status=document.getElementById('bePageStatus');
+  if(status){status.textContent='这份教材没有包含这个 Unit 的页面。';status.classList.remove('hidden')}
+  return;
  }
+ beViewPage=x.pdfPage;renderBePage()
 }
-function loadBePdf(){
- const frame=document.getElementById('bePdf'),msg=document.getElementById('bePdfMessage');
- if(!frame.dataset.src)return;
- frame.src=frame.dataset.src;frame.classList.remove('hidden');msg.classList.add('hidden')
-}
-function openBePdfTab(){const x=beInfo();if(!x.pdfPage)return toast('这份 PDF 没有这个 Unit 的页面');window.open(`${BLACK.pdf}#page=${x.pdfPage}`,'_blank')}
+function renderBePage(){setStudyPage('bePageImg','bePageStatus','bePageLabel','be',beViewPage,165)}
+function moveBePage(delta){beViewPage=Math.max(1,Math.min(165,beViewPage+delta));renderBePage()}
 function toggleBeDone(){state.blackEyesDone[beUnit]=!state.blackEyesDone[beUnit];persist();renderBlackEyes()}
 function playBeIntro(){
  const p=document.getElementById('beAudio');p.src=BLACK.intro.src;p.playbackRate=1;p.play();
@@ -799,8 +815,10 @@ let c21TimerState={left:3600,run:false,h:null};
 
 function c21Key(){return `T${c21Test}-${c21Module}`}
 function formatDuration(sec){sec=Math.round(sec||0);return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`}
-function c21Page(page){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');f.removeAttribute('src');f.classList.add('hidden');f.dataset.src=`${cloudAsset('asset-0001.pdf')}#page=${page}&zoom=page-width`;if(m)m.classList.remove('hidden')}
-function loadC21Pdf(){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');if(!f.dataset.src)return;f.src=f.dataset.src;f.classList.remove('hidden');if(m)m.classList.add('hidden')}
+let c21ViewPage=1;
+function c21Page(page){c21ViewPage=page;renderC21Page()}
+function renderC21Page(){setStudyPage('c21PageImg','c21PageStatus','c21PageLabel','c21',c21ViewPage,146)}
+function moveC21Page(delta){c21ViewPage=Math.max(1,Math.min(146,c21ViewPage+delta));renderC21Page()}
 function setupC21(){
  const tabs=document.getElementById('c21TestTabs');if(!tabs)return;
  tabs.innerHTML=[1,2,3,4].map(t=>`<button class="btn ${t===c21Test?'active':''}" onclick="selectC21Test(${t})">Test ${t}</button>`).join('');
@@ -809,7 +827,7 @@ function setupC21(){
 function selectC21Test(t){c21Test=t;c21Part=1;setupC21()}
 function setC21Module(m){c21Module=m;c21Part=1;renderC21()}
 function renderC21(){
- if(!document.getElementById('c21Pdf'))return;
+ if(!document.getElementById('c21PageImg'))return;
  document.querySelectorAll('#c21TestTabs button').forEach((b,i)=>b.classList.toggle('active',i+1===c21Test));
  ['listening','reading','writing','speaking'].forEach(m=>{
   const id='c21Mod'+m.charAt(0).toUpperCase()+m.slice(1),e=document.getElementById(id);if(e)e.classList.toggle('active',c21Module===m)
