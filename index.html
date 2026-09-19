@@ -596,7 +596,7 @@ function seeded(n,salt){let s=dayKey()+salt,h=2166136261;for(let i=0;i<s.length;
 document.getElementById('dateText').textContent=new Date().toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
 const names={home:'今日学习',writing:'写作 Task 2',speaking:'口语训练',blackeyes:'黑眼睛口语',blacklisten:'黑眼睛听力',cambridge21:'剑21真题',lr:'听力 / 阅读',vocab:'我的生词',corevocab:'核心词汇',oralbook:'口语教材',materials:'资料库',settings:'备份 / 设置'};
 document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
-function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));document.getElementById('pageTitle').textContent=names[id];if(id==='home')renderDailyPlan();if(id==='materials'&&window.IELTSCloudMaterials)IELTSCloudMaterials.load();if(id==='blackeyes')setupBlackEyes();if(id==='blacklisten')setupBlackListening();if(id==='cambridge21')setupC21();prepareLazyAudio();scrollTo(0,0)}
+function go(id){stopAllAudio();document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));document.getElementById('pageTitle').textContent=names[id];if(id==='home')renderDailyPlan();if(id==='materials'&&window.IELTSCloudMaterials)IELTSCloudMaterials.load();if(id==='blackeyes')setupBlackEyes();if(id==='blacklisten')setupBlackListening();if(id==='cambridge21')setupC21();prepareLazyAudio();scrollTo(0,0)}
 function saveTarget(){state.targetMonth=document.getElementById('targetMonth').value||'2027-02';persist();renderTarget();toast('目标已保存')}
 function renderTarget(){document.getElementById('targetMonth').value=state.targetMonth||'2027-02';const [y,m]=(state.targetMonth||'2027-02').split('-').map(Number),days=Math.max(0,Math.ceil((new Date(y,m-1,1)-new Date())/86400000));document.getElementById('countdown').textContent=days?`距离目标月份约 ${days} 天`:'目标月份已到或已过去'}
 function renderStats(){document.getElementById('statW').textContent=Object.values(state.writingDone).filter(Boolean).length;document.getElementById('statS').textContent=Object.values(state.speakingDone).filter(Boolean).length;document.getElementById('statV').textContent=state.vocab.length;document.getElementById('statL').textContent=state.logs.length;const cm=Object.values(state.coreMastered||{}).filter(Boolean).length;const sc=document.getElementById('statCore');if(sc)sc.textContent=cm;const cp=document.getElementById('coreProgress');if(cp)cp.style.width=Math.min(100,cm/1696*100)+'%'}
@@ -645,7 +645,7 @@ async function startRecording(){try{const stream=await navigator.mediaDevices.ge
 function stopRecording(){if(recorder&&recorder.state!=='inactive'){recorder.stop();document.getElementById('recBtn').disabled=false;document.getElementById('stopRecBtn').disabled=true;document.getElementById('recNote').textContent='录音完成，可回放或保存。'}}
 
 // Listening / Reading
-function loadAudio(e){const f=e.target.files[0];if(!f)return;document.getElementById('audio').src=URL.createObjectURL(f);document.getElementById('audioName').textContent=f.name}
+function loadAudio(e){const f=e.target.files[0];if(!f)return;const p=document.getElementById('audio');p.pause();stopOtherAudio(p);p.src=URL.createObjectURL(f);document.getElementById('audioName').textContent=f.name}
 function setRate(r){document.getElementById('audio').playbackRate=r;toast('速度 '+r+'×')}
 function estBand(m,c){c=Number(c);const L=[[39,9],[37,8.5],[35,8],[32,7.5],[30,7],[26,6.5],[23,6],[18,5.5],[16,5],[13,4.5],[10,4]],R=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4]];for(const [n,b] of (m==='Listening'?L:R))if(c>=n)return b;return'<4'}
 function addLog(){const name=document.getElementById('logName').value.trim(),module=document.getElementById('logModule').value,c=document.getElementById('logCorrect').value,note=document.getElementById('logNote').value.trim();if(!name||c==='')return toast('请填写教材/Test 和正确题数');state.logs.unshift({id:Date.now(),date:dayKey(),name,module,correct:Number(c),note});persist();document.getElementById('logName').value='';document.getElementById('logCorrect').value='';document.getElementById('logNote').value='';renderLogs()}
@@ -762,6 +762,7 @@ function bindBluTrack(autoplay=false){
  const g=bluInfo();if(!g||!g.tracks.length)return;
  if(bluTrackIndex>=g.tracks.length)bluTrackIndex=0;
  const t=g.tracks[bluTrackIndex],player=document.getElementById('bluAudio');
+ player.pause();stopOtherAudio(player);
  if(player.getAttribute('src')!==t.src)player.src=t.src;
  player.classList.remove('hidden');player.playbackRate=1;
  player.onerror=()=>{document.getElementById('bluNoAudio').textContent='这个音频暂时加载失败，请刷新后重试。'};
@@ -884,6 +885,7 @@ function renderBeTracks(){
 function loadBeTrack(i){
  const x=beInfo();if(!x.tracks.length)return;beTrackIndex=i;
  const t=x.tracks[i],player=document.getElementById('beAudio');
+ player.pause();stopOtherAudio(player);
  document.querySelectorAll('#beTrackGrid .be-track').forEach((el,n)=>el.classList.toggle('active',n===i));
  player.src=t.src;player.playbackRate=1;
  document.getElementById('beAudioMeta').textContent=`${t.label} · ${fmtSec(t.seconds)} · 云端播放`;
@@ -905,7 +907,7 @@ function renderBePage(){setStudyPage('bePageImg','bePageStatus','bePageLabel','b
 function moveBePage(delta){beViewPage=Math.max(1,Math.min(224,beViewPage+delta));renderBePage()}
 function toggleBeDone(){state.blackEyesDone[beUnit]=!state.blackEyesDone[beUnit];persist();renderBlackEyes()}
 function playBeIntro(){
- const p=document.getElementById('beAudio');p.src=BLACK.intro.src;p.playbackRate=1;p.play();
+ const p=document.getElementById('beAudio');p.pause();stopOtherAudio(p);p.src=BLACK.intro.src;p.playbackRate=1;p.play();
  document.getElementById('beAudioMeta').textContent=`教材音频说明 · ${fmtSec(BLACK.intro.seconds)}`
 }
 function todayBlackEyesUnit(){
@@ -964,7 +966,7 @@ function loadC21Part(p){
  c21Part=p;renderC21Parts();
  const a=C21.audio[c21Test][p],player=document.getElementById('c21Audio');
  const tracks=((C21_CLOUD_AUDIO[c21Test]||{})[p]||[]).map(cloudAsset);
- player.pause();
+ player.pause();stopOtherAudio(player);
  player.onended=null;
  player._cloudTracks=tracks;
  player._cloudTrackIndex=0;
@@ -1255,6 +1257,27 @@ function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileRe
 function clearState(){if(confirm('确定清空全部学习记录吗？')){state=JSON.parse(JSON.stringify(DEF));persist();init();toast('已清空')}}
 
 
+function stopOtherAudio(active){
+ document.querySelectorAll('audio').forEach(a=>{
+  if(a!==active&&!a.paused){
+   try{a.pause()}catch(e){}
+  }
+ })
+}
+function stopAllAudio(){
+ document.querySelectorAll('audio').forEach(a=>{
+  if(!a.paused){try{a.pause()}catch(e){}}
+ })
+}
+function installExclusiveAudio(){
+ if(document.documentElement.dataset.exclusiveAudioBound==='1')return;
+ document.documentElement.dataset.exclusiveAudioBound='1';
+ document.addEventListener('play',e=>{
+  const a=e.target;
+  if(a&&a.tagName==='AUDIO')stopOtherAudio(a)
+ },true)
+}
+
 function prepareLazyAudio(){
  const blu=document.getElementById('bluAudio');
  if(blu&&!blu.dataset.lazyBound){
@@ -1268,7 +1291,7 @@ function prepareLazyAudio(){
  }
 }
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=3').catch(()=>{}))}
-function attachMediaErrorChecks(){prepareLazyAudio()}
+function attachMediaErrorChecks(){installExclusiveAudio();prepareLazyAudio()}
 
 function init(){renderTarget();renderStats();renderDailySettings();renderHome();renderWriting();renderP1();renderP2();renderLogs();renderVocab();setupCore();renderCoreVocab();setupOral();renderDailyPlan();Object.keys(timers).forEach(drawTimer);attachMediaErrorChecks()}
 init();
