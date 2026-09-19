@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f6b54">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="IELTS Focus">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg">
+<title>IELTS Focus</title>
+<style>
+:root{--g:#0f6b54;--g2:#e9f5f0;--ink:#18211e;--muted:#68736f;--line:#dfe8e4;--bg:#f5f8f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:620px;margin:auto;padding:calc(18px + env(safe-area-inset-top)) 16px calc(30px + env(safe-area-inset-bottom))}
+.hero{background:linear-gradient(145deg,#0f6b54,#21836a);color:#fff;border-radius:24px;padding:24px 20px;box-shadow:0 14px 38px rgba(15,107,84,.18)}
+.hero h1{margin:0 0 5px;font-size:28px}.hero p{margin:0;opacity:.88}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 7px 24px rgba(30,60,50,.05)}
+h2{font-size:18px;margin:0 0 10px}.note{font-size:13px;color:var(--muted)}
+button,.filebtn{width:100%;border:0;border-radius:14px;padding:13px 15px;font-weight:700;font-size:15px;cursor:pointer;display:block;text-align:center}
+.primary{background:var(--g);color:#fff}.secondary{background:var(--g2);color:var(--g);margin-top:9px}.ghost{background:#f3f5f4;color:#37443f;margin-top:9px}
+input[type=file]{display:none}
+.progress{height:9px;background:#e9eeec;border-radius:999px;overflow:hidden;margin:12px 0}.bar{height:100%;width:0;background:var(--g);transition:.2s}
+.status{display:flex;gap:8px;align-items:center;margin-top:10px}.dot{width:9px;height:9px;border-radius:50%;background:#b7c2be}.dot.ok{background:#35a273}
+.small{font-size:12px;color:var(--muted)}.hidden{display:none!important}
+.install{position:sticky;bottom:12px;margin-top:14px}
+code{word-break:break-all;background:#f2f5f4;padding:2px 5px;border-radius:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>IELTS Focus</h1>
+    <p>手机学习入口 · 资料只保存在你的设备里</p>
+  </div>
+
+  <div class="card">
+    <h2>学习 App</h2>
+    <div class="status"><span id="dot" class="dot"></span><b id="stateText">正在检查本机资料…</b></div>
+    <p id="stateNote" class="note">第一次使用需要导入一次电脑版本的 ZIP。</p>
+    <button id="openBtn" class="primary hidden">打开 IELTS Focus</button>
+  </div>
+
+  <div class="card" id="importCard">
+    <h2>第一次使用：导入完整包</h2>
+    <p class="note">选择你从 ChatGPT 下载的 <b>IELTS-Focus-App-V8-音频修复版.zip</b>。PDF、MP3 和学习页面会解压到手机浏览器本地，不会上传到 GitHub。</p>
+    <label class="filebtn secondary" for="zipInput">选择 V8 ZIP</label>
+    <input id="zipInput" type="file" accept=".zip,application/zip">
+    <div id="progressWrap" class="hidden">
+      <div class="progress"><div id="bar" class="bar"></div></div>
+      <div id="progressText" class="small"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>手机安装</h2>
+    <div id="iosTip" class="note">iPhone：Safari 打开本页 → 底部“分享” → “添加到主屏幕”。</div>
+    <div id="androidTip" class="note">Android：Chrome 打开本页 → 菜单 → “添加到主屏幕 / 安装应用”。</div>
+    <button id="installBtn" class="ghost hidden">安装到手机</button>
+  </div>
+
+  <div class="card">
+    <h2>资料管理</h2>
+    <p class="note">更新版本时直接重新导入新的 ZIP，会覆盖同名文件；你的答题进度和设置仍保存在浏览器中。</p>
+    <button id="clearBtn" class="ghost">清除手机里的学习资料</button>
+  </div>
+</div>
+<script>
+const DB='ielts-focus-local', STORE='files';
+let deferredPrompt=null;
+function openDB(){return new Promise((ok,bad)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore(STORE);r.onsuccess=()=>ok(r.result);r.onerror=()=>bad(r.error)})}
+async function dbGet(k){const db=await openDB();return new Promise((ok,bad)=>{const t=db.transaction(STORE,'readonly'),r=t.objectStore(STORE).get(k);r.onsuccess=()=>ok(r.result);r.onerror=()=>bad(r.error)})}
+async function dbPut(k,v){const db=await openDB();return new Promise((ok,bad)=>{const t=db.transaction(STORE,'readwrite');t.objectStore(STORE).put(v,k);t.oncomplete=()=>ok();t.onerror=()=>bad(t.error)})}
+async function dbClear(){const db=await openDB();return new Promise((ok,bad)=>{const t=db.transaction(STORE,'readwrite'),r=t.objectStore(STORE).clear();r.onsuccess=()=>ok();r.onerror=()=>bad(r.error)})}
+function u16(v,o){return v.getUint16(o,true)} function u32(v,o){return v.getUint32(o,true)}
+function cleanPath(p){
+  p=p.replace(/\\/g,'/').replace(/^\/+/, '');
+  const parts=p.split('/').filter(Boolean);
+  if(parts[0]==='IELTS-Focus-App')parts.shift();
+  return parts.join('/');
+}
+function mime(name){
+  const e=name.split('.').pop().toLowerCase();
+  return ({html:'text/html;charset=utf-8',js:'text/javascript;charset=utf-8',css:'text/css;charset=utf-8',json:'application/json',pdf:'application/pdf',mp3:'audio/mpeg',txt:'text/plain;charset=utf-8',svg:'image/svg+xml',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg'})[e]||'application/octet-stream'
+}
+async function unzipToDB(file){
+  const tailSize=Math.min(file.size,66000), tail=new Uint8Array(await file.slice(file.size-tailSize).arrayBuffer());
+  let eocd=-1;
+  for(let i=tail.length-22;i>=0;i--){if(tail[i]===0x50&&tail[i+1]===0x4b&&tail[i+2]===0x05&&tail[i+3]===0x06){eocd=i;break}}
+  if(eocd<0)throw new Error('不是有效的 ZIP 文件');
+  const tv=new DataView(tail.buffer,tail.byteOffset,tail.byteLength), total=u16(tv,eocd+10), cdSize=u32(tv,eocd+12), cdOffset=u32(tv,eocd+16);
+  const cdb=new Uint8Array(await file.slice(cdOffset,cdOffset+cdSize).arrayBuffer()), cv=new DataView(cdb.buffer);
+  const entries=[];let p=0;const dec=new TextDecoder('utf-8');
+  while(p+46<=cdb.length&&entries.length<total){
+    if(u32(cv,p)!==0x02014b50)break;
+    const method=u16(cv,p+10), csize=u32(cv,p+20), usize=u32(cv,p+24), nlen=u16(cv,p+28), xlen=u16(cv,p+30), clen=u16(cv,p+32), off=u32(cv,p+42);
+    const name=dec.decode(cdb.slice(p+46,p+46+nlen));
+    entries.push({name,method,csize,usize,off});
+    p+=46+nlen+xlen+clen;
+  }
+  if(!entries.length)throw new Error('ZIP 中没有找到文件');
+  const usable=entries.filter(e=>!e.name.endsWith('/'));
+  for(let i=0;i<usable.length;i++){
+    const e=usable[i], key=cleanPath(e.name);
+    document.getElementById('bar').style.width=((i/usable.length)*100).toFixed(1)+'%';
+    document.getElementById('progressText').textContent='正在导入 '+(i+1)+' / '+usable.length+'：'+key;
+    const lh=new DataView(await file.slice(e.off,e.off+30).arrayBuffer());
+    if(u32(lh,0)!==0x04034b50)throw new Error('ZIP 文件头异常：'+key);
+    const nlen=u16(lh,26), xlen=u16(lh,28), start=e.off+30+nlen+xlen;
+    const comp=new Uint8Array(await file.slice(start,start+e.csize).arrayBuffer());
+    let out;
+    if(e.method===0){out=comp}
+    else if(e.method===8){
+      if(typeof DecompressionStream==='undefined')throw new Error('当前浏览器不支持直接解压。请升级 Safari/Chrome 后再试。');
+      const ds=new DecompressionStream('deflate-raw');
+      out=new Uint8Array(await new Response(new Blob([comp]).stream().pipeThrough(ds)).arrayBuffer());
+    }else throw new Error('暂不支持 ZIP 压缩方式 '+e.method+'：'+key);
+    let blob=new Blob([out],{type:mime(key)});
+    if(key==='IELTS-Focus-App.html'){
+      let html=await blob.text();
+      if(!html.includes('mobile-shell-patch')){
+        html=html.replace('</head>','<style id="mobile-shell-patch">@media(max-width:760px){body{font-size:15px}.sidebar{max-height:none}.card{border-radius:14px}iframe{height:62vh!important}}</style></head>');
+        blob=new Blob([html],{type:'text/html;charset=utf-8'});
+      }
+    }
+    await dbPut(key,blob);
+  }
+  document.getElementById('bar').style.width='100%';
+  document.getElementById('progressText').textContent='导入完成';
+}
+async function refresh(){
+  const ok=await dbGet('IELTS-Focus-App.html');
+  const dot=document.getElementById('dot'), text=document.getElementById('stateText'), note=document.getElementById('stateNote'), btn=document.getElementById('openBtn');
+  if(ok){dot.classList.add('ok');text.textContent='学习资料已就绪';note.textContent='以后直接点“打开 IELTS Focus”即可。';btn.classList.remove('hidden')}
+  else{dot.classList.remove('ok');text.textContent='还没有导入学习资料';note.textContent='第一次使用请导入 V8 ZIP。';btn.classList.add('hidden')}
+}
+document.getElementById('zipInput').addEventListener('change',async e=>{
+  const f=e.target.files[0];if(!f)return;
+  document.getElementById('progressWrap').classList.remove('hidden');
+  try{await unzipToDB(f);await refresh();setTimeout(()=>location.href='./local/IELTS-Focus-App.html',500)}
+  catch(err){alert('导入失败：'+err.message)}
+  e.target.value='';
+});
+document.getElementById('openBtn').onclick=()=>location.href='./local/IELTS-Focus-App.html';
+document.getElementById('clearBtn').onclick=async()=>{if(confirm('确定清除手机里已导入的教材和音频吗？学习进度不会清除。')){await dbClear();await refresh()}};
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;document.getElementById('installBtn').classList.remove('hidden')});
+document.getElementById('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;document.getElementById('installBtn').classList.add('hidden')}};
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').then(()=>navigator.serviceWorker.ready).then(refresh).catch(refresh)}else refresh();
+</script>
+</body>
+</html>
