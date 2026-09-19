@@ -1,29 +1,78 @@
 name: Deploy IELTS Focus
+
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
-  group: pages-${{ github.sha }}
+  group: pages
   cancel-in-progress: true
+
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+
+      - name: Build in-app textbook pages
+        shell: bash
+        run: |
+          sudo apt-get update >/dev/null
+          sudo apt-get install -y poppler-utils >/dev/null
+          mkdir -p /tmp/ielts-pdf study-pages
+          gh release download materials-v1 --repo "$REPO" --pattern "asset-0001.pdf" --dir /tmp/ielts-pdf
+          gh release download materials-v1 --repo "$REPO" --pattern "asset-0027.pdf" --dir /tmp/ielts-pdf
+          gh release download materials-v1 --repo "$REPO" --pattern "asset-0276.pdf" --dir /tmp/ielts-pdf
+
+          render_pdf () {
+            local src="$1"
+            local prefix="$2"
+            local tmp="/tmp/render-$prefix"
+            rm -rf "$tmp"
+            mkdir -p "$tmp"
+            pdftoppm -jpeg -r 105 -jpegopt quality=72,optimize=y "$src" "$tmp/page"
+            n=1
+            for f in "$tmp"/page-*.jpg; do
+              printf -v num "%03d" "$n"
+              mv "$f" "study-pages/${prefix}-${num}.jpg"
+              n=$((n+1))
+            done
+          }
+
+          render_pdf /tmp/ielts-pdf/asset-0001.pdf c21
+          render_pdf /tmp/ielts-pdf/asset-0027.pdf blu
+          render_pdf /tmp/ielts-pdf/asset-0276.pdf be
+
+          python - <<'PY'
+          from pathlib import Path
+          from collections import Counter
+          c=Counter(p.name.split("-")[0] for p in Path("study-pages").glob("*.jpg"))
+          print("study pages:", dict(c))
+          assert c["c21"] == 146
+          assert c["blu"] == 278
+          assert c["be"] == 224
+          PY
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
