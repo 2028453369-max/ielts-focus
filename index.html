@@ -277,6 +277,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     </div>
 
     <div class="note" id="bluMeta"></div>
+    <div id="bluTrackList" class="be-track-grid" style="margin-top:12px"></div>
 
     <div id="bluAudioArea" style="margin-top:14px">
       <h3>音频</h3>
@@ -550,7 +551,7 @@ function setStudyPage(imgId,statusId,labelId,prefix,page,total){
  img.onerror=()=>{if(status){status.textContent='教材页正在准备中，稍后刷新即可。';status.classList.remove('hidden')}};
  img.src=studyPageUrl(prefix,safe);
 }
-function cloudAsset(name){return CLOUD_RELEASE_BASE+name}
+function cloudAsset(name){return /\.mp3$/i.test(name)?'./media/'+name:CLOUD_RELEASE_BASE+name}
 
 // Cloud replacements for the old local-media paths.
 BLACKLISTEN.introAudio.src=cloudAsset('asset-0028.mp3');
@@ -663,68 +664,174 @@ function revealFlash(){document.getElementById('flashMeaning').classList.remove(
 
 
 
-// Black Eyes Listening Upper
-let bluIndex=0,bluPdfUrl=cloudAsset('asset-0027.pdf');
-function bluInfo(){return BLACKLISTEN.sections[bluIndex]}
-function setupBlackListening(){if(!document.getElementById('bluSectionList'))return;renderBluList();renderBlackListening()}
+// Black Eyes Listening · actual uploaded library
+let bluIndex=0,bluTrackIndex=0,bluGroups=[],bluLibraryLoading=false;
+let bluViewPage=1,bluPagePrefix='blu',bluPageTotal=278;
+
+function bluNatural(a,b){return String(a).localeCompare(String(b),undefined,{numeric:true,sensitivity:'base'})}
+function bluInfo(){return bluGroups[bluIndex]||null}
+
+function bluGroupForPath(path){
+ const upperMark='/黑眼睛听力（上）音频/';
+ const lowerMark='/黑眼睛（下）听力音频/';
+ let volume='',rel='';
+ if(path.includes(upperMark)){volume='上';rel=path.split(upperMark)[1]||''}
+ else if(path.includes(lowerMark)){volume='下';rel=path.split(lowerMark)[1]||''}
+ else return null;
+ const parts=rel.split('/').filter(Boolean);
+ if(!parts.length)return null;
+ parts.pop();
+ return {volume,parent:parts.join(' / ')||'其他'};
+}
+
+async function loadBlackListeningLibrary(){
+ if(bluGroups.length||bluLibraryLoading)return;
+ bluLibraryLoading=true;
+ const box=document.getElementById('bluSectionList');
+ if(box)box.innerHTML='<div class="note">正在读取你上传的黑眼睛听力音频…</div>';
+ try{
+  const response=await fetch('materials-manifest.json',{cache:'no-store'});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const raw=await response.json(),files=raw.files||raw;
+  const map=new Map();
+  files.filter(x=>(x.path||'').startsWith('02_黑眼睛听力/')&&/\.mp3$/i.test(x.name||x.path||'')).forEach(x=>{
+   const g=bluGroupForPath(x.path||'');if(!g)return;
+   const key=g.volume+'|'+g.parent;
+   if(!map.has(key))map.set(key,{id:'audio-'+key,volume:g.volume,parent:g.parent,title:g.parent,tracks:[]});
+   map.get(key).tracks.push({
+    asset:x.asset,name:x.name||x.asset,path:x.path||'',size:x.size||0,
+    src:'./media/'+x.asset
+   });
+  });
+  bluGroups=[...map.values()].sort((a,b)=>(a.volume===b.volume?bluNatural(a.parent,b.parent):(a.volume==='上'?-1:1)));
+  bluGroups.forEach(g=>g.tracks.sort((a,b)=>bluNatural(a.name,b.name)));
+  bluIndex=Math.min(bluIndex,Math.max(0,bluGroups.length-1));bluTrackIndex=0;
+  const total=bluGroups.reduce((n,g)=>n+g.tracks.length,0);
+  const badge=document.getElementById('bluProgress');if(badge)badge.textContent=total+' 音频';
+  renderBluList();renderBlackListening();
+ }catch(error){
+  if(box)box.innerHTML='<div class="note">音频目录读取失败，请刷新页面重试。</div>';
+  const no=document.getElementById('bluNoAudio');if(no)no.textContent='没有读取到音频目录。';
+ }finally{bluLibraryLoading=false}
+}
+
+function setupBlackListening(){
+ if(!document.getElementById('bluSectionList'))return;
+ if(bluGroups.length){renderBluList();renderBlackListening()}
+ else loadBlackListeningLibrary()
+}
+
 function renderBluList(){
  const box=document.getElementById('bluSectionList');if(!box)return;
- box.innerHTML=BLACKLISTEN.sections.map((x,i)=>{
-  const done=!!state.blackListeningDone[x.id],audio=!!x.audio;
+ if(!bluGroups.length){box.innerHTML='<div class="note">正在读取音频目录…</div>';return}
+ box.innerHTML=bluGroups.map((g,i)=>{
+  const done=!!state.blackListeningDone[g.id];
   return `<div class="blu-section ${i===bluIndex?'active':''}" onclick="selectBlu(${i})">
-   <div class="blu-section-title">${done?'✓ ':''}${esc(x.title)}</div>
-   <div class="blu-section-meta">${esc(x.type)} · 书本第 ${x.printedPage} 页${audio?' · 有音频':''}${x.activities?` · ${x.activities} 个 Activity`:''}</div>
+   <div class="blu-section-title">${done?'✓ ':''}黑眼睛听力（${g.volume}） · ${esc(g.title)}</div>
+   <div class="blu-section-meta">${g.tracks.length} 个音频</div>
   </div>`
  }).join('');
- document.getElementById('bluProgress').textContent=`${Object.values(state.blackListeningDone||{}).filter(Boolean).length} / ${BLACKLISTEN.sections.length}`
 }
-function selectBlu(i){bluIndex=i;renderBlackListening()}
+
+function selectBlu(i){bluIndex=i;bluTrackIndex=0;renderBlackListening()}
+
+function bluPdfStart(g,track){
+ if(!g)return {prefix:'blu',page:1,total:278};
+ if(g.volume==='下')return {prefix:'blu2',page:1,total:null};
+ const p=g.parent;
+ let page=14;
+ if(/Unit One/i.test(p))page=42;
+ else if(/Unit Two/i.test(p))page=58;
+ else if(/Unit Three/i.test(p))page=71;
+ else if(/Unit Four/i.test(p))page=90;
+ else if(/Unit Five/i.test(p))page=111;
+ else if(/Unit Six/i.test(p))page=125;
+ else if(/Achievement/i.test(p))page=138;
+ if(track&&/Pretraining Test/i.test(track.name))page=28;
+ return {prefix:'blu',page,total:278};
+}
+
+function renderBluTracks(){
+ const g=bluInfo(),list=document.getElementById('bluTrackList');if(!list)return;
+ if(!g){list.innerHTML='';return}
+ if(bluTrackIndex>=g.tracks.length)bluTrackIndex=0;
+ list.innerHTML=g.tracks.map((t,i)=>`<button class="be-track ${i===bluTrackIndex?'active':''}" onclick="selectBluTrack(${i})"><b>${esc(t.name.replace(/\.mp3$/i,''))}</b><div class="note">${(t.size/1048576).toFixed(1)} MB</div></button>`).join('')
+}
+
+function bindBluTrack(autoplay=false){
+ const g=bluInfo();if(!g||!g.tracks.length)return;
+ if(bluTrackIndex>=g.tracks.length)bluTrackIndex=0;
+ const t=g.tracks[bluTrackIndex],player=document.getElementById('bluAudio');
+ if(player.getAttribute('src')!==t.src)player.src=t.src;
+ player.classList.remove('hidden');player.playbackRate=1;
+ player.onerror=()=>{document.getElementById('bluNoAudio').textContent='这个音频暂时加载失败，请刷新后重试。'};
+ player.oncanplay=()=>{document.getElementById('bluNoAudio').textContent=''};
+ document.getElementById('bluAudioMeta').textContent=t.name.replace(/\.mp3$/i,'')+' · 已就绪';
+ const page=bluPdfStart(g,t);
+ bluPagePrefix=page.prefix;bluPageTotal=page.total;bluViewPage=page.page;
+ renderBluPage();
+ if(autoplay)player.play().catch(()=>{})
+}
+
+function selectBluTrack(i){
+ const g=bluInfo();if(!g)return;
+ bluTrackIndex=i;
+ document.querySelectorAll('#bluTrackList .be-track').forEach((el,n)=>el.classList.toggle('active',n===i));
+ bindBluTrack(true)
+}
+
 function renderBlackListening(){
- const x=bluInfo();if(!x||!document.getElementById('bluTitle'))return;
- document.getElementById('bluType').textContent=x.type;
- document.getElementById('bluTitle').textContent=x.title;
- document.getElementById('bluDoneBtn').textContent=state.blackListeningDone[x.id]?'取消完成':'标记完成';
- document.getElementById('bluMeta').textContent=`教材印刷页 ${x.printedPage} · PDF 第 ${x.pdfPage} 页${x.activities?` · ${x.activities} 个 Listening Activity`:''}`;
- const player=document.getElementById('bluAudio'),no=document.getElementById('bluNoAudio'),meta=document.getElementById('bluAudioMeta');
- const playBtn=document.getElementById('bluPlayBtn');
- if(x.audio){
-  player.pause();
-  if(player.getAttribute('src')!==x.audio.src)player.src=x.audio.src;
-  player.playbackRate=1;player.classList.remove('hidden');
-  delete player.dataset.lazySrc;
-  if(playBtn)playBtn.classList.add('hidden');
-  no.textContent='';meta.textContent=`${formatDuration(x.audio.seconds)} · 已就绪`;
- }else{
-  player.pause();player.removeAttribute('src');delete player.dataset.lazySrc;player.classList.add('hidden');
-  if(playBtn)playBtn.classList.add('hidden');
-  no.textContent='当前还没有这一部分的对应音频。';
-  meta.textContent='';
+ const g=bluInfo();if(!g||!document.getElementById('bluTitle'))return;
+ const done=!!state.blackListeningDone[g.id];
+ document.getElementById('bluType').textContent='黑眼睛听力（'+g.volume+'）';
+ document.getElementById('bluTitle').textContent=g.title;
+ document.getElementById('bluDoneBtn').textContent=done?'取消完成':'标记完成';
+ document.getElementById('bluMeta').textContent=g.tracks.length+' 个音频 · 来自你上传的资料';
+ document.getElementById('bluNoAudio').textContent='';
+ renderBluList();renderBluTracks();bindBluTrack(false)
+}
+
+function renderBluPage(){
+ const total=bluPageTotal;
+ setStudyPage('bluPageImg','bluPageStatus','bluPageLabel',bluPagePrefix,bluViewPage,total||bluViewPage);
+ if(!total){
+  const label=document.getElementById('bluPageLabel');if(label)label.textContent='第 '+bluViewPage+' 页';
  }
- renderBluList();updateBluPdf()
 }
-let bluViewPage=1;
-function updateBluPdf(){
- const x=bluInfo();if(!x)return;
- bluViewPage=x.pdfPage;renderBluPage()
+function moveBluPage(delta){
+ bluViewPage=Math.max(1,bluViewPage+delta);
+ if(bluPageTotal)bluViewPage=Math.min(bluPageTotal,bluViewPage);
+ renderBluPage()
 }
-function renderBluPage(){setStudyPage('bluPageImg','bluPageStatus','bluPageLabel','blu',bluViewPage,278)}
-function moveBluPage(delta){bluViewPage=Math.max(1,Math.min(278,bluViewPage+delta));renderBluPage()}
-function toggleBluDone(){const x=bluInfo();state.blackListeningDone[x.id]=!state.blackListeningDone[x.id];persist();renderBlackListening()}
-function playBluCurrent(){
- const p=document.getElementById('bluAudio');
- const x=bluInfo();
- if(!x||!x.audio)return;
- p.src=x.audio.src;p.classList.remove('hidden');p.playbackRate=1;
- p.play().catch(()=>{});
- document.getElementById('bluAudioMeta').textContent=`${formatDuration(x.audio.seconds)} · 云端播放`;
+
+function toggleBluDone(){
+ const g=bluInfo();if(!g)return;
+ state.blackListeningDone[g.id]=!state.blackListeningDone[g.id];persist();renderBlackListening()
 }
+function playBluCurrent(){const p=document.getElementById('bluAudio');if(p.src)p.play().catch(()=>{})}
 function bluSeek(sec){const p=document.getElementById('bluAudio');if(!p.src)return;p.currentTime=Math.max(0,Math.min(p.duration||999999,p.currentTime+sec))}
 function bluRate(r){const p=document.getElementById('bluAudio');p.playbackRate=r;toast('速度 '+r+'×')}
-function playBluIntro(){
- const p=document.getElementById('bluAudio');p.src=BLACKLISTEN.introAudio.src;p.classList.remove('hidden');p.playbackRate=1;p.play();
- document.getElementById('bluNoAudio').textContent='';document.getElementById('bluAudioMeta').textContent=`教材音频说明 · ${formatDuration(BLACKLISTEN.introAudio.seconds)}`
+
+function findBluTrack(test){
+ for(let gi=0;gi<bluGroups.length;gi++){
+  const ti=bluGroups[gi].tracks.findIndex(test);
+  if(ti>=0)return {gi,ti}
+ }
+ return null
 }
-function openBluPretest(){const i=BLACKLISTEN.sections.findIndex(x=>x.id==='pretest');bluIndex=i;go('blacklisten');renderBlackListening()}
+function playBluIntro(){
+ const hit=findBluTrack(t=>/IELTS.*听力（上）/i.test(t.name)||/IELTS 考试技能训练教程（第5版）听力（上）/i.test(t.name));
+ if(!hit)return;
+ bluIndex=hit.gi;bluTrackIndex=hit.ti;renderBlackListening();selectBluTrack(hit.ti)
+}
+function openBluPretest(){
+ const goPre=()=>{
+  const hit=findBluTrack(t=>/Pretraining Test/i.test(t.name));
+  if(!hit)return;
+  bluIndex=hit.gi;bluTrackIndex=hit.ti;go('blacklisten');renderBlackListening();selectBluTrack(hit.ti)
+ };
+ if(bluGroups.length)goPre();else loadBlackListeningLibrary().then(goPre)
+}
 
 // Black Eyes IELTS Speaking
 let beUnit=1,beTrackIndex=0;
