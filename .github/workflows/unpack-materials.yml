@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+
     steps:
       - name: Choose release tag
         id: tag
@@ -29,30 +30,44 @@ jobs:
             echo "tag=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Download ZIP assets
+      - name: Install 7-Zip
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+
+      - name: Download archive assets
         shell: bash
         run: |
           mkdir -p work
           gh release download "${{ steps.tag.outputs.tag }}" \
             --repo "${{ github.repository }}" \
             --pattern "*.zip" \
+            --pattern "*.7z" \
             --dir work
-          ZIP_COUNT="$(find work -maxdepth 1 -type f -name '*.zip' | wc -l)"
-          if [ "$ZIP_COUNT" -eq 0 ]; then
-            echo "No ZIP assets found in release."
+
+          COUNT="$(find work -maxdepth 1 -type f \( -name '*.zip' -o -name '*.7z' \) | wc -l)"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No ZIP or 7Z assets found in release."
             exit 1
           fi
-          echo "Found $ZIP_COUNT ZIP asset(s)."
+          echo "Found $COUNT archive asset(s)."
 
-      - name: Unpack all ZIPs and build manifest
+      - name: Unpack all archives
         shell: bash
         run: |
           mkdir -p extracted upload
-          while IFS= read -r z; do
-            echo "Unpacking $z"
-            unzip -q -o "$z" -d extracted
-          done < <(find work -maxdepth 1 -type f -name '*.zip' | sort)
+          while IFS= read -r f; do
+            echo "Unpacking $f"
+            case "$f" in
+              *.zip) unzip -q -o "$f" -d extracted ;;
+              *.7z)  7z x -y -oextracted "$f" >/dev/null ;;
+            esac
+          done < <(find work -maxdepth 1 -type f \( -name '*.zip' -o -name '*.7z' \) | sort)
 
+      - name: Build upload assets and manifest
+        shell: bash
+        run: |
           python3 - <<'PY'
           from pathlib import Path
           import json, mimetypes, shutil, hashlib
@@ -71,13 +86,17 @@ jobs:
               asset = f"asset-{i:04d}{ext}"
               target = out / asset
               shutil.copy2(p, target)
+              h = hashlib.sha256()
+              with p.open("rb") as fh:
+                  for chunk in iter(lambda: fh.read(1024 * 1024), b""):
+                      h.update(chunk)
               manifest.append({
                   "path": rel,
                   "name": p.name,
                   "asset": asset,
                   "size": p.stat().st_size,
                   "mime": mimetypes.guess_type(p.name)[0] or "application/octet-stream",
-                  "sha256": hashlib.sha256(p.read_bytes()).hexdigest()
+                  "sha256": h.hexdigest()
               })
 
           (out / "materials-manifest.json").write_text(
