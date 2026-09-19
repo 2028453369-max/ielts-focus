@@ -1,0 +1,42 @@
+name: Sync Materials Manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sync-materials-manifest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download manifest from materials release
+        shell: bash
+        run: |
+          rm -f materials-manifest.json
+          gh release download materials-v1 \
+            --repo "${{ github.repository }}" \
+            --pattern "materials-manifest.json" \
+            --dir .
+          test -s materials-manifest.json
+      - name: Commit manifest to site root
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add materials-manifest.json
+          if git diff --cached --quiet; then
+            echo "Manifest already current."
+            exit 0
+          fi
+          git commit -m "Sync materials manifest"
+          git push origin HEAD:main
