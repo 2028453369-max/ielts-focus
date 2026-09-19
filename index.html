@@ -746,6 +746,10 @@ function bluPdfStart(g,track){
   else if(/Unit Four/i.test(p))page=46;
   else if(/Unit Five/i.test(p))page=62;
   else if(/Unit Six/i.test(p))page=78;
+  else if(track&&/Test\s*1/i.test(track.name))page=93;
+  else if(track&&/Test\s*2/i.test(track.name))page=97;
+  else if(track&&/Test\s*3/i.test(track.name))page=102;
+  else if(track&&/Test\s*4/i.test(track.name))page=106;
   return {prefix:'blu2',page,total:259};
  }
  let page=14;
@@ -786,7 +790,10 @@ function bindBluTrack(autoplay=false){
  player.onerror=()=>{document.getElementById('bluNoAudio').textContent='这个音频暂时加载失败，请刷新后重试。'};
  player.oncanplay=()=>{document.getElementById('bluNoAudio').textContent=''};
  document.getElementById('bluAudioMeta').textContent=t.name.replace(/\.mp3$/i,'')+' · 已就绪';
- if(autoplay&&/Pretraining Test/i.test(t.name)){
+ const trackHasOwnStart=
+  (g.volume==='上'&&g.parent==='01 第一部分') ||
+  (g.volume==='下'&&/02 第二部分/i.test(g.parent));
+ if(autoplay&&trackHasOwnStart){
   const page=bluPdfStart(g,t);
   bluPagePrefix=page.prefix;bluPageTotal=page.total;bluViewPage=page.page;bluPageGroupId=g.id;
   renderBluPage();
