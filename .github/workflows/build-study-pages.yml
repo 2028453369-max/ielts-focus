@@ -1,0 +1,74 @@
+name: Build In-App Study Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build-study-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      SRC_TAG: materials-v1
+      OUT_TAG: study-pages-v1
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PDF renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Download study PDFs
+        shell: bash
+        run: |
+          mkdir -p srcpdf pages
+          gh release download "$SRC_TAG" --repo "$REPO" --pattern "asset-0001.pdf" --dir srcpdf
+          gh release download "$SRC_TAG" --repo "$REPO" --pattern "asset-0027.pdf" --dir srcpdf
+          gh release download "$SRC_TAG" --repo "$REPO" --pattern "asset-0276.pdf" --dir srcpdf
+          test -s srcpdf/asset-0001.pdf
+          test -s srcpdf/asset-0027.pdf
+          test -s srcpdf/asset-0276.pdf
+
+      - name: Render PDFs as browser-friendly pages
+        shell: bash
+        run: |
+          render_pdf () {
+            local src="$1"
+            local prefix="$2"
+            local tmp="tmp-$prefix"
+            mkdir -p "$tmp"
+            pdftoppm -jpeg -r 105 -jpegopt quality=72,optimize=y "$src" "$tmp/page"
+            n=1
+            for f in "$tmp"/page-*.jpg; do
+              printf -v num "%03d" "$n"
+              mv "$f" "pages/${prefix}-${num}.jpg"
+              n=$((n+1))
+            done
+          }
+          render_pdf srcpdf/asset-0001.pdf c21
+          render_pdf srcpdf/asset-0027.pdf blu
+          render_pdf srcpdf/asset-0276.pdf be
+          python - <<'PY'
+          from pathlib import Path
+          from collections import Counter
+          files=list(Path("pages").glob("*.jpg"))
+          c=Counter(p.name.split("-")[0] for p in files)
+          print(dict(c))
+          assert c["c21"] >= 140
+          assert c["blu"] >= 270
+          assert c["be"] >= 160
+          PY
+
+      - name: Create or update page-image release
+        shell: bash
+        run: |
+          if ! gh release view "$OUT_TAG" --repo "$REPO" >/dev/null 2>&1; then
+            gh release create "$OUT_TAG" --repo "$REPO" --title "IELTS Focus Study Pages" --notes "Browser-friendly page images for in-app textbook viewing."
+          fi
+          gh release upload "$OUT_TAG" pages/*.jpg --repo "$REPO" --clobber
