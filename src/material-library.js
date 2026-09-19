@@ -28,11 +28,22 @@
   }
 
   async function loadReleaseManifest(cfg = DEFAULT_RELEASE) {
-    const url = releaseAssetUrl('materials-manifest.json', cfg);
-    const response = await fetch(url, { cache:'no-store' });
-    if (!response.ok) throw new Error('资料清单加载失败：HTTP ' + response.status);
-    const raw = await response.json();
-    return normalizeManifest(raw);
+    const candidates = [
+      'materials-manifest.json',
+      releaseAssetUrl('materials-manifest.json', cfg)
+    ];
+    let lastError = null;
+    for (const url of candidates) {
+      try {
+        const response = await fetch(url, { cache:'no-store' });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const raw = await response.json();
+        return normalizeManifest(raw);
+      } catch (error) {
+        lastError = error;
+      }
+    }
+    throw new Error('资料清单加载失败：' + (lastError ? lastError.message : 'unknown error'));
   }
 
   function materialUrl(item, cfg = DEFAULT_RELEASE) {
