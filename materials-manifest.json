@@ -1,0 +1,2525 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "01_剑桥21/剑桥雅思21（A类）.pdf",
+      "name": "剑桥雅思21（A类）.pdf",
+      "asset": "asset-0001.pdf",
+      "size": 44241076,
+      "mime": "application/pdf",
+      "sha256": "7967be9984a5ea337fd0955a92020563c6b4f21641491f2f4bcf0f7e97c9faae"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P1.1.mp3",
+      "name": "C21T1P1.1.mp3",
+      "asset": "asset-0002.mp3",
+      "size": 7282570,
+      "mime": "audio/mpeg",
+      "sha256": "73d44b3aa391e712382c9293de44135c00480592f95ea85059e2b5bbc926c6d0"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P1.2.mp3",
+      "name": "C21T1P1.2.mp3",
+      "asset": "asset-0003.mp3",
+      "size": 3933463,
+      "mime": "audio/mpeg",
+      "sha256": "d8b72ae587f56bfa8a7524cad723b3effedb3156f1212545f64c26e4f4f30b17"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P2.1.mp3",
+      "name": "C21T1P2.1.mp3",
+      "asset": "asset-0004.mp3",
+      "size": 7254358,
+      "mime": "audio/mpeg",
+      "sha256": "d94a92bd721c4eacf1c15026fe43849a473363d48b35d1cf328d67e006ffa96a"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P2.2.mp3",
+      "name": "C21T1P2.2.mp3",
+      "asset": "asset-0005.mp3",
+      "size": 3438809,
+      "mime": "audio/mpeg",
+      "sha256": "03072b155c84760bcb7518550b36ae0b3fdf9ee3cae4755e6fdec580342ab6c4"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P3.1.mp3",
+      "name": "C21T1P3.1.mp3",
+      "asset": "asset-0006.mp3",
+      "size": 5530276,
+      "mime": "audio/mpeg",
+      "sha256": "2e045b039fd4c78ac2105d39a3df9d11560294f5b44f3aa999aea3c46de7576f"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P3.2.mp3",
+      "name": "C21T1P3.2.mp3",
+      "asset": "asset-0007.mp3",
+      "size": 4468242,
+      "mime": "audio/mpeg",
+      "sha256": "0669ec852db2b979997f10fc8ac935a5447af505f0b155481c703a5f9c92128a"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T1P4.mp3",
+      "name": "C21T1P4.mp3",
+      "asset": "asset-0008.mp3",
+      "size": 13067124,
+      "mime": "audio/mpeg",
+      "sha256": "b9f88f6031a5cff67f488b43117df7559ccb0b8721bd58c7f46bf983c2a2b4bd"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T2P1.mp3",
+      "name": "C21T2P1.mp3",
+      "asset": "asset-0009.mp3",
+      "size": 12081800,
+      "mime": "audio/mpeg",
+      "sha256": "fb0d06b22e2e2fd2c6192634053e86ec45c70f49dbf5a13fd02f67d5a1570887"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T2P2.1.mp3",
+      "name": "C21T2P2.1.mp3",
+      "asset": "asset-0010.mp3",
+      "size": 4753499,
+      "mime": "audio/mpeg",
+      "sha256": "63b2b10f9ae8af66fbf9607f0b3b1fb6dcc45bb047b0c2da685f43ba997b336c"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T2P2.2.mp3",
+      "name": "C21T2P2.2.mp3",
+      "asset": "asset-0011.mp3",
+      "size": 4081421,
+      "mime": "audio/mpeg",
+      "sha256": "f9b1341b39e8b525ac6925321f21379a651f6f08bf5da0e13536190e5353a071"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T2P3.1.mp3",
+      "name": "C21T2P3.1.mp3",
+      "asset": "asset-0012.mp3",
+      "size": 6895749,
+      "mime": "audio/mpeg",
+      "sha256": "5eb3d2648ea0075fcf3199b879c4b51ef359536413b5de2eaf8ac2634063eb7f"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T2P3.2.mp3",
+      "name": "C21T2P3.2.mp3",
+      "asset": "asset-0013.mp3",
+      "size": 3809330,
+      "mime": "audio/mpeg",
+      "sha256": "5dddc05f05f86175efbae3fb26f2944019d699f564dfd0e2b00933ba16599880"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T2P4.mp3",
+      "name": "C21T2P4.mp3",
+      "asset": "asset-0014.mp3",
+      "size": 10971902,
+      "mime": "audio/mpeg",
+      "sha256": "98fb6ccffc0e05c2b0fab1aef80254aca92f4ffa0705954076cef1880137fb44"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T3P1.mp3",
+      "name": "C21T3P1.mp3",
+      "asset": "asset-0015.mp3",
+      "size": 10367812,
+      "mime": "audio/mpeg",
+      "sha256": "416f786615d82791775e771123a378883ccfb039802f83e00f72d661487a5a79"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T3P2.1.mp3",
+      "name": "C21T3P2.1.mp3",
+      "asset": "asset-0016.mp3",
+      "size": 4850675,
+      "mime": "audio/mpeg",
+      "sha256": "684c9ad297e3e4dce54950cea583fbd5851a6e831836a89d8ede281f591069b5"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T3P2.2.mp3",
+      "name": "C21T3P2.2.mp3",
+      "asset": "asset-0017.mp3",
+      "size": 5002394,
+      "mime": "audio/mpeg",
+      "sha256": "b90c5fd1f8e4bcdf169de77fa4ed9dca1dadff2167342241d13fbb71eec52245"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T3P3.1.mp3",
+      "name": "C21T3P3.1.mp3",
+      "asset": "asset-0018.mp3",
+      "size": 4681401,
+      "mime": "audio/mpeg",
+      "sha256": "b8921207fb23d04c7d61a84083ea3ff4c3b716b1422fcc41d207f10fd4c8f305"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T3P3.2.mp3",
+      "name": "C21T3P3.2.mp3",
+      "asset": "asset-0019.mp3",
+      "size": 4725914,
+      "mime": "audio/mpeg",
+      "sha256": "cb57a6829e51b746747370a10b4ee52d5f67e85c7c1abed94ea1e622e61fc944"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T3P4.mp3",
+      "name": "C21T3P4.mp3",
+      "asset": "asset-0020.mp3",
+      "size": 13445228,
+      "mime": "audio/mpeg",
+      "sha256": "3c2ca30363eecec365d2a182848418133ab5c81978210af94200a859cc213585"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T4P1.mp3",
+      "name": "C21T4P1.mp3",
+      "asset": "asset-0021.mp3",
+      "size": 10216946,
+      "mime": "audio/mpeg",
+      "sha256": "b68d69b421351d881516ba6c4ddc2f6938a3d58864b7bcdb8593ef416cad250f"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T4P2.1.mp3",
+      "name": "C21T4P2.1.mp3",
+      "asset": "asset-0022.mp3",
+      "size": 5036249,
+      "mime": "audio/mpeg",
+      "sha256": "7d74e442ac5c38cc4844c85b54420d855d41e11f3a8aa14986e86f035deb7d7e"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T4P2.2.mp3",
+      "name": "C21T4P2.2.mp3",
+      "asset": "asset-0023.mp3",
+      "size": 5355361,
+      "mime": "audio/mpeg",
+      "sha256": "04a9091b8482281eec84d230f7cc8b734508c813c9e66f65f1d0918af4ab5ad9"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T4P3.1.mp3",
+      "name": "C21T4P3.1.mp3",
+      "asset": "asset-0024.mp3",
+      "size": 4527174,
+      "mime": "audio/mpeg",
+      "sha256": "ef73054aa6ee9336dc916ec15815c8d8aa07bec45fbca1ae436b51b87208a68d"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T4P3.2.mp3",
+      "name": "C21T4P3.2.mp3",
+      "asset": "asset-0025.mp3",
+      "size": 4841271,
+      "mime": "audio/mpeg",
+      "sha256": "ab7cda9a1954767be49c67b92b03b7c56c7b967d28b8ddbc89feae6f490735fd"
+    },
+    {
+      "path": "01_剑桥21/听力音频/C21T4P4.mp3",
+      "name": "C21T4P4.mp3",
+      "asset": "asset-0026.mp3",
+      "size": 10655146,
+      "mime": "audio/mpeg",
+      "sha256": "2c3077e251447dfa6a8bd8b3b79f9872f41780b7773dfcb77e9164a2f10078bc"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力 第5版 上【我不是考神】.pdf",
+      "name": "黑眼睛听力 第5版 上【我不是考神】.pdf",
+      "asset": "asset-0027.pdf",
+      "size": 167741618,
+      "mime": "application/pdf",
+      "sha256": "0d7e646b0a565b2b90c81d64dfee1e355b9e9a6050f57562862267bda9f574dd"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/01 第一部分/01  IELTS 考试技能训练教程（第5版）听力（上）.mp3",
+      "name": "01  IELTS 考试技能训练教程（第5版）听力（上）.mp3",
+      "asset": "asset-0028.mp3",
+      "size": 960470,
+      "mime": "audio/mpeg",
+      "sha256": "b02ef5e18aa09c44b2f04f85a8e1a26d228b10a8f77134904e41d0c514b468d2"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/01 第一部分/02 Pretraining Test.mp3",
+      "name": "02 Pretraining Test.mp3",
+      "asset": "asset-0029.mp3",
+      "size": 36028081,
+      "mime": "audio/mpeg",
+      "sha256": "7e42175f9ef5f14e478cf322deb946064a04a8fd44f072f7880b836be9d5f20a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-1 Listening Activity No.1.mp3",
+      "name": "1-1 Listening Activity No.1.mp3",
+      "asset": "asset-0030.mp3",
+      "size": 2954553,
+      "mime": "audio/mpeg",
+      "sha256": "1d6cbf001c92912c416f45f4e94b9c2d7a7b0577b8676849e84c061ce1081a4a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-10  Listening Activity No.10.mp3",
+      "name": "1-10  Listening Activity No.10.mp3",
+      "asset": "asset-0031.mp3",
+      "size": 1136431,
+      "mime": "audio/mpeg",
+      "sha256": "393bfc29429047e68655637de69bb83a29c8640f71d9fc3e9e9901979fa979ac"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-11  Listening Activity No.11(1).mp3",
+      "name": "1-11  Listening Activity No.11(1).mp3",
+      "asset": "asset-0032.mp3",
+      "size": 1708198,
+      "mime": "audio/mpeg",
+      "sha256": "14b92dfe86ad8da20743f731af4b030fb853beb9ebe3446545f8946c8f45c8d4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-12  Listening Activity No.12.mp3",
+      "name": "1-12  Listening Activity No.12.mp3",
+      "asset": "asset-0033.mp3",
+      "size": 651179,
+      "mime": "audio/mpeg",
+      "sha256": "55fb289f1ccaee51fd8ef2cd3f2c66b3298c2ffadee3857fd6f99e94f96725bf"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-13  Listening Activity No.13.mp3",
+      "name": "1-13  Listening Activity No.13.mp3",
+      "asset": "asset-0034.mp3",
+      "size": 3055280,
+      "mime": "audio/mpeg",
+      "sha256": "b998cb29073cfe9790028a594d877f68746ed50ab276c783fea85b7774c394c6"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-14  Listening Activity No.14.mp3",
+      "name": "1-14  Listening Activity No.14.mp3",
+      "asset": "asset-0035.mp3",
+      "size": 3118811,
+      "mime": "audio/mpeg",
+      "sha256": "42538d5cb149fae84b2f6be921645293ac949e9eea7ed0e5a0c2ebe1d783d733"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-15  Listening Activity No.15.mp3",
+      "name": "1-15  Listening Activity No.15.mp3",
+      "asset": "asset-0036.mp3",
+      "size": 2145802,
+      "mime": "audio/mpeg",
+      "sha256": "60a5777e99f7fb1c9421c4571743a5a5cf88823d2fb753a257b50721086dfe5e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-16  Listening Activity No.16.mp3",
+      "name": "1-16  Listening Activity No.16.mp3",
+      "asset": "asset-0037.mp3",
+      "size": 2434612,
+      "mime": "audio/mpeg",
+      "sha256": "ef00cdb1dc95ef02aecb4ae94417476df360337eba3aac3f37c2ab634fda7ff0"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-17  Listening Activity No.17.mp3",
+      "name": "1-17  Listening Activity No.17.mp3",
+      "asset": "asset-0038.mp3",
+      "size": 2806595,
+      "mime": "audio/mpeg",
+      "sha256": "12196a89642c3ed6e951bda1542bc19aa389dc776f37631228ea0e1ad4314369"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-18  Listening Activity No.18.mp3",
+      "name": "1-18  Listening Activity No.18.mp3",
+      "asset": "asset-0039.mp3",
+      "size": 3230405,
+      "mime": "audio/mpeg",
+      "sha256": "acf71ed1fbef87f7426b2dec8f98206165cf985aa78d54349b71f48717a46d5c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-19  Listening Activity No.19.mp3",
+      "name": "1-19  Listening Activity No.19.mp3",
+      "asset": "asset-0040.mp3",
+      "size": 2599706,
+      "mime": "audio/mpeg",
+      "sha256": "a83ccc63863261b96186a9ab4643991162df34beeb97bb79f5e04dce8e0d3cac"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-2  Listening Activity No.2.mp3",
+      "name": "1-2  Listening Activity No.2.mp3",
+      "asset": "asset-0041.mp3",
+      "size": 2378187,
+      "mime": "audio/mpeg",
+      "sha256": "29eed0658e3b6b3db8f294660e7a863bc333d0d630cc4bd1ba543de5382acdf0"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-20  Listening Activity No.20.mp3",
+      "name": "1-20  Listening Activity No.20.mp3",
+      "asset": "asset-0042.mp3",
+      "size": 4458788,
+      "mime": "audio/mpeg",
+      "sha256": "4ad27a0c493de0fdaaff4d1b0245d182ab898c185ccf735f12e5dec0c8fcbcea"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-3  Listening Activity No.3.mp3",
+      "name": "1-3  Listening Activity No.3.mp3",
+      "asset": "asset-0043.mp3",
+      "size": 2730944,
+      "mime": "audio/mpeg",
+      "sha256": "b8bd61db7ed4ef72560e96c969bc0a2ba1c3e8a0649dd78f5a2b6ecf7b8d8ddd"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-4  Listening Activity No.4.mp3",
+      "name": "1-4  Listening Activity No.4.mp3",
+      "asset": "asset-0044.mp3",
+      "size": 1815613,
+      "mime": "audio/mpeg",
+      "sha256": "9dd72d3e9977aad7d4990d70738b7bc6ca951c7888e1b9621893e05cb96c8dcc"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-5  Listening Activity No.5.mp3",
+      "name": "1-5  Listening Activity No.5.mp3",
+      "asset": "asset-0045.mp3",
+      "size": 2750589,
+      "mime": "audio/mpeg",
+      "sha256": "da772e9e9e67e1bf8ef8208e7744aef078ff1dd7a6a7e3302716a9ce02bd8a99"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-6  Listening Activity No.6.mp3",
+      "name": "1-6  Listening Activity No.6.mp3",
+      "asset": "asset-0046.mp3",
+      "size": 986801,
+      "mime": "audio/mpeg",
+      "sha256": "1d38a3a9aecdb3c1becf2e19ef73928acdf9cd22d6d063f639f8da6e99f9584e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-7  Listening Activity No.7.mp3",
+      "name": "1-7  Listening Activity No.7.mp3",
+      "asset": "asset-0047.mp3",
+      "size": 948348,
+      "mime": "audio/mpeg",
+      "sha256": "a6e9f9827461f3de506734b986005317ec96d6261d00931bba085be13578b3c5"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-8  Listening Activity No.8.mp3",
+      "name": "1-8  Listening Activity No.8.mp3",
+      "asset": "asset-0048.mp3",
+      "size": 1147297,
+      "mime": "audio/mpeg",
+      "sha256": "7e065e6c204dd7696fc63340debfe7cf0c8373126eb5d2a39c3d72a62a31c18c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/01 Unit One/1-9  Listening Activity No.9.mp3",
+      "name": "1-9  Listening Activity No.9.mp3",
+      "asset": "asset-0049.mp3",
+      "size": 1226709,
+      "mime": "audio/mpeg",
+      "sha256": "dc258c733e66079e4e73e68800367918d888e7877b106f5c95af9c1e3723beb6"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-1  Listening Activity No.1.mp3",
+      "name": "2-1  Listening Activity No.1.mp3",
+      "asset": "asset-0050.mp3",
+      "size": 1381773,
+      "mime": "audio/mpeg",
+      "sha256": "a25bbd5acdb524e4e38703cd4377fefd7961287fa4932762bb0197bb440fe182"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-10 Listening Activity No.10.mp3",
+      "name": "2-10 Listening Activity No.10.mp3",
+      "asset": "asset-0051.mp3",
+      "size": 4831190,
+      "mime": "audio/mpeg",
+      "sha256": "2dda6ae48935b6e776bb70320bfd952d83620bb886882ac0df3c996936c9cec4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-11 Listening Activity No.11.mp3",
+      "name": "2-11 Listening Activity No.11.mp3",
+      "asset": "asset-0052.mp3",
+      "size": 2265338,
+      "mime": "audio/mpeg",
+      "sha256": "f794ad11e0f1773ce266f1508b2bc321d1dfb28f38eab120117d71553d789034"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-12 Listening Activity No.12.mp3",
+      "name": "2-12 Listening Activity No.12.mp3",
+      "asset": "asset-0053.mp3",
+      "size": 1931807,
+      "mime": "audio/mpeg",
+      "sha256": "44c4e7ba9e8c57fa30f9423dd041a135a6ea6bd00c936dbda04323512abeba05"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-13 Listening Activity No.13.mp3",
+      "name": "2-13 Listening Activity No.13.mp3",
+      "asset": "asset-0054.mp3",
+      "size": 1875382,
+      "mime": "audio/mpeg",
+      "sha256": "fad6eac1a537c8240960a32b169a083efad811247a8c420b061688c50466e993"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-14 Listening Activity No.14.mp3",
+      "name": "2-14 Listening Activity No.14.mp3",
+      "asset": "asset-0055.mp3",
+      "size": 2267009,
+      "mime": "audio/mpeg",
+      "sha256": "6f6d81a0dba0c4c771be986566fd120f2457a7badea05d2197131e6fbe29097e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-15 Listening Activity No.15.mp3",
+      "name": "2-15 Listening Activity No.15.mp3",
+      "asset": "asset-0056.mp3",
+      "size": 2161266,
+      "mime": "audio/mpeg",
+      "sha256": "bf2ef18453ce2d6a044297b4e3102c2edb09a6ef96934f82160d1087506a5a29"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-16 Listening Activity No.16.mp3",
+      "name": "2-16 Listening Activity No.16.mp3",
+      "asset": "asset-0057.mp3",
+      "size": 1868695,
+      "mime": "audio/mpeg",
+      "sha256": "e2d65ff8c45434e8f7050a60184ec5421e5929eadae06750d41b55d7a514908b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-17 Listening Activity No.17.mp3",
+      "name": "2-17 Listening Activity No.17.mp3",
+      "asset": "asset-0058.mp3",
+      "size": 2537012,
+      "mime": "audio/mpeg",
+      "sha256": "3aa7560bf255ca4daca48a79b18f8e1094ccb2f60c39e9314a93ec7ab80c667d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-18 Listening Activity No.18.mp3",
+      "name": "2-18 Listening Activity No.18.mp3",
+      "asset": "asset-0059.mp3",
+      "size": 2103169,
+      "mime": "audio/mpeg",
+      "sha256": "a344fe9f31f36e340e780ffb3f161b4894244aaa81f0c50ed07b0bb64265be68"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-19 Listening Activity No.19.mp3",
+      "name": "2-19 Listening Activity No.19.mp3",
+      "asset": "asset-0060.mp3",
+      "size": 2773576,
+      "mime": "audio/mpeg",
+      "sha256": "16dbf27f1c446d8a55f594639e6aa5521a62d0cc7612f34014d28e0b6b39baaa"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-2  Listening Activity No.2.mp3",
+      "name": "2-2  Listening Activity No.2.mp3",
+      "asset": "asset-0061.mp3",
+      "size": 1889592,
+      "mime": "audio/mpeg",
+      "sha256": "e191a494fed79b1a5d675e479255b511d4399836a670c6e4f22a8c8e6abe116a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-20 Listening Activity No.20.mp3",
+      "name": "2-20 Listening Activity No.20.mp3",
+      "asset": "asset-0062.mp3",
+      "size": 2825821,
+      "mime": "audio/mpeg",
+      "sha256": "be2d6e8a0e90cbcdb132cf40f089c6293acdeb30dc7cc3dae4eaf4723a4753fd"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-3 Listening Activity No.3.mp3",
+      "name": "2-3 Listening Activity No.3.mp3",
+      "asset": "asset-0063.mp3",
+      "size": 1729096,
+      "mime": "audio/mpeg",
+      "sha256": "48f458a1cafd6b950c2eec8cf9eaa7ed4d80fa394b2bfd3f42afc59d755d2276"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-4 Listening Activity No.4.mp3",
+      "name": "2-4 Listening Activity No.4.mp3",
+      "asset": "asset-0064.mp3",
+      "size": 1758354,
+      "mime": "audio/mpeg",
+      "sha256": "b1e983dff9ce547d1a5b73a2badf46ea9d2afddef229ba80e6f6a8e95cef7e9b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-5 Listening Activity No.5.mp3",
+      "name": "2-5 Listening Activity No.5.mp3",
+      "asset": "asset-0065.mp3",
+      "size": 1347917,
+      "mime": "audio/mpeg",
+      "sha256": "94c6eca2ef735593a2348d26367d6ff3d36e8a7c4e602a1e35d237ac984d540a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-6 Listening Activity No.6.mp3",
+      "name": "2-6 Listening Activity No.6.mp3",
+      "asset": "asset-0066.mp3",
+      "size": 2079764,
+      "mime": "audio/mpeg",
+      "sha256": "ec8599de9375ad9e64ba78ec0b894520acf3d2a37a4be961ccc99bca0aaf9de8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-7 Listening Activity No.7.mp3",
+      "name": "2-7 Listening Activity No.7.mp3",
+      "asset": "asset-0067.mp3",
+      "size": 1979036,
+      "mime": "audio/mpeg",
+      "sha256": "398029f30e4b5361d5096bbacddb977f87cde408165987ce1e1448b59a3cad20"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-8 Listening Activity No.8.mp3",
+      "name": "2-8 Listening Activity No.8.mp3",
+      "asset": "asset-0068.mp3",
+      "size": 1636309,
+      "mime": "audio/mpeg",
+      "sha256": "2ee8a21369edbf61b4f1727654cb4ecd63fe7559927976da1b0d936c238ca25c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/02 Unit Two/2-9 Listening Activity No.9.mp3",
+      "name": "2-9 Listening Activity No.9.mp3",
+      "asset": "asset-0069.mp3",
+      "size": 2112783,
+      "mime": "audio/mpeg",
+      "sha256": "c868b07768327f5e906da9e917ee5d785d847a73ecb8c1bd61d94a629ec4b6df"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-1 Listening Activity No.1.mp3",
+      "name": "3-1 Listening Activity No.1.mp3",
+      "asset": "asset-0070.mp3",
+      "size": 1566929,
+      "mime": "audio/mpeg",
+      "sha256": "23d46c8233dad14c7a8d1dbbfc87cdef1f349f58b1f4405dec601568f889a5ac"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-10 Listening Activity No.10.mp3",
+      "name": "3-10 Listening Activity No.10.mp3",
+      "asset": "asset-0071.mp3",
+      "size": 1455332,
+      "mime": "audio/mpeg",
+      "sha256": "a21c4569ba84c73f4491828190fb0f20dbdbb549faee3c077aa9a1633172fb43"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-11 Listening Activity No.11.mp3",
+      "name": "3-11 Listening Activity No.11.mp3",
+      "asset": "asset-0072.mp3",
+      "size": 2495216,
+      "mime": "audio/mpeg",
+      "sha256": "2d3aa0fe50a327aea98dee11a124e857377936e3249f37f461aaa58939c59894"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-12 Listening Activity No.12.mp3",
+      "name": "3-12 Listening Activity No.12.mp3",
+      "asset": "asset-0073.mp3",
+      "size": 3222465,
+      "mime": "audio/mpeg",
+      "sha256": "e1c9a159982a0c19caf2e7dab366c4a7fc8fadf5441d3dfe517c4bf3ada70a2a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-13 Listening Activity No.13.mp3",
+      "name": "3-13 Listening Activity No.13.mp3",
+      "asset": "asset-0074.mp3",
+      "size": 4115226,
+      "mime": "audio/mpeg",
+      "sha256": "3712531805e931aab7e3b3d079bbf9f5275b07c29d24c6033b2f42f35dbf5d34"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-14 Listening Activity No.14.mp3",
+      "name": "3-14 Listening Activity No.14.mp3",
+      "asset": "asset-0075.mp3",
+      "size": 1490442,
+      "mime": "audio/mpeg",
+      "sha256": "3534c289d657dfe51d07bd9ef04f8bd4a5ffc94d58d35a79dd6cf3483e632db4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-15 Listening Activity No.15.mp3",
+      "name": "3-15 Listening Activity No.15.mp3",
+      "asset": "asset-0076.mp3",
+      "size": 3671770,
+      "mime": "audio/mpeg",
+      "sha256": "0a06f08b4348199ee3587a6e1983f9edeb2b1f3c8846f5e18623d27286679448"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-16 Listening Activity No.16.mp3",
+      "name": "3-16 Listening Activity No.16.mp3",
+      "asset": "asset-0077.mp3",
+      "size": 1434435,
+      "mime": "audio/mpeg",
+      "sha256": "ec6ed3fd3c75066c95fdb3ac944dcf2fa0eb8a08d8e2627a37c0e59dc3baed6d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-17 Listening Activity No.17.mp3",
+      "name": "3-17 Listening Activity No.17.mp3",
+      "asset": "asset-0078.mp3",
+      "size": 4042083,
+      "mime": "audio/mpeg",
+      "sha256": "a325b6a09c661be4e771f80124540ac2086383ca94ccbcfe869565bd7ce28e93"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-18 Listening Activity No.18.mp3",
+      "name": "3-18 Listening Activity No.18.mp3",
+      "asset": "asset-0079.mp3",
+      "size": 3270530,
+      "mime": "audio/mpeg",
+      "sha256": "84a66b4a4c2472856fa1f79c727783de1795fcd199c8faed34cd2145ce14a4d9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-19 Listening Activity No.19.mp3",
+      "name": "3-19 Listening Activity No.19.mp3",
+      "asset": "asset-0080.mp3",
+      "size": 4056711,
+      "mime": "audio/mpeg",
+      "sha256": "40fc34d7b2447d2a885731cafe7550849bda342d520fad2fc3048a84fb680eb3"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-2 Listening Activity No.2.mp3",
+      "name": "3-2 Listening Activity No.2.mp3",
+      "asset": "asset-0081.mp3",
+      "size": 2374844,
+      "mime": "audio/mpeg",
+      "sha256": "e27fdf837b0745a5a59099c65e880dfe6672eda2193c99d13c3200de8fb38426"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-20 Listening Activity No.20.mp3",
+      "name": "3-20 Listening Activity No.20.mp3",
+      "asset": "asset-0082.mp3",
+      "size": 2554148,
+      "mime": "audio/mpeg",
+      "sha256": "60ba1f0c21e2b0cc98c0de11cdc62916f81b46f2a2c08d069ce5af9f5ef16b2d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-3 Listening Activity No.3.mp3",
+      "name": "3-3 Listening Activity No.3.mp3",
+      "asset": "asset-0083.mp3",
+      "size": 1547283,
+      "mime": "audio/mpeg",
+      "sha256": "770dabe62d2ecacbf88d34947592e0661960e36d8cc4d4649f37cb9ed5bf808c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-4 Listening Activity No.4.mp3",
+      "name": "3-4 Listening Activity No.4.mp3",
+      "asset": "asset-0084.mp3",
+      "size": 1279372,
+      "mime": "audio/mpeg",
+      "sha256": "70288abaf8ce5d8a3eb4bae4d7b6b75c728ae1cfadf44eedaea37ff297e9bcd2"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-5 Listening Activity No.5.mp3",
+      "name": "3-5 Listening Activity No.5.mp3",
+      "asset": "asset-0085.mp3",
+      "size": 1573616,
+      "mime": "audio/mpeg",
+      "sha256": "1cae29e0b796f20901fe3169f57a9b87aa737833a52e008ffe4e60b6dce2406e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-6 Listening Activity No.6.mp3",
+      "name": "3-6 Listening Activity No.6.mp3",
+      "asset": "asset-0086.mp3",
+      "size": 1230053,
+      "mime": "audio/mpeg",
+      "sha256": "18ab62c88f2a6b1a083cfedbbb8424e2c8b35bd9903309fc41b8d638959e69a6"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-7 Listening Activity No.7.mp3",
+      "name": "3-7 Listening Activity No.7.mp3",
+      "asset": "asset-0087.mp3",
+      "size": 1823137,
+      "mime": "audio/mpeg",
+      "sha256": "d2fe0ea55ed907e220eaee1295bf0ce4572cc97765c3b2b0785fafd4374bcccb"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-8 Listening Activity No.8.mp3",
+      "name": "3-8 Listening Activity No.8.mp3",
+      "asset": "asset-0088.mp3",
+      "size": 931630,
+      "mime": "audio/mpeg",
+      "sha256": "8ff444f632e6c18cc27bb70bff279ea07fdd5e702153e6bf6a80368effe26117"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/03 Unit Three/3-9 Listening Activity No.9.mp3",
+      "name": "3-9 Listening Activity No.9.mp3",
+      "asset": "asset-0089.mp3",
+      "size": 2564596,
+      "mime": "audio/mpeg",
+      "sha256": "3b120544d259a18437ecd2c6360fb7091e944831f2704fc21616ae6c01321571"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-1 Listening Activity No.1.mp3",
+      "name": "4-1 Listening Activity No.1.mp3",
+      "asset": "asset-0090.mp3",
+      "size": 1787611,
+      "mime": "audio/mpeg",
+      "sha256": "0eafef083bdf804dac9f1970aa6c0a1baf094abee90cc58d1ca87566dc3ab0a5"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-10 Listening Activity No.10.mp3",
+      "name": "4-10 Listening Activity No.10.mp3",
+      "asset": "asset-0091.mp3",
+      "size": 2259068,
+      "mime": "audio/mpeg",
+      "sha256": "bdb66f85fe4e9557fb4720ed127344b04fd3f7cf3cfedfe084699e8185a98468"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-11 Listening Activity No.11.mp3",
+      "name": "4-11 Listening Activity No.11.mp3",
+      "asset": "asset-0092.mp3",
+      "size": 1972349,
+      "mime": "audio/mpeg",
+      "sha256": "cfcb0752f63fab30d73bd3fc098db415735e806148a0b339ca8bcd6d7470265f"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-12 Listening Activity No.12.mp3",
+      "name": "4-12 Listening Activity No.12.mp3",
+      "asset": "asset-0093.mp3",
+      "size": 3056534,
+      "mime": "audio/mpeg",
+      "sha256": "1df08ceb6d6bf5dbbaf4ae03bf5d51993d5750b2caeed5bb5bda9666c6f22388"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-13 Listening Activity No.13.mp3",
+      "name": "4-13 Listening Activity No.13.mp3",
+      "asset": "asset-0094.mp3",
+      "size": 4358059,
+      "mime": "audio/mpeg",
+      "sha256": "3b6856f199662b04434583212c0c51d74b26ecac76422a93bdaa1c10b786e04c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-14 Listening Activity No.14.mp3",
+      "name": "4-14 Listening Activity No.14.mp3",
+      "asset": "asset-0095.mp3",
+      "size": 2509008,
+      "mime": "audio/mpeg",
+      "sha256": "f9f6b24e6c41ce2b2a568091aacd8e63440a4356ab5dd000fc92f48af9d270a0"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-15 Listening Activity No.15.mp3",
+      "name": "4-15 Listening Activity No.15.mp3",
+      "asset": "asset-0096.mp3",
+      "size": 2319255,
+      "mime": "audio/mpeg",
+      "sha256": "77559294916fa2b88815a44c740377ff255a52d18ec0c15493f68c03d6bfd6bf"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-16 Listening Activity No.16.mp3",
+      "name": "4-16 Listening Activity No.16.mp3",
+      "asset": "asset-0097.mp3",
+      "size": 2786533,
+      "mime": "audio/mpeg",
+      "sha256": "3c7aaca2be2edf5950b56f5d67ff51809696ca32efa5717b55869b668240de7c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-17 Listening Activity No.17.mp3",
+      "name": "4-17 Listening Activity No.17.mp3",
+      "asset": "asset-0098.mp3",
+      "size": 2827911,
+      "mime": "audio/mpeg",
+      "sha256": "162194db213091534ddeeb6639f9e9374825d9b07579b68f7fa120a079b928a8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-18 Listening Activity No.18.mp3",
+      "name": "4-18 Listening Activity No.18.mp3",
+      "asset": "asset-0099.mp3",
+      "size": 3158099,
+      "mime": "audio/mpeg",
+      "sha256": "2cc11fb84697eff185a8a5e780046e9ad49ed63787a64beb58f9c47f69dd4a39"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-19 Listening Activity No.19.mp3",
+      "name": "4-19 Listening Activity No.19.mp3",
+      "asset": "asset-0100.mp3",
+      "size": 3049012,
+      "mime": "audio/mpeg",
+      "sha256": "f174e8d3471b1ac345a5d988ddac01c1e9f491e5178ce6bbddd5483967ce90b5"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-2 Listening Activity No.2.mp3",
+      "name": "4-2 Listening Activity No.2.mp3",
+      "asset": "asset-0101.mp3",
+      "size": 2796146,
+      "mime": "audio/mpeg",
+      "sha256": "3e57c0ab63003886c83c1e02a1b4ed0fdc071ff43ad6927572434fa88bdeb73a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-20 Listening Activity No.20.mp3",
+      "name": "4-20 Listening Activity No.20.mp3",
+      "asset": "asset-0102.mp3",
+      "size": 3448581,
+      "mime": "audio/mpeg",
+      "sha256": "26521547da5cc231cc7684c637fc86db6ce3b2aaa465fd10c4a9117dfad48ca5"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-3 Listening Activity No.3.mp3",
+      "name": "4-3 Listening Activity No.3.mp3",
+      "asset": "asset-0103.mp3",
+      "size": 2172133,
+      "mime": "audio/mpeg",
+      "sha256": "0a128f384e8cf54edf61b938edd91c80104b9b42b84a6f7a61a893ef93846274"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-4 Listening Activity No.4.mp3",
+      "name": "4-4 Listening Activity No.4.mp3",
+      "asset": "asset-0104.mp3",
+      "size": 2354781,
+      "mime": "audio/mpeg",
+      "sha256": "3a36ee4dd3d3622b3f7c5fd30a361811c5d5edf9859d44789c7ee4229c2d81d6"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-5 Listening Activity No.5.mp3",
+      "name": "4-5 Listening Activity No.5.mp3",
+      "asset": "asset-0105.mp3",
+      "size": 1625025,
+      "mime": "audio/mpeg",
+      "sha256": "b30e50d9cc9bab615c3b1aa23bbdf5300071780489482326f830bd6beecec13c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-6 Listening Activity No.6.mp3",
+      "name": "4-6 Listening Activity No.6.mp3",
+      "asset": "asset-0106.mp3",
+      "size": 2017906,
+      "mime": "audio/mpeg",
+      "sha256": "3dda0a192c55a65494ab37c6db5a84fc08bc976fabf0dc66c9d5c6e88e897a90"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-7 Listening Activity No.7.mp3",
+      "name": "4-7 Listening Activity No.7.mp3",
+      "asset": "asset-0107.mp3",
+      "size": 1716139,
+      "mime": "audio/mpeg",
+      "sha256": "aba144f8a98219b67f3ccffd764c13ff753bb867c7279667a54ba058cd7301db"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-8 Listening Activity No.8.mp3",
+      "name": "4-8 Listening Activity No.8.mp3",
+      "asset": "asset-0108.mp3",
+      "size": 2626037,
+      "mime": "audio/mpeg",
+      "sha256": "a1d1223cab55eff86fc08ca22c0292021d6d014173ada218ca7d8b7b01174ec8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/04 Unit Four/4-9 Listening Activity No.9.mp3",
+      "name": "4-9 Listening Activity No.9.mp3",
+      "asset": "asset-0109.mp3",
+      "size": 2349765,
+      "mime": "audio/mpeg",
+      "sha256": "5550b21cb8abcc3f4d61b54630d7f4d8692f634bf01191e42de87f73aadef7f3"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-1 Listening Activity No.1.mp3",
+      "name": "5-1 Listening Activity No.1.mp3",
+      "asset": "asset-0110.mp3",
+      "size": 1678942,
+      "mime": "audio/mpeg",
+      "sha256": "3a951b663deb1d7a8cd94d7c91edc777287bc0b85acd1af2a3383924a37fc229"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-10 Listening Activity No.10.mp3",
+      "name": "5-10 Listening Activity No.10.mp3",
+      "asset": "asset-0111.mp3",
+      "size": 3330298,
+      "mime": "audio/mpeg",
+      "sha256": "b98b2b885b0fa24a961223e8d1ba24fe828849386583dcacda02e4c6aa01faa4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-11 Listening Activity No.11.mp3",
+      "name": "5-11 Listening Activity No.11.mp3",
+      "asset": "asset-0112.mp3",
+      "size": 3231660,
+      "mime": "audio/mpeg",
+      "sha256": "03efbcb9c476f594ec03aff9dff2f7136060e0789036ccc4bbe6755cd4201c33"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-12 Listening Activity No.12.mp3",
+      "name": "5-12 Listening Activity No.12.mp3",
+      "asset": "asset-0113.mp3",
+      "size": 1760443,
+      "mime": "audio/mpeg",
+      "sha256": "24866dda29bd58ac149d358e1693f57ebc49882b71894dff0e35e42e4e813ed8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-13 Listening Activity No.13.mp3",
+      "name": "5-13 Listening Activity No.13.mp3",
+      "asset": "asset-0114.mp3",
+      "size": 2542027,
+      "mime": "audio/mpeg",
+      "sha256": "f1061c12d0fe676aaeffd459ace8aef1ca4d96b66ca77ad0458557ab496c7cbc"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-14 Listening Activity No.14.mp3",
+      "name": "5-14 Listening Activity No.14.mp3",
+      "asset": "asset-0115.mp3",
+      "size": 2065971,
+      "mime": "audio/mpeg",
+      "sha256": "095d07a188a3f56265cac861dfe2268a49a9deb7eec759ba5bdc9628c1e8a214"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-15 Listening Activity No.15.mp3",
+      "name": "5-15 Listening Activity No.15.mp3",
+      "asset": "asset-0116.mp3",
+      "size": 2266592,
+      "mime": "audio/mpeg",
+      "sha256": "865cd11cffd646a3978473989caaa7abe16b4495e55d7fdc169baa3a2864e642"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-16 Listening Activity No.16.mp3",
+      "name": "5-16 Listening Activity No.16.mp3",
+      "asset": "asset-0117.mp3",
+      "size": 2939924,
+      "mime": "audio/mpeg",
+      "sha256": "f0eb34a2d5534030e4fe4c809414a3aa82a389a7d88da201e21988c47e4beb8e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-17 Listening Activity No.17.mp3",
+      "name": "5-17 Listening Activity No.17.mp3",
+      "asset": "asset-0118.mp3",
+      "size": 2668669,
+      "mime": "audio/mpeg",
+      "sha256": "7e71a47330ae47751b5b06ebd3b8f1b3be5ce8a0e9286a5bd81b4fde6ad2310f"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-18 Listening Activity No.18.mp3",
+      "name": "5-18 Listening Activity No.18.mp3",
+      "asset": "asset-0119.mp3",
+      "size": 2796563,
+      "mime": "audio/mpeg",
+      "sha256": "60e234a5257afa819e65ecae41eee8c1c0f0e68b0fb5760a48daa2431a3b9b2d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-19 Listening Activity No.19.mp3",
+      "name": "5-19 Listening Activity No.19.mp3",
+      "asset": "asset-0120.mp3",
+      "size": 3705626,
+      "mime": "audio/mpeg",
+      "sha256": "b2e09948072f4a25587c91c1f089ff25496f7fe282f7e082dab6c11def7a0c2d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-2 Listening Activity No.2.mp3",
+      "name": "5-2 Listening Activity No.2.mp3",
+      "asset": "asset-0121.mp3",
+      "size": 2097319,
+      "mime": "audio/mpeg",
+      "sha256": "e714ca8c272d561b0e11c7dbd3d7084bfc3cad3b0e1c728fefcac68c56921216"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-20 Listening Activity No.20.mp3",
+      "name": "5-20 Listening Activity No.20.mp3",
+      "asset": "asset-0122.mp3",
+      "size": 2999274,
+      "mime": "audio/mpeg",
+      "sha256": "a85230084ebf4561a178ed51ee458dc21e3871c4c567f090f7b4b759df593927"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-3 Listening Activity No.3.mp3",
+      "name": "5-3 Listening Activity No.3.mp3",
+      "asset": "asset-0123.mp3",
+      "size": 1777579,
+      "mime": "audio/mpeg",
+      "sha256": "7999b3e96ae9f5b278f8bc159aedb16dac972cad635d30459b55cbf5e41d8edd"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-4 Listening Activity No.4.mp3",
+      "name": "5-4 Listening Activity No.4.mp3",
+      "asset": "asset-0124.mp3",
+      "size": 2483095,
+      "mime": "audio/mpeg",
+      "sha256": "046b62e3a6ac515bcf4667c16cdfc87a166e31dd9ae252a87da248a6f7e7601b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-5 Listening Activity No.5.mp3",
+      "name": "5-5 Listening Activity No.5.mp3",
+      "asset": "asset-0125.mp3",
+      "size": 2227304,
+      "mime": "audio/mpeg",
+      "sha256": "f07a70c88ed5b36d05988f0250a1a91c41ae4501511a0e6a40251e3b2ebc59b4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-6 Listening Activity No.6.mp3",
+      "name": "5-6 Listening Activity No.6.mp3",
+      "asset": "asset-0126.mp3",
+      "size": 2712973,
+      "mime": "audio/mpeg",
+      "sha256": "dbd302eb12ad79cef67f5bb719a1d88d330eeb2581be609b5de650eaaea57cf9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-7 Listening Activity No.7.mp3",
+      "name": "5-7 Listening Activity No.7.mp3",
+      "asset": "asset-0127.mp3",
+      "size": 1588243,
+      "mime": "audio/mpeg",
+      "sha256": "bfa34bf2f1c273b1d6e6564dd6ccb473e81458b0aba0a74fef2397e5bd6c1cb8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-8 Listening Activity No.8.mp3",
+      "name": "5-8 Listening Activity No.8.mp3",
+      "asset": "asset-0128.mp3",
+      "size": 2467631,
+      "mime": "audio/mpeg",
+      "sha256": "768e96354fc6633091a759faefe14b7876104ac7fb47135caa156b0efe73a66f"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/05 Unit Five/5-9 Listening Activity No.9.mp3",
+      "name": "5-9 Listening Activity No.9.mp3",
+      "asset": "asset-0129.mp3",
+      "size": 2753514,
+      "mime": "audio/mpeg",
+      "sha256": "f7672de1cf27cd29b8fde420cb7c145747290e2268db47369f775d65fb41c59a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-1 Listening Activity No.1.mp3",
+      "name": "6-1 Listening Activity No.1.mp3",
+      "asset": "asset-0130.mp3",
+      "size": 2689567,
+      "mime": "audio/mpeg",
+      "sha256": "08d74355e5fa2c7e2ec74a14dd0dc55ee427717d67470099034253cbad602e17"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-10 Listening Activity No.10(1).mp3",
+      "name": "6-10 Listening Activity No.10(1).mp3",
+      "asset": "asset-0131.mp3",
+      "size": 2577135,
+      "mime": "audio/mpeg",
+      "sha256": "340dcc1bb17e0f1b2cbed7cde20ad5102b4854e6e816221aa12c84a2786e4faf"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-11 Listening Activity No.11.mp3",
+      "name": "6-11 Listening Activity No.11.mp3",
+      "asset": "asset-0132.mp3",
+      "size": 5902419,
+      "mime": "audio/mpeg",
+      "sha256": "9ca724d1a4a36516d1a40efa28e1ffc6375de137c987452695c668ec8afeb71d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-12 Listening Activity No.12.mp3",
+      "name": "6-12 Listening Activity No.12.mp3",
+      "asset": "asset-0133.mp3",
+      "size": 4129436,
+      "mime": "audio/mpeg",
+      "sha256": "f945e0003f3c8cffd85fc924708a718432c54cf3d541db230b842ca600a6f82e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-13 Listening Activity No.13.mp3",
+      "name": "6-13 Listening Activity No.13.mp3",
+      "asset": "asset-0134.mp3",
+      "size": 4858356,
+      "mime": "audio/mpeg",
+      "sha256": "4054a8cdd79d70446552c78b1f1f885abc53fe8bb3bd960cc96855ae5a1f0029"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-14 Listening Activity No.14.mp3",
+      "name": "6-14 Listening Activity No.14.mp3",
+      "asset": "asset-0135.mp3",
+      "size": 3613256,
+      "mime": "audio/mpeg",
+      "sha256": "ee6ec5031084e7d6d484080727676e9937363fd512e0dabc3a3cebd36f10b2cc"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-15 Listening Activity No.15.mp3",
+      "name": "6-15 Listening Activity No.15.mp3",
+      "asset": "asset-0136.mp3",
+      "size": 3435206,
+      "mime": "audio/mpeg",
+      "sha256": "341dd2ea6181bdafa1afb4ab0ce61885f9039638c927f966b62bb855f053e23c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-16 Listening Activity No.16.mp3",
+      "name": "6-16 Listening Activity No.16.mp3",
+      "asset": "asset-0137.mp3",
+      "size": 3389230,
+      "mime": "audio/mpeg",
+      "sha256": "9f00b74609ce8c1a39260a5b359661c316da38d0da42bbb5b3b0e3ca9c8caa83"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-17 Listening Activity No.17.mp3",
+      "name": "6-17 Listening Activity No.17.mp3",
+      "asset": "asset-0138.mp3",
+      "size": 6604590,
+      "mime": "audio/mpeg",
+      "sha256": "707652eb0b8b047a81b2053f777e5b1fe36aedc899ef0400b4b4bb12a1db409b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-18 Listening Activity No.18.mp3",
+      "name": "6-18 Listening Activity No.18.mp3",
+      "asset": "asset-0139.mp3",
+      "size": 6073781,
+      "mime": "audio/mpeg",
+      "sha256": "cde48444d68dae1964cbaf4fc38c158c490f1c64f9a5905e2fad4ce8d49c8efa"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-19 Listening Activity No.19.mp3",
+      "name": "6-19 Listening Activity No.19.mp3",
+      "asset": "asset-0140.mp3",
+      "size": 3437296,
+      "mime": "audio/mpeg",
+      "sha256": "41689bfa71393bf393202b5270ee26ee9b64ef11a9b81e59c52efc9c2fcb84e2"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-2 Listening Activity No.2.mp3",
+      "name": "6-2 Listening Activity No.2.mp3",
+      "asset": "asset-0141.mp3",
+      "size": 3082448,
+      "mime": "audio/mpeg",
+      "sha256": "a91fed1eecfa26332efaa8b0bb3aafd9e1f09fc838e0c36f49c804ba70c41671"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-20 Listening Activity No.20.mp3",
+      "name": "6-20 Listening Activity No.20.mp3",
+      "asset": "asset-0142.mp3",
+      "size": 4977474,
+      "mime": "audio/mpeg",
+      "sha256": "d721b20bab3b11d5aebb420b57bdb7a758e129016a9c9ea20bc5b85d54844c13"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-3 Listening Activity No.3.mp3",
+      "name": "6-3 Listening Activity No.3.mp3",
+      "asset": "asset-0143.mp3",
+      "size": 2776501,
+      "mime": "audio/mpeg",
+      "sha256": "d2717cdf1bb80d470fbfe5726876f6d160b41189019fbce9e6c4857553e34417"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-4 Listening Activity No.4.mp3",
+      "name": "6-4 Listening Activity No.4.mp3",
+      "asset": "asset-0144.mp3",
+      "size": 2765217,
+      "mime": "audio/mpeg",
+      "sha256": "04fca6d89e63d0b2065a7d1bb364fccde4468c9e83d8fb78fb4fba277b8e9cc1"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-5 Listening Activity No.5.mp3",
+      "name": "6-5 Listening Activity No.5.mp3",
+      "asset": "asset-0145.mp3",
+      "size": 2905651,
+      "mime": "audio/mpeg",
+      "sha256": "7e253c4772697b544daadcb01cd2c273af113585c267d1f8732b25fffcd848d9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-6 Listening Activity No.6.mp3",
+      "name": "6-6 Listening Activity No.6.mp3",
+      "asset": "asset-0146.mp3",
+      "size": 3331970,
+      "mime": "audio/mpeg",
+      "sha256": "ea0e96574ab8eb5927b69494e91ef52973dd10e6da4fe07156a52581c2ae5fdd"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-7 Listening Activity No.7.mp3",
+      "name": "6-7 Listening Activity No.7.mp3",
+      "asset": "asset-0147.mp3",
+      "size": 3577311,
+      "mime": "audio/mpeg",
+      "sha256": "3bf15607a55c4270a0bb44d501526c33bbf56e7d89e057976a19e65c2a02f177"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-8 Listening Activity No.8.mp3",
+      "name": "6-8 Listening Activity No.8.mp3",
+      "asset": "asset-0148.mp3",
+      "size": 2885171,
+      "mime": "audio/mpeg",
+      "sha256": "422085ddbda61731e97b38b2127c47f5e83a0158303257f795db0b41ca68cd71"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/02 第二部分/06 Unit Six/6-9 Listening Activity No.9.mp3",
+      "name": "6-9 Listening Activity No.9.mp3",
+      "asset": "asset-0149.mp3",
+      "size": 3165621,
+      "mime": "audio/mpeg",
+      "sha256": "c850b9bd227e11a3c9238a601d53472014515623524c5ceadefa0bd8651b61eb"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（上）/黑眼睛听力（上）音频/Achievement Test/Achievement Test.mp3",
+      "name": "Achievement Test.mp3",
+      "asset": "asset-0150.mp3",
+      "size": 22681809,
+      "mime": "audio/mpeg",
+      "sha256": "932b283ccce5d59ff5f40ec339b45afa8120ff84ebbc5439460538eb82d2552d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛听力 第5版 下【我不是考神】.pdf",
+      "name": "黑眼睛听力 第5版 下【我不是考神】.pdf",
+      "asset": "asset-0151.pdf",
+      "size": 100931651,
+      "mime": "application/pdf",
+      "sha256": "4a2d5b8e177bbc8ed80bb96f6599698d8b1dc8222eeac1a8f0548828eb3ab341"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/00 IELTS 考试技能训练教程 听力 （下）（第5版）.mp3",
+      "name": "00 IELTS 考试技能训练教程 听力 （下）（第5版）.mp3",
+      "asset": "asset-0152.mp3",
+      "size": 757760,
+      "mime": "audio/mpeg",
+      "sha256": "e9e34b604f8342aab7dacac095400e7b2f6464127afe7a57946191d9a3fd35b3"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/01 Unit One-01.mp3",
+      "name": "01 Unit One-01.mp3",
+      "asset": "asset-0153.mp3",
+      "size": 2046328,
+      "mime": "audio/mpeg",
+      "sha256": "1d30a8555965063fdba99046a20cfd8b00cb09f9459940a4dcc2c4e23bb375b8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/02 Unit One-02.mp3",
+      "name": "02 Unit One-02.mp3",
+      "asset": "asset-0154.mp3",
+      "size": 1961481,
+      "mime": "audio/mpeg",
+      "sha256": "e589af432739db59bafabfb91eb542a3a3305acc2341ed088f756d5f6654188d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/03 Unit One-03.mp3",
+      "name": "03 Unit One-03.mp3",
+      "asset": "asset-0155.mp3",
+      "size": 2284981,
+      "mime": "audio/mpeg",
+      "sha256": "2f3933b590abfc6ae54869925dc726ec9a79a5f1d46b9f07454cab1ae498ee46"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/04 Unit One-04.mp3",
+      "name": "04 Unit One-04.mp3",
+      "asset": "asset-0156.mp3",
+      "size": 3724851,
+      "mime": "audio/mpeg",
+      "sha256": "b0be90bd3077fae326eda6ac446f47008fc3098827e4ddaba7852c13499a9e3c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/05 Unit One-05.mp3",
+      "name": "05 Unit One-05.mp3",
+      "asset": "asset-0157.mp3",
+      "size": 3173563,
+      "mime": "audio/mpeg",
+      "sha256": "407ff7d0db9f8500a3d79751645a496f96d0f7dbbc78cbf39b45982e95453911"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/06 Unit One-06.mp3",
+      "name": "06 Unit One-06.mp3",
+      "asset": "asset-0158.mp3",
+      "size": 3059042,
+      "mime": "audio/mpeg",
+      "sha256": "507593139fc180819606d297ae06f0efa555d5d0abe8646e1e7792cf3fd4a7ac"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/07 Unit One-07.mp3",
+      "name": "07 Unit One-07.mp3",
+      "asset": "asset-0159.mp3",
+      "size": 3170220,
+      "mime": "audio/mpeg",
+      "sha256": "318ba926802f1bd5e4f999ca66ee766f39de5331e9432a4bce40a91792323cec"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/08 Unit One-08.mp3",
+      "name": "08 Unit One-08.mp3",
+      "asset": "asset-0160.mp3",
+      "size": 3228315,
+      "mime": "audio/mpeg",
+      "sha256": "f5bcc400e27319ef6fdd30dd27a52489a26ba99c7c3fc38c4bd2ed9ea0a8771a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/09 Unit One-09.mp3",
+      "name": "09 Unit One-09.mp3",
+      "asset": "asset-0161.mp3",
+      "size": 3415561,
+      "mime": "audio/mpeg",
+      "sha256": "79840df896d184afbda41e37020ba1a2f7030e6588fad3a5ee36e16e15aad316"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/10 Unit One-10.mp3",
+      "name": "10 Unit One-10.mp3",
+      "asset": "asset-0162.mp3",
+      "size": 3676786,
+      "mime": "audio/mpeg",
+      "sha256": "5d021a47fe6aab91213c12a4b74ee7f726f36ad9e0006991e2006a3841000c8a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/11 Unit One-11.mp3",
+      "name": "11 Unit One-11.mp3",
+      "asset": "asset-0163.mp3",
+      "size": 4088893,
+      "mime": "audio/mpeg",
+      "sha256": "1394510cca242dae8bf10f464270f5dc18bf6a9cbbfeb5d9db473246a2020163"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/12 Unit One-12.mp3",
+      "name": "12 Unit One-12.mp3",
+      "asset": "asset-0164.mp3",
+      "size": 3432697,
+      "mime": "audio/mpeg",
+      "sha256": "d07c4925db5f5836296349740002636d0ab9aeff3847bbb1ca64ab05f9f30f5d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/13 Unit One-13.mp3",
+      "name": "13 Unit One-13.mp3",
+      "asset": "asset-0165.mp3",
+      "size": 3968939,
+      "mime": "audio/mpeg",
+      "sha256": "6c9664cd805a38ebb15be917d7b451bd5af0caaee6369acd50d05e730246f2c0"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/14 Unit One-14.mp3",
+      "name": "14 Unit One-14.mp3",
+      "asset": "asset-0166.mp3",
+      "size": 3989838,
+      "mime": "audio/mpeg",
+      "sha256": "9274dc280a7f3f11e38baad098032f10cebbdc5e959aa3a902589283f9a10db5"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/01 Unit One/15 Unit One-15.mp3",
+      "name": "15 Unit One-15.mp3",
+      "asset": "asset-0167.mp3",
+      "size": 6332080,
+      "mime": "audio/mpeg",
+      "sha256": "2753e22e9e1b3b3ed9b7810fc2b5f1c03c4707a96a5c4dd379135c7de224d071"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/01 Unit Two-01.mp3",
+      "name": "01 Unit Two-01.mp3",
+      "asset": "asset-0168.mp3",
+      "size": 1777580,
+      "mime": "audio/mpeg",
+      "sha256": "d54ab4c99c159361d920b8e86f3d04a96758ed19c75ac0b7c14bf0cb63b02762"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/02 Unit Two-02.mp3",
+      "name": "02 Unit Two-02.mp3",
+      "asset": "asset-0169.mp3",
+      "size": 2336808,
+      "mime": "audio/mpeg",
+      "sha256": "1589c6889059f8254e62458330830437b229a5c146b297c1b3bea06a0806a8d1"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/03 Unit Two-03.mp3",
+      "name": "03 Unit Two-03.mp3",
+      "asset": "asset-0170.mp3",
+      "size": 2414967,
+      "mime": "audio/mpeg",
+      "sha256": "89c98c0f5c7cb726c31b6f403502ec59f95509874d7582c67b81f9217c5b94ab"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/04 Unit Two-04.mp3",
+      "name": "04 Unit Two-04.mp3",
+      "asset": "asset-0171.mp3",
+      "size": 3574803,
+      "mime": "audio/mpeg",
+      "sha256": "21fcca51a78e31f6672a6b433368183e06bb54b591690fcc9ae3408224bcb6a3"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/05 Unit Two-05.mp3",
+      "name": "05 Unit Two-05.mp3",
+      "asset": "asset-0172.mp3",
+      "size": 3227061,
+      "mime": "audio/mpeg",
+      "sha256": "7b6051f703a6e62b8cb4fa32846ab4ec9dbb87f66d0b8f4ddcc7c85416565ccf"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/06 Unit Two-06.mp3",
+      "name": "06 Unit Two-06.mp3",
+      "asset": "asset-0173.mp3",
+      "size": 3651290,
+      "mime": "audio/mpeg",
+      "sha256": "cf5027062c7760c6f50191b2494d9b1ebe503952d8034c5161a8df7e8cd59736"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/07 Unit Two-07.mp3",
+      "name": "07 Unit Two-07.mp3",
+      "asset": "asset-0174.mp3",
+      "size": 3517543,
+      "mime": "audio/mpeg",
+      "sha256": "0cc75afb5dc25dc998a0da2c35d036734f2ecf1c76781f507faec864801efff1"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/08 Unit Two-08.mp3",
+      "name": "08 Unit Two-08.mp3",
+      "asset": "asset-0175.mp3",
+      "size": 3353285,
+      "mime": "audio/mpeg",
+      "sha256": "f7693327ed16ce9fa22ff4d3a5fa1de96e80dfedf2f0ce7ca021795a14e91d2e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/09 Unit Two-09.mp3",
+      "name": "09 Unit Two-09.mp3",
+      "asset": "asset-0176.mp3",
+      "size": 3624959,
+      "mime": "audio/mpeg",
+      "sha256": "13484bbaedd2af944027550d9b589b89bc40ba5f0d808686203ff885482d4cd2"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/10 Unit Two-10.mp3",
+      "name": "10 Unit Two-10.mp3",
+      "asset": "asset-0177.mp3",
+      "size": 3691415,
+      "mime": "audio/mpeg",
+      "sha256": "fbd3ad061c3e9f5a4d36a81eaba70d78cf636f720d3e863c9fe0ad9636400060"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/11 Unit Two-11.mp3",
+      "name": "11 Unit Two-11.mp3",
+      "asset": "asset-0178.mp3",
+      "size": 4329638,
+      "mime": "audio/mpeg",
+      "sha256": "0ddd8b1566a213c9b6336403754448dc7b84346fd800da07b2fd2d0b5c378b7c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/12 Unit Two-12.mp3",
+      "name": "12 Unit Two-12.mp3",
+      "asset": "asset-0179.mp3",
+      "size": 4722519,
+      "mime": "audio/mpeg",
+      "sha256": "3df085d40bd302e0dce545d5e30934b890b5ad3dff1f63eaa51bcc42cd0eeb50"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/13 Unit Two-13.mp3",
+      "name": "13 Unit Two-13.mp3",
+      "asset": "asset-0180.mp3",
+      "size": 4668603,
+      "mime": "audio/mpeg",
+      "sha256": "11aaca645bc0cea73141c2e41a4a1f6d3a4de154ebda6f6f8421a55db7f9165e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/14 Unit Two-14.mp3",
+      "name": "14 Unit Two-14.mp3",
+      "asset": "asset-0181.mp3",
+      "size": 5236609,
+      "mime": "audio/mpeg",
+      "sha256": "7fdcf49d669f610372a32c3a2a6a7ac548ef5d431317f20b1edca0ea9b104c8b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/02 Unit Two/15 Unit Two-15.mp3",
+      "name": "15 Unit Two-15.mp3",
+      "asset": "asset-0182.mp3",
+      "size": 5847249,
+      "mime": "audio/mpeg",
+      "sha256": "45c4fd144c85a5c717ec030e0e77f0f90c40e7c266d6d63a56af97c18313a2cf"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/01 Unit Three-01.mp3",
+      "name": "01 Unit Three-01.mp3",
+      "asset": "asset-0183.mp3",
+      "size": 2431268,
+      "mime": "audio/mpeg",
+      "sha256": "08d1ef8aa633ef1be1c4d0548a29fb04a523f82af25ca3bb425dbf5dc9e94e43"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/02 Unit Three-02.mp3",
+      "name": "02 Unit Three-02.mp3",
+      "asset": "asset-0184.mp3",
+      "size": 2996766,
+      "mime": "audio/mpeg",
+      "sha256": "d94d2479c6ba7b468ac4e1e643eb25eb7842cc57f884ba8d25686d4ddf158f02"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/03 Unit Three-03.mp3",
+      "name": "03 Unit Three-03.mp3",
+      "asset": "asset-0185.mp3",
+      "size": 2646098,
+      "mime": "audio/mpeg",
+      "sha256": "c3bb42f413d3fec78924f360cd4a833daa633a0a43521e9db6b4d908cb61a423"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/04 Unit Three-04.mp3",
+      "name": "04 Unit Three-04.mp3",
+      "asset": "asset-0186.mp3",
+      "size": 3377527,
+      "mime": "audio/mpeg",
+      "sha256": "d2ae7fbaaed0611bd8233b124d18bb12fe7683fbc2e5792932d8fd0d8b70e3e4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/05 Unit Three-05.mp3",
+      "name": "05 Unit Three-05.mp3",
+      "asset": "asset-0187.mp3",
+      "size": 3737808,
+      "mime": "audio/mpeg",
+      "sha256": "1aea2fb0eb640c94b16bf8b958bcc5c30c2577f8a378a3c3db654d0bd1bc02ad"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/06 Unit Three-06.mp3",
+      "name": "06 Unit Three-06.mp3",
+      "asset": "asset-0188.mp3",
+      "size": 3683056,
+      "mime": "audio/mpeg",
+      "sha256": "223f38fb5138f0c0b796b2653f9b31dcb6aa11939bf3150a4853c92c1d2e8ea4"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/07 Unit Three-07.mp3",
+      "name": "07 Unit Three-07.mp3",
+      "asset": "asset-0189.mp3",
+      "size": 4116061,
+      "mime": "audio/mpeg",
+      "sha256": "ddc9131af99286b0e740833a31ee4e8870342af8a4601fc9e17bee3649cdd95d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/08 Unit Three-08.mp3",
+      "name": "08 Unit Three-08.mp3",
+      "asset": "asset-0190.mp3",
+      "size": 3785038,
+      "mime": "audio/mpeg",
+      "sha256": "e60e5beb2142c5beba5626bc33f6454e6ab25fbe7477f20477c3b372b33d5ef7"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/09 Unit Three-09.mp3",
+      "name": "09 Unit Three-09.mp3",
+      "asset": "asset-0191.mp3",
+      "size": 4937768,
+      "mime": "audio/mpeg",
+      "sha256": "d3ab6380cd934d9fda777e321f8f4ebaf90728abf6d497163d5ae4ada74e07ef"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/10 Unit Three-10.mp3",
+      "name": "10 Unit Three-10.mp3",
+      "asset": "asset-0192.mp3",
+      "size": 4531512,
+      "mime": "audio/mpeg",
+      "sha256": "e62e0fb400b43ab58fcdb2bdfd9e800e7e74f34ffb154cdb8a86ec058b0a2f51"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/11 Unit Three-11.mp3",
+      "name": "11 Unit Three-11.mp3",
+      "asset": "asset-0193.mp3",
+      "size": 4524825,
+      "mime": "audio/mpeg",
+      "sha256": "3f1b036b8947ca2acc5f80c7192996e0bcb990e2f95ae7752dfb6284fdd9fd51"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/12 Unit Three-12.mp3",
+      "name": "12 Unit Three-12.mp3",
+      "asset": "asset-0194.mp3",
+      "size": 4560769,
+      "mime": "audio/mpeg",
+      "sha256": "1f61d24dad26c3f1ba7e5e83f0fcafe43d2b4e79741a4ac544dd531b1658f931"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/13 Unit Three-13.mp3",
+      "name": "13 Unit Three-13.mp3",
+      "asset": "asset-0195.mp3",
+      "size": 5932093,
+      "mime": "audio/mpeg",
+      "sha256": "fbc4e1a7662d0515c52ed57d4927b9cb005ea80977403b8b59b05ccc4e2d5b3f"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/14 Unit Three-14.mp3",
+      "name": "14 Unit Three-14.mp3",
+      "asset": "asset-0196.mp3",
+      "size": 4192965,
+      "mime": "audio/mpeg",
+      "sha256": "305f1fc32e273539f82d288c306251de86d76924416b0290ffac41ff0074c21e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/03 Unit Three/15 Unit Three-15.mp3",
+      "name": "15 Unit Three-15.mp3",
+      "asset": "asset-0197.mp3",
+      "size": 6802284,
+      "mime": "audio/mpeg",
+      "sha256": "d884e15badcc4ce6fb8883f1ed933c9a077804cc40684aa34a33f0d2cb054ed9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/01 Unit Four-01.mp3",
+      "name": "01 Unit Four-01.mp3",
+      "asset": "asset-0198.mp3",
+      "size": 2688731,
+      "mime": "audio/mpeg",
+      "sha256": "91acc5ed319faf7d42b448a74194be1cc81cfb5c2f6888953a0991c78f1e33c9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/02 Unit Four-02.mp3",
+      "name": "02 Unit Four-02.mp3",
+      "asset": "asset-0199.mp3",
+      "size": 2817043,
+      "mime": "audio/mpeg",
+      "sha256": "5f3e5c4262f54389cbc66ff0a45cb09296d4795b5752dffbc191c44c99bc99de"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/03 Unit Four-03.mp3",
+      "name": "03 Unit Four-03.mp3",
+      "asset": "asset-0200.mp3",
+      "size": 2842121,
+      "mime": "audio/mpeg",
+      "sha256": "8f6a3bda9761b994e20b00526e4ed39385a2e12f80fe8127000e077c46073841"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/04 Unit Four-04.mp3",
+      "name": "04 Unit Four-04.mp3",
+      "asset": "asset-0201.mp3",
+      "size": 2856332,
+      "mime": "audio/mpeg",
+      "sha256": "7dfd32c63be48e5e137a360a7f41bcc530f3187046ebbdfff67a057d6d625960"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/05 Unit Four-05.mp3",
+      "name": "05 Unit Four-05.mp3",
+      "asset": "asset-0202.mp3",
+      "size": 3973954,
+      "mime": "audio/mpeg",
+      "sha256": "c1032399489dc574965edeb01ff24493725ebccb5bda872017019289f7299e37"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/06 Unit Four-06.mp3",
+      "name": "06 Unit Four-06.mp3",
+      "asset": "asset-0203.mp3",
+      "size": 3677621,
+      "mime": "audio/mpeg",
+      "sha256": "b712880ca645977626ae9c4f5f45e4d1ac8293a0551e5ab3d32cd9f36a0af9e7"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/07 Unit Four-07.mp3",
+      "name": "07 Unit Four-07.mp3",
+      "asset": "asset-0204.mp3",
+      "size": 3878242,
+      "mime": "audio/mpeg",
+      "sha256": "7f1c31b191dc6e30a0f07f0f7bf38c2ef74e6fa1a70d149d754e12662421366f"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/08 Unit Four-08.mp3",
+      "name": "08 Unit Four-08.mp3",
+      "asset": "asset-0205.mp3",
+      "size": 3723597,
+      "mime": "audio/mpeg",
+      "sha256": "dbda039c1e38477ed66e8166a52db57115c37d19541deacef58ff98a9e9ecd3c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/09 Unit Four-09.mp3",
+      "name": "09 Unit Four-09.mp3",
+      "asset": "asset-0206.mp3",
+      "size": 3689742,
+      "mime": "audio/mpeg",
+      "sha256": "44c0b570697e6f01b98476fee128d906a84f4a2d8292481804b229b7812b53ab"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/10 Unit Four-10.mp3",
+      "name": "10 Unit Four-10.mp3",
+      "asset": "asset-0207.mp3",
+      "size": 3947623,
+      "mime": "audio/mpeg",
+      "sha256": "2e7a31241cb569e44acc96d3e1fcd40d9f78a4769e59b71409bf23a8ec9ef376"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/11 Unit Four-11.mp3",
+      "name": "11 Unit Four-11.mp3",
+      "asset": "asset-0208.mp3",
+      "size": 5677557,
+      "mime": "audio/mpeg",
+      "sha256": "565438b181f068ce0c4b2ce412a52ee834132469e07e671b9071e822b7ea0ebd"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/12 Unit Four-12.mp3",
+      "name": "12 Unit Four-12.mp3",
+      "asset": "asset-0209.mp3",
+      "size": 4361821,
+      "mime": "audio/mpeg",
+      "sha256": "eb134f26f727b3be107c3e6ac151b98825acf2b84da3b8d2d0d7bdf32a2291f8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/13 Unit Four-13.mp3",
+      "name": "13 Unit Four-13.mp3",
+      "asset": "asset-0210.mp3",
+      "size": 4304560,
+      "mime": "audio/mpeg",
+      "sha256": "d0538866b255aa8d50ae410d8ee9776dc039bdf42cd162ea89be656a47778e9c"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/14 Unit Four-14.mp3",
+      "name": "14 Unit Four-14.mp3",
+      "asset": "asset-0211.mp3",
+      "size": 4929409,
+      "mime": "audio/mpeg",
+      "sha256": "be985d5c267f1a85d668313db0da98fd3c3c18e2522b0c6716449473fba2afe5"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/04 Unit Four/15 Unit Four-15.mp3",
+      "name": "15 Unit Four-15.mp3",
+      "asset": "asset-0212.mp3",
+      "size": 5597727,
+      "mime": "audio/mpeg",
+      "sha256": "1bd0dd60151a2546f1ef3aa83d254c849c87f15463c7c8e0cf2adbd03f190a0e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/01 Unit Five-01.mp3",
+      "name": "01 Unit Five-01.mp3",
+      "asset": "asset-0213.mp3",
+      "size": 3116303,
+      "mime": "audio/mpeg",
+      "sha256": "eac59e50607a191e5c9c6b3359da1e7bf58c1c7e352ad0bdfd050178c69dbb7a"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/02 Unit Five-02.mp3",
+      "name": "02 Unit Five-02.mp3",
+      "asset": "asset-0214.mp3",
+      "size": 2999275,
+      "mime": "audio/mpeg",
+      "sha256": "d96c7c46080e1da70dfb5fe2f9fff211e3d51e1e232c0d9d43fb1004b788b555"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/03 Unit Five-03.mp3",
+      "name": "03 Unit Five-03.mp3",
+      "asset": "asset-0215.mp3",
+      "size": 3012230,
+      "mime": "audio/mpeg",
+      "sha256": "b46f6468e5cc15709ea6ef0a9fb43538875f8b633d6faa7d0be1f08e1a522d4d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/04 Unit Five-04.mp3",
+      "name": "04 Unit Five-04.mp3",
+      "asset": "asset-0216.mp3",
+      "size": 3056534,
+      "mime": "audio/mpeg",
+      "sha256": "eb07b5d5c65dc931c0439f04eb903d8b452f5f8c2df4b1753374d878d2442a7b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/05 Unit Five-05.mp3",
+      "name": "05 Unit Five-05.mp3",
+      "asset": "asset-0217.mp3",
+      "size": 3345344,
+      "mime": "audio/mpeg",
+      "sha256": "df6f24f1dc94897fd2942329bfe95d2da532decfeb90559dda7af73ad94873db"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/06 Unit Five-06.mp3",
+      "name": "06 Unit Five-06.mp3",
+      "asset": "asset-0218.mp3",
+      "size": 3643767,
+      "mime": "audio/mpeg",
+      "sha256": "5c3eb574378b3473d7ceb647a50cbfcef652f1a6ea8649b78eadb97b506e379d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/07 Unit Five-07.mp3",
+      "name": "07 Unit Five-07.mp3",
+      "asset": "asset-0219.mp3",
+      "size": 3253394,
+      "mime": "audio/mpeg",
+      "sha256": "d573bd2ec07a4c7243fb772c8ee7028ed1a0876aa418ec56cf2abea3f758a23d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/08 Unit Five-08.mp3",
+      "name": "08 Unit Five-08.mp3",
+      "asset": "asset-0220.mp3",
+      "size": 3826415,
+      "mime": "audio/mpeg",
+      "sha256": "f3c97ec5c9e7189aa519527ec77ddd24967af98c6de7241cd01256d8e5781d0f"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/09 Unit Five-09.mp3",
+      "name": "09 Unit Five-09.mp3",
+      "asset": "asset-0221.mp3",
+      "size": 4949889,
+      "mime": "audio/mpeg",
+      "sha256": "24d6dfee75b705e72fa4a161b13de289eb432cbd048484e1519cf2c18eb953ee"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/10 Unit Five-10.mp3",
+      "name": "10 Unit Five-10.mp3",
+      "asset": "asset-0222.mp3",
+      "size": 4628479,
+      "mime": "audio/mpeg",
+      "sha256": "ef42f79f52aa9619f1e904b16b0f4fdde40ab43d474b1d7ae37962d8928067a3"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/11 Unit Five-11.mp3",
+      "name": "11 Unit Five-11.mp3",
+      "asset": "asset-0223.mp3",
+      "size": 4056710,
+      "mime": "audio/mpeg",
+      "sha256": "023b9ea89db93ae0b054372fd6faaa2a5ed5b33c4fcd129333c934863728ba94"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/12 Unit Five-12.mp3",
+      "name": "12 Unit Five-12.mp3",
+      "asset": "asset-0224.mp3",
+      "size": 4134869,
+      "mime": "audio/mpeg",
+      "sha256": "2af7a7f85dce8d90f550f54552581aabab654c2c2b923cc911ab76032c8c875e"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/13 Unit Five-13.mp3",
+      "name": "13 Unit Five-13.mp3",
+      "asset": "asset-0225.mp3",
+      "size": 4011572,
+      "mime": "audio/mpeg",
+      "sha256": "959c02319d29150aba8cc0b1aa6b9dfc32030fe3ce62c9992608f12e4c75d322"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/14 Unit Five-14.mp3",
+      "name": "14 Unit Five-14.mp3",
+      "asset": "asset-0226.mp3",
+      "size": 5241626,
+      "mime": "audio/mpeg",
+      "sha256": "29c58a2c94f6ba4fa2d1eb608457575496bd1d7573523746d051216cbf88ab46"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/05 Unit Five/15 Unit Five-15.mp3",
+      "name": "15 Unit Five-15.mp3",
+      "asset": "asset-0227.mp3",
+      "size": 6018193,
+      "mime": "audio/mpeg",
+      "sha256": "66e24ca7ef4b1246ab07f0753d20defcc7b082cc334bd39f9cc97c7b18c00901"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/01 Unit Six-01.mp3",
+      "name": "01 Unit Six-01.mp3",
+      "asset": "asset-0228.mp3",
+      "size": 2220199,
+      "mime": "audio/mpeg",
+      "sha256": "a892dd378367beed22fc56ac2b8c32cd161e543339039e44a3de78c64a3f88fe"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/02 Unit Six-02.mp3",
+      "name": "02 Unit Six-02.mp3",
+      "asset": "asset-0229.mp3",
+      "size": 2172132,
+      "mime": "audio/mpeg",
+      "sha256": "525ecf811fe63e4f0c875c8624b8a73e43ecdd69a6486369d560880a65f6b17b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/03 Unit Six-03.mp3",
+      "name": "03 Unit Six-03.mp3",
+      "asset": "asset-0230.mp3",
+      "size": 3321938,
+      "mime": "audio/mpeg",
+      "sha256": "18657a4c5d7b7d9606f5af550bf4dbc59952d09001648065e9158054e9288769"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/04 Unit Six-04.mp3",
+      "name": "04 Unit Six-04.mp3",
+      "asset": "asset-0231.mp3",
+      "size": 2123649,
+      "mime": "audio/mpeg",
+      "sha256": "b0c7ad7041226a56a81a19303e40b2bf64a646156f675cca4d861c43d3c8a2e3"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/05 Unit Six-05.mp3",
+      "name": "05 Unit Six-05.mp3",
+      "asset": "asset-0232.mp3",
+      "size": 2716316,
+      "mime": "audio/mpeg",
+      "sha256": "4f31a1e274b4b726631299ac21395636360cf36047f67f5481350513b71d1b57"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/06 Unit Six-06.mp3",
+      "name": "06 Unit Six-06.mp3",
+      "asset": "asset-0233.mp3",
+      "size": 2888097,
+      "mime": "audio/mpeg",
+      "sha256": "779e05c1a354069a866aca66a8cdc8effa21bcbd31cb0db55a7033443034c20b"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/07 Unit Six-07.mp3",
+      "name": "07 Unit Six-07.mp3",
+      "asset": "asset-0234.mp3",
+      "size": 3512110,
+      "mime": "audio/mpeg",
+      "sha256": "d658dda5a57c99bb535dab21e177431643332b428c84982e52dcd695d9ccbe82"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/08 Unit Six-08.mp3",
+      "name": "08 Unit Six-08.mp3",
+      "asset": "asset-0235.mp3",
+      "size": 3514200,
+      "mime": "audio/mpeg",
+      "sha256": "fba0b8c9a63dd983c8022f4142e2cfcf16e1d3fcd1e0e26a494f8ddfd5c660d9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/09 Unit Six-09.mp3",
+      "name": "09 Unit Six-09.mp3",
+      "asset": "asset-0236.mp3",
+      "size": 3194879,
+      "mime": "audio/mpeg",
+      "sha256": "ed82e31ae64562bcfa5f89d3ba704682bd2a60d58c551d7728bf19b3cbec10f2"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/10 Unit Six-10.mp3",
+      "name": "10 Unit Six-10.mp3",
+      "asset": "asset-0237.mp3",
+      "size": 3652544,
+      "mime": "audio/mpeg",
+      "sha256": "c8dd93646769496bd4e76d5c552a5125528a1106b88a820fdb4e507d2cbad7b1"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/11 Unit Six-11.mp3",
+      "name": "11 Unit Six-11.mp3",
+      "asset": "asset-0238.mp3",
+      "size": 3533843,
+      "mime": "audio/mpeg",
+      "sha256": "25969a093b059e63983ad8990d7849ca6804b4fb1669229063959b3053f25dd9"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/12 Unit Six-12.mp3",
+      "name": "12 Unit Six-12.mp3",
+      "asset": "asset-0239.mp3",
+      "size": 4404870,
+      "mime": "audio/mpeg",
+      "sha256": "426ce913c1b0905178fbc9a3ebff2f033119733dba9895a3dbb35e0f22854b3d"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/13 Unit Six-13.mp3",
+      "name": "13 Unit Six-13.mp3",
+      "asset": "asset-0240.mp3",
+      "size": 4141557,
+      "mime": "audio/mpeg",
+      "sha256": "42378380e9cfdb2e78325297fe0d218a15dac7dc26714beea80abbcbe79b7125"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/14 Unit Six-14.mp3",
+      "name": "14 Unit Six-14.mp3",
+      "asset": "asset-0241.mp3",
+      "size": 5460217,
+      "mime": "audio/mpeg",
+      "sha256": "dfca931fc64500f737cd9e2b87b7cbac473ac94c247e83bb7b7fcdc4cc3c1ca0"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/01 第一部分/06 Unit Six/15 Unit Six-15.mp3",
+      "name": "15 Unit Six-15.mp3",
+      "asset": "asset-0242.mp3",
+      "size": 5176423,
+      "mime": "audio/mpeg",
+      "sha256": "0c520595f36b1a7e294f0742dc6bcffefc58d2c0cfed24b55bfddc4b321470ff"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/02 第二部分/01 Test 1.mp3",
+      "name": "01 Test 1.mp3",
+      "asset": "asset-0243.mp3",
+      "size": 30073835,
+      "mime": "audio/mpeg",
+      "sha256": "6e705a755307a44aef1652279388f0422feeeb2e1437d3ece066f586f4f9c1e8"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/02 第二部分/02 Test 2.mp3",
+      "name": "02 Test 2.mp3",
+      "asset": "asset-0244.mp3",
+      "size": 30435787,
+      "mime": "audio/mpeg",
+      "sha256": "7d95542a848962910a191073bd914b27698ced9d5f00113fb68317217e028f75"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/02 第二部分/03 Test 3.mp3",
+      "name": "03 Test 3.mp3",
+      "asset": "asset-0245.mp3",
+      "size": 22960169,
+      "mime": "audio/mpeg",
+      "sha256": "16d14a00b798f708660d782f08a4b8c3deecc4a25f648be9b27ad692525e16da"
+    },
+    {
+      "path": "02_黑眼睛听力/黑眼睛听力（下）/黑眼睛（下）听力音频/02 第二部分/04 Test 4.mp3",
+      "name": "04 Test 4.mp3",
+      "asset": "asset-0246.mp3",
+      "size": 23493903,
+      "mime": "audio/mpeg",
+      "sha256": "c5e7dbb35f7f95bab7c7cf7fa637f991d6161d14d25b64eeb02ffb0d82b46241"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/00 IELTS考试技能训练教程 口语 第5版.mp3",
+      "name": "00 IELTS考试技能训练教程 口语 第5版.mp3",
+      "asset": "asset-0247.mp3",
+      "size": 1036538,
+      "mime": "audio/mpeg",
+      "sha256": "9cbe92379c8d14a6226a9d1b17a61f826a89b7bbc93cdd0b71fc7007e0198391"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/01 Unit 1.mp3",
+      "name": "01 Unit 1.mp3",
+      "asset": "asset-0248.mp3",
+      "size": 6338769,
+      "mime": "audio/mpeg",
+      "sha256": "016d2480265d87e541172bd9567ec3067167444222447304ec92dbd1343f1555"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/02 Unit 2.mp3",
+      "name": "02 Unit 2.mp3",
+      "asset": "asset-0249.mp3",
+      "size": 7614380,
+      "mime": "audio/mpeg",
+      "sha256": "bb7daade41fc59f1414c72c717064b408027aeb610f8575a4849a039c9b1a08b"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/03 Unit 3.mp3",
+      "name": "03 Unit 3.mp3",
+      "asset": "asset-0250.mp3",
+      "size": 6566974,
+      "mime": "audio/mpeg",
+      "sha256": "98c5e91f853b11fbc53080096d3a63b3c6fd11aafd527b8dba5423c3e0ea3bde"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/04 Unit 5.mp3",
+      "name": "04 Unit 5.mp3",
+      "asset": "asset-0251.mp3",
+      "size": 5993116,
+      "mime": "audio/mpeg",
+      "sha256": "61c452ebe1ae1b6f1c10a99006146ea9fee860afb00a1d21d24f4de54e8f745a"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/05 Unit 6.mp3",
+      "name": "05 Unit 6.mp3",
+      "asset": "asset-0252.mp3",
+      "size": 5584352,
+      "mime": "audio/mpeg",
+      "sha256": "772a3409ae0130bbe1b580be1f96eb276856d2ecbcf2ccc013eee0f11dc938ca"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/06 Unit 7.mp3",
+      "name": "06 Unit 7.mp3",
+      "asset": "asset-0253.mp3",
+      "size": 16135732,
+      "mime": "audio/mpeg",
+      "sha256": "6da668646bbcc1a6bad61f2818b6115660c2bdbc2b2c47017136f126e1c659c4"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/07 Unit 8.mp3",
+      "name": "07 Unit 8.mp3",
+      "asset": "asset-0254.mp3",
+      "size": 8543921,
+      "mime": "audio/mpeg",
+      "sha256": "bcb2adf381e2bfd25b060d5edcf43676f4447d7d4e19befaab4d0eec4ff5363f"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/08 Unit 9.mp3",
+      "name": "08 Unit 9.mp3",
+      "asset": "asset-0255.mp3",
+      "size": 5797929,
+      "mime": "audio/mpeg",
+      "sha256": "aeaf6760974f112480fc84dd5899b9af6a2ee9bc380d29bf00b339ad99254b2b"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/09 Unit 10.mp3",
+      "name": "09 Unit 10.mp3",
+      "asset": "asset-0256.mp3",
+      "size": 5015928,
+      "mime": "audio/mpeg",
+      "sha256": "f3c0f0e699240d2b7e2b52d307a0790212c3b18d1420419ef68095430365c1a6"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/10 Unit 11.mp3",
+      "name": "10 Unit 11.mp3",
+      "asset": "asset-0257.mp3",
+      "size": 8371304,
+      "mime": "audio/mpeg",
+      "sha256": "5807008f74390815503097b2443c4d9ecc93b88720db34ed8e3e53cb39f403ac"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/11 Unit 13.mp3",
+      "name": "11 Unit 13.mp3",
+      "asset": "asset-0258.mp3",
+      "size": 3876153,
+      "mime": "audio/mpeg",
+      "sha256": "f1f92fa7a900608618aec6c047e5d2977b3667ddacbbae5287c64fa602cbf78e"
+    },
+    {
+      "path": "03_黑眼睛口语/01 第一部分 IELTS口语技能训练/12 Unit 14.mp3",
+      "name": "12 Unit 14.mp3",
+      "asset": "asset-0259.mp3",
+      "size": 9149962,
+      "mime": "audio/mpeg",
+      "sha256": "678102c0fe8ccaf35f4f189bb7916f579cf820302d4d47bdeae7decb2e5e7ba2"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/01 Unit 15 Practice No.1.mp3",
+      "name": "01 Unit 15 Practice No.1.mp3",
+      "asset": "asset-0260.mp3",
+      "size": 1044062,
+      "mime": "audio/mpeg",
+      "sha256": "f6d70dac72b917575dd65391a10db64152653e1e39a06d4c63c0e03b5edec8e3"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/02 Unit 15 Practice No.2.mp3",
+      "name": "02 Unit 15 Practice No.2.mp3",
+      "asset": "asset-0261.mp3",
+      "size": 1603290,
+      "mime": "audio/mpeg",
+      "sha256": "6335475d85d4ec46265e67237dcae83c46195c99efffe90e16887242801b8f69"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/03 Unit 15 Practice No.3.mp3",
+      "name": "03 Unit 15 Practice No.3.mp3",
+      "asset": "asset-0262.mp3",
+      "size": 5192723,
+      "mime": "audio/mpeg",
+      "sha256": "5086fbd7c75220b5c6fa25ceed034c7c8dfb25ec020157ffdd3de1d5c8a16073"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/04 Unit 15 Practice No.4.mp3",
+      "name": "04 Unit 15 Practice No.4.mp3",
+      "asset": "asset-0263.mp3",
+      "size": 2399084,
+      "mime": "audio/mpeg",
+      "sha256": "99f2a875dd60cd847d20b6d084e2e84f2258e0ca3fccaaa5d3099ed020dba2d8"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/05 Unit 15 Practice No.5.mp3",
+      "name": "05 Unit 15 Practice No.5.mp3",
+      "asset": "asset-0264.mp3",
+      "size": 1352932,
+      "mime": "audio/mpeg",
+      "sha256": "f701e1c1cbecf95ce06d3dfa2af0b3f6d4186793fc2dd513405ebafc22dbaf2f"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/06 Unit 15 Practice No.6.mp3",
+      "name": "06 Unit 15 Practice No.6.mp3",
+      "asset": "asset-0265.mp3",
+      "size": 3610748,
+      "mime": "audio/mpeg",
+      "sha256": "c1393a9bec953a128331cddf6624ca38994f035c2741fd81a6267a7a3bda59a8"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/07 Unit 15 Practice No.7.mp3",
+      "name": "07 Unit 15 Practice No.7.mp3",
+      "asset": "asset-0266.mp3",
+      "size": 2300864,
+      "mime": "audio/mpeg",
+      "sha256": "5b6f5ec234a6ace0c753b4e1d218cc41b1d528d22475203cbe18c0d24285ac52"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/08 Unit 15 Practice No.8.mp3",
+      "name": "08 Unit 15 Practice No.8.mp3",
+      "asset": "asset-0267.mp3",
+      "size": 802899,
+      "mime": "audio/mpeg",
+      "sha256": "d9e342db637027bebf3c06e9006cdcdb75ac095a857d95ae40b9995c38216031"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/09 Unit 15 Practice No.9.mp3",
+      "name": "09 Unit 15 Practice No.9.mp3",
+      "asset": "asset-0268.mp3",
+      "size": 2119470,
+      "mime": "audio/mpeg",
+      "sha256": "34757285de71b412c26cf2ed31162228c9a2b0cfb91db37d25ba55a65ff3b5f1"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/10 Unit 15 Practice No.10.mp3",
+      "name": "10 Unit 15 Practice No.10.mp3",
+      "asset": "asset-0269.mp3",
+      "size": 3264678,
+      "mime": "audio/mpeg",
+      "sha256": "bb9799f9f87dd31f4f3b54f9755532e0fe50fc0a093d96f4f655be0f2f638804"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/11 Unit 15 Practice No.11.mp3",
+      "name": "11 Unit 15 Practice No.11.mp3",
+      "asset": "asset-0270.mp3",
+      "size": 1517608,
+      "mime": "audio/mpeg",
+      "sha256": "55b8e0688707450d465a73e4feb344027e1e63a9c976eae9ccd292ca7814daa9"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/12 Unit 15 Practice No.12.mp3",
+      "name": "12 Unit 15 Practice No.12.mp3",
+      "asset": "asset-0271.mp3",
+      "size": 1395146,
+      "mime": "audio/mpeg",
+      "sha256": "27ce5c5e1f3357e0eb47168383d6e9846a94cb631535aec1068bcce880af0ebd"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/13 Unit 15 Practice No.13.mp3",
+      "name": "13 Unit 15 Practice No.13.mp3",
+      "asset": "asset-0272.mp3",
+      "size": 1017729,
+      "mime": "audio/mpeg",
+      "sha256": "cb66ac3cd5aaaad924625c22adf3fe32881716de5df11de8b5c6f78868d93428"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/14 Unit 17 Test One.mp3",
+      "name": "14 Unit 17 Test One.mp3",
+      "asset": "asset-0273.mp3",
+      "size": 9777737,
+      "mime": "audio/mpeg",
+      "sha256": "5c1f45d9c3f86822fdd570db6bb4a563f81f3e4fc49bb6d74450e7f20fe2c08e"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/15 Unit 17 Test Two.mp3",
+      "name": "15 Unit 17 Test Two.mp3",
+      "asset": "asset-0274.mp3",
+      "size": 10189843,
+      "mime": "audio/mpeg",
+      "sha256": "e06eaa8f5cd51bdec16e19b64564b2a26b8dc629776614ed00e18f3c1d8c47b1"
+    },
+    {
+      "path": "03_黑眼睛口语/02 第二部分 IELTS口试训练及模拟口试/16 Unit 17 Test Three.mp3",
+      "name": "16 Unit 17 Test Three.mp3",
+      "asset": "asset-0275.mp3",
+      "size": 9637720,
+      "mime": "audio/mpeg",
+      "sha256": "5794cc9dc9cc094f9b7b54a85473fd928ef622896cd89a62b608313e95adde11"
+    },
+    {
+      "path": "03_黑眼睛口语/黑眼睛雅思：IELTS考试技能训练教程口语.pdf",
+      "name": "黑眼睛雅思：IELTS考试技能训练教程口语.pdf",
+      "asset": "asset-0276.pdf",
+      "size": 9526051,
+      "mime": "application/pdf",
+      "sha256": "583046f45525ce3bde17ab98a2bfc8e8426c2adbaa6bf0be77809c3775e5ea02"
+    },
+    {
+      "path": "04_阅读/雅思538阅读考点词系列/07 题干-答案 同意词替换（统计表背诵版）.pdf",
+      "name": "07 题干-答案 同意词替换（统计表背诵版）.pdf",
+      "asset": "asset-0277.pdf",
+      "size": 324345,
+      "mime": "application/pdf",
+      "sha256": "f671dbe7d90981eb88e68aac05182dc2da61d7a91d95873fbf92872d573be1fd"
+    },
+    {
+      "path": "04_阅读/雅思538阅读考点词系列/刘洪波阅读538考点词(剑19版).pdf",
+      "name": "刘洪波阅读538考点词(剑19版).pdf",
+      "asset": "asset-0278.pdf",
+      "size": 150672567,
+      "mime": "application/pdf",
+      "sha256": "24d0fd212433237896e3bce74b731dea2cae52ff976f08c5f0f278c2027e4933"
+    },
+    {
+      "path": "04_阅读/雅思538阅读考点词系列/雅思阅读-538考点词表格整理.xlsx",
+      "name": "雅思阅读-538考点词表格整理.xlsx",
+      "asset": "asset-0279.xlsx",
+      "size": 33402,
+      "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "7d15d511e9733ceb3148477d70bf4f00f0cdb76bb2993761524c471b1c9c20ba"
+    },
+    {
+      "path": "04_阅读/雅思阅读真经/最新雅思阅读真经总纲 最后版 .pdf",
+      "name": "最新雅思阅读真经总纲 最后版 .pdf",
+      "asset": "asset-0280.pdf",
+      "size": 50439479,
+      "mime": "application/pdf",
+      "sha256": "4ca8225d7f167e38f741d658833e6595557ae14ac668605b9db84da2e20cd562"
+    },
+    {
+      "path": "04_阅读/雅思阅读真经/雅思阅读真经1&2精编版.pdf",
+      "name": "雅思阅读真经1&2精编版.pdf",
+      "asset": "asset-0281.pdf",
+      "size": 84826406,
+      "mime": "application/pdf",
+      "sha256": "9f2ac420cb3a57f022d1fa5338299882ef1b86b46cecbe4098a2143aeb95ae7c"
+    },
+    {
+      "path": "04_阅读/雅思阅读真经/雅思阅读真经5.pdf",
+      "name": "雅思阅读真经5.pdf",
+      "asset": "asset-0282.pdf",
+      "size": 61635372,
+      "mime": "application/pdf",
+      "sha256": "73059ea8d4463c4130fae5110f058fd09396ba07c75d8f2483fc4026d1a1ae09"
+    },
+    {
+      "path": "04_阅读/雅思阅读真经/雅思阅读真经总纲.pdf",
+      "name": "雅思阅读真经总纲.pdf",
+      "asset": "asset-0283.pdf",
+      "size": 87024424,
+      "mime": "application/pdf",
+      "sha256": "3c279271606f433912bd381e8daceeb112067fcb3287e1e6b2c3d266a27502fd"
+    },
+    {
+      "path": "05_写作/A类学术类（大作文+小作文）/【大作文】写作技巧.pdf",
+      "name": "【大作文】写作技巧.pdf",
+      "asset": "asset-0284.pdf",
+      "size": 203797345,
+      "mime": "application/pdf",
+      "sha256": "e38a52ecce21beddefaa952c7d47737c68ad5264839900efe39f365b867efd9b"
+    },
+    {
+      "path": "05_写作/A类学术类（大作文+小作文）/【大作文】范文合集.pdf",
+      "name": "【大作文】范文合集.pdf",
+      "asset": "asset-0285.pdf",
+      "size": 126247249,
+      "mime": "application/pdf",
+      "sha256": "855705dcbc40bd368d5d4bdd8931f08db344f5a1283e0ddfa27f2c2c7bce1bac"
+    },
+    {
+      "path": "05_写作/A类学术类（大作文+小作文）/【小作文】范文合集.pdf",
+      "name": "【小作文】范文合集.pdf",
+      "asset": "asset-0286.pdf",
+      "size": 12024423,
+      "mime": "application/pdf",
+      "sha256": "d434295d87ee6cef1b276432476276074065878f788ac822de8046dcca70fc51"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/Ideas_for_IELTS_topics_(simon).pdf",
+      "name": "Ideas_for_IELTS_topics_(simon).pdf",
+      "asset": "asset-0287.pdf",
+      "size": 738248,
+      "mime": "application/pdf",
+      "sha256": "145ce0773bfa53f2cf779e01ab57e1863eaff24e561b877e40bf58ecbc045d52"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/Simon 词伙.pdf",
+      "name": "Simon 词伙.pdf",
+      "asset": "asset-0288.pdf",
+      "size": 310237,
+      "mime": "application/pdf",
+      "sha256": "09eeae500991156f34b76c7eb0ec7bd3eb321af96b0e646867cdda9f5f824982"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/Simon考官雅思大作文9分范文合集.pdf",
+      "name": "Simon考官雅思大作文9分范文合集.pdf",
+      "asset": "asset-0289.pdf",
+      "size": 1795563,
+      "mime": "application/pdf",
+      "sha256": "f6bad43471bc3c2e3b1b997bae22e87541e06e55f10a70e8dded4219feb904da"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/Simon：Ideas for IELTS topics.pdf",
+      "name": "Simon：Ideas for IELTS topics.pdf",
+      "asset": "asset-0290.pdf",
+      "size": 790586,
+      "mime": "application/pdf",
+      "sha256": "9901234f36144291a59a1581fbc75c7a3629de75093bee7c305f4e2683a43063"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/【写作】雅思小作文原题及素材范文.docx",
+      "name": "【写作】雅思小作文原题及素材范文.docx",
+      "asset": "asset-0291.docx",
+      "size": 2884197,
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "sha256": "205dca5d825f23c59538f13770aa9c3cadceb5dd1cd48955d0d1ec564110cf78"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/【写作】雅思小作文原题及素材范文.pdf",
+      "name": "【写作】雅思小作文原题及素材范文.pdf",
+      "asset": "asset-0292.pdf",
+      "size": 103922795,
+      "mime": "application/pdf",
+      "sha256": "574baf8901509a69ea3d686110b3fa855610539644e37a8bedddac6e8436f4ac"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/雅思小作文参考范文41篇.pdf",
+      "name": "雅思小作文参考范文41篇.pdf",
+      "asset": "asset-0293.pdf",
+      "size": 1377368,
+      "mime": "application/pdf",
+      "sha256": "01f7d5fa8211f204c40dbc9022fec74f6ac052fde665309319d7420d7851f83b"
+    },
+    {
+      "path": "05_写作/Simon考官9分高分范文/雅思考官9分范文合集.pdf",
+      "name": "雅思考官9分范文合集.pdf",
+      "asset": "asset-0294.pdf",
+      "size": 1818833,
+      "mime": "application/pdf",
+      "sha256": "af656f12ffbd3accbf6b4f0debd34f973c5cbcd27d772d7259c91fc8225c6e3b"
+    },
+    {
+      "path": "05_写作/写作词汇素材collocations.pdf",
+      "name": "写作词汇素材collocations.pdf",
+      "asset": "asset-0295.pdf",
+      "size": 237406,
+      "mime": "application/pdf",
+      "sha256": "05657565ba77da0acf2d03a02f17721ef17d40dd7a3ff238c4b0de860f174623"
+    },
+    {
+      "path": "05_写作/雅思写作真经/（新版）雅思写作真经总纲.pdf",
+      "name": "（新版）雅思写作真经总纲.pdf",
+      "asset": "asset-0296.pdf",
+      "size": 121808745,
+      "mime": "application/pdf",
+      "sha256": "d00caa6743ad1c46b390a5354d561a8f02242029f4d851f9369e9dc52e0fa6c8"
+    },
+    {
+      "path": "05_写作/顾家北/100句翻译 -答案.pdf",
+      "name": "100句翻译 -答案.pdf",
+      "asset": "asset-0297.pdf",
+      "size": 387498,
+      "mime": "application/pdf",
+      "sha256": "9cad67239c60befc96f2e6f67c58e5e5ad34c7643a919708ee1c634ab2293173"
+    },
+    {
+      "path": "05_写作/顾家北/100句翻译.pdf",
+      "name": "100句翻译.pdf",
+      "asset": "asset-0298.pdf",
+      "size": 163532,
+      "mime": "application/pdf",
+      "sha256": "6943afc07ffe06140ac5160174010ea07fcac9241573a8fd4f2a8cbd8274168e"
+    },
+    {
+      "path": "05_写作/顾家北/【赠】顾家北手把手教你雅思写作6.0版 练习手册.pdf",
+      "name": "【赠】顾家北手把手教你雅思写作6.0版 练习手册.pdf",
+      "asset": "asset-0299.pdf",
+      "size": 22338981,
+      "mime": "application/pdf",
+      "sha256": "77b3fb39ad780ea00471dcc4316b136e0b2e0f8f5daa041ca83a5a7164a5d910"
+    },
+    {
+      "path": "05_写作/顾家北/顾家北手把手教你雅思写作  6.0版本.pdf",
+      "name": "顾家北手把手教你雅思写作  6.0版本.pdf",
+      "asset": "asset-0300.pdf",
+      "size": 409620682,
+      "mime": "application/pdf",
+      "sha256": "3e2c60ea24f10d6ab5bfefbca2f6b3ac1feae5b4bf0014cdcedfa6119bdf5610"
+    },
+    {
+      "path": "05_写作/顾家北/顾家北手把手教你雅思词伙  2.0版.pdf",
+      "name": "顾家北手把手教你雅思词伙  2.0版.pdf",
+      "asset": "asset-0301.pdf",
+      "size": 37880200,
+      "mime": "application/pdf",
+      "sha256": "c6a4fb109dd003d98dd7476b166084b844c811622c2fbc35eb004785842abd13"
+    },
+    {
+      "path": "05_写作/顾家北/顾家北手把手教你雅思词伙.pdf",
+      "name": "顾家北手把手教你雅思词伙.pdf",
+      "asset": "asset-0302.pdf",
+      "size": 142066954,
+      "mime": "application/pdf",
+      "sha256": "97b1f2fcbb7afbad964c14a13217c9565d3b2e6e9f60931ee6ca1a04863643c7"
+    },
+    {
+      "path": "05_写作/顾家北/顾家北观点库.pdf",
+      "name": "顾家北观点库.pdf",
+      "asset": "asset-0303.pdf",
+      "size": 5521975,
+      "mime": "application/pdf",
+      "sha256": "91fcd3687dd11bfe2f3c3ed766ee89c34f1aa1a089bf787181d0621cbfd8eb1e"
+    },
+    {
+      "path": "06_词汇/核心词汇表（完结版）.xlsx",
+      "name": "核心词汇表（完结版）.xlsx",
+      "asset": "asset-0304.xlsx",
+      "size": 96863,
+      "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "1a35f5ea3aef551e0654a249db89d718c1e25d15030b7ab277bdcbcc61ed9298"
+    },
+    {
+      "path": "07_听力补充/何琼听力网课（2026未出，后续持续更新）/何琼雅思新版考试答题纸(1).pdf",
+      "name": "何琼雅思新版考试答题纸(1).pdf",
+      "asset": "asset-0305.pdf",
+      "size": 3171605,
+      "mime": "application/pdf",
+      "sha256": "bc776a8952f8a38d203e6a44d74f42fd83d1960d3b3ae8da9c1980b781b549bb"
+    },
+    {
+      "path": "07_听力补充/何琼听力网课（2026未出，后续持续更新）/剑11第四套题讲解.mp3",
+      "name": "剑11第四套题讲解.mp3",
+      "asset": "asset-0306.mp3",
+      "size": 6148652,
+      "mime": "audio/mpeg",
+      "sha256": "e183d92c3f56ab6a0c2e35d045ca2dc76b6301653f00dc3261d114bf6bc8a577"
+    },
+    {
+      "path": "07_听力补充/何琼听力网课（2026未出，后续持续更新）/剑16第四套题讲解.mp3",
+      "name": "剑16第四套题讲解.mp3",
+      "asset": "asset-0307.mp3",
+      "size": 5926604,
+      "mime": "audio/mpeg",
+      "sha256": "ee89045ec9128580b8370def1b3b9bda2bae4fd93fb5947ef73ff0ba6fec453d"
+    },
+    {
+      "path": "07_听力补充/何琼听力网课（2026未出，后续持续更新）/必考词汇18页快速听写测试，可手动暂停再写.mp3",
+      "name": "必考词汇18页快速听写测试，可手动暂停再写.mp3",
+      "asset": "asset-0308.mp3",
+      "size": 313581,
+      "mime": "audio/mpeg",
+      "sha256": "fbf346bf31c873afcba0f10604654bc0ebd9ed7f8dd6fb289e465dc1de541626"
+    },
+    {
+      "path": "07_听力补充/何琼听力网课（2026未出，后续持续更新）/课表.jpg",
+      "name": "课表.jpg",
+      "asset": "asset-0309.jpg",
+      "size": 1631800,
+      "mime": "image/jpeg",
+      "sha256": "0151103926519c7313095708adcd9b49021c34488c36bf5ec54e1e1447c1b0aa"
+    },
+    {
+      "path": "07_听力补充/雅思179听力考点词系列/179考点词默写-自动检验.xlsx",
+      "name": "179考点词默写-自动检验.xlsx",
+      "asset": "asset-0310.xlsx",
+      "size": 106342,
+      "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "d03a86a838cf95aa3e5cce4ee4908e130d1869e9df5a5d28ce5037be97da3f51"
+    },
+    {
+      "path": "07_听力补充/雅思179听力考点词系列/刘洪波179听力考点词(剑19版).pdf",
+      "name": "刘洪波179听力考点词(剑19版).pdf",
+      "asset": "asset-0311.pdf",
+      "size": 97818866,
+      "mime": "application/pdf",
+      "sha256": "2e16e4cebbce2c876f61f61bed559b34c2fc6ac737ab11c439ec0405fd902017"
+    },
+    {
+      "path": "07_听力补充/雅思179听力考点词系列/听力179词同义替换.xlsx",
+      "name": "听力179词同义替换.xlsx",
+      "asset": "asset-0312.xlsx",
+      "size": 21283,
+      "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "6362b6ff9cfa93b6ef2d7076d1d96f658f0e1294fca3b4c2769697bc7a859e84"
+    },
+    {
+      "path": "07_听力补充/雅思听力同义互换总和.pdf",
+      "name": "雅思听力同义互换总和.pdf",
+      "asset": "asset-0313.pdf",
+      "size": 792452,
+      "mime": "application/pdf",
+      "sha256": "60f99197c40edf39158e7ce92b8a7b3ab303be04cac8d632f5d2e52dbaf2df43"
+    },
+    {
+      "path": "07_听力补充/雅思听力场景词汇.pdf",
+      "name": "雅思听力场景词汇.pdf",
+      "asset": "asset-0314.pdf",
+      "size": 860004,
+      "mime": "application/pdf",
+      "sha256": "bf8ba8a6ade8ee2bd1355bd6aa31ac14d88f4f2d4310b272fe65d2495a85e205"
+    },
+    {
+      "path": "07_听力补充/雅思听力高频词汇整合版.pdf",
+      "name": "雅思听力高频词汇整合版.pdf",
+      "asset": "asset-0315.pdf",
+      "size": 325927,
+      "mime": "application/pdf",
+      "sha256": "5e4224669c9e936d5754d8f3c9c6928f8d97652245c582e67a65b4a167ac9d8a"
+    }
+  ]
+}
