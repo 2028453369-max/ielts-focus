@@ -1,0 +1,94 @@
+name: Unpack IELTS Materials
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to process"
+        required: true
+        default: "materials-v1"
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Choose release tag
+        id: tag
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            echo "tag=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download ZIP asset
+        shell: bash
+        run: |
+          mkdir -p work
+          gh release download "${{ steps.tag.outputs.tag }}" \
+            --repo "${{ github.repository }}" \
+            --pattern "*.zip" \
+            --dir work
+          ZIP_FILE="$(find work -maxdepth 1 -type f -name '*.zip' | head -n 1)"
+          if [ -z "$ZIP_FILE" ]; then
+            echo "No ZIP asset found in release."
+            exit 1
+          fi
+          echo "ZIP_FILE=$ZIP_FILE" >> "$GITHUB_ENV"
+
+      - name: Unpack and build manifest
+        shell: bash
+        run: |
+          mkdir -p extracted upload
+          unzip -q "$ZIP_FILE" -d extracted
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, mimetypes, shutil, hashlib
+
+          root = Path("extracted")
+          out = Path("upload")
+          out.mkdir(exist_ok=True)
+
+          manifest = []
+          files = [p for p in root.rglob("*") if p.is_file()]
+          files.sort(key=lambda p: str(p.relative_to(root)).lower())
+
+          for i, p in enumerate(files, 1):
+              rel = str(p.relative_to(root)).replace("\\", "/")
+              ext = p.suffix.lower()
+              asset = f"asset-{i:04d}{ext}"
+              target = out / asset
+              shutil.copy2(p, target)
+              manifest.append({
+                  "path": rel,
+                  "name": p.name,
+                  "asset": asset,
+                  "size": p.stat().st_size,
+                  "mime": mimetypes.guess_type(p.name)[0] or "application/octet-stream",
+                  "sha256": hashlib.sha256(p.read_bytes()).hexdigest()
+              })
+
+          (out / "materials-manifest.json").write_text(
+              json.dumps({"version": 1, "files": manifest}, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+          print(f"Prepared {len(files)} files")
+          PY
+
+      - name: Upload unpacked assets to the same release
+        shell: bash
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          for f in upload/*; do
+            gh release upload "$TAG" "$f" \
+              --repo "${{ github.repository }}" \
+              --clobber
+          done
