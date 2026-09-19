@@ -2,7 +2,7 @@ name: Validate IELTS Focus Upgrade
 
 on:
   push:
-    branches: [atlas-inspired-upgrade]
+    branches: [main, atlas-inspired-upgrade]
   workflow_dispatch:
 
 jobs:
