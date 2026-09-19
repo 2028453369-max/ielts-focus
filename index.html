@@ -781,7 +781,8 @@ let c21TimerState={left:3600,run:false,h:null};
 
 function c21Key(){return `T${c21Test}-${c21Module}`}
 function formatDuration(sec){sec=Math.round(sec||0);return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`}
-function c21Page(page){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');f.removeAttribute('src');f.classList.add('hidden');f.dataset.src=`${cloudAsset('asset-0001.pdf')}#page=${page}&zoom=page-width`;if(m)m.classList.remove('hidden')}\nfunction loadC21Pdf(){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');if(!f.dataset.src)return;f.src=f.dataset.src;f.classList.remove('hidden');if(m)m.classList.add('hidden')}
+function c21Page(page){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');f.removeAttribute('src');f.classList.add('hidden');f.dataset.src=`${cloudAsset('asset-0001.pdf')}#page=${page}&zoom=page-width`;if(m)m.classList.remove('hidden')}
+function loadC21Pdf(){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');if(!f.dataset.src)return;f.src=f.dataset.src;f.classList.remove('hidden');if(m)m.classList.add('hidden')}
 function setupC21(){
  const tabs=document.getElementById('c21TestTabs');if(!tabs)return;
  tabs.innerHTML=[1,2,3,4].map(t=>`<button class="btn ${t===c21Test?'active':''}" onclick="selectC21Test(${t})">Test ${t}</button>`).join('');
