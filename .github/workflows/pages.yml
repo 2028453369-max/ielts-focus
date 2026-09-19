@@ -37,7 +37,7 @@ jobs:
           path: |
             study-pages
             media
-          key: ielts-focus-study-media-v1-${{ hashFiles('materials-manifest.json') }}
+          key: ielts-focus-study-media-v2-${{ hashFiles('materials-manifest.json') }}
 
       - name: Prepare in-app textbooks and mobile audio
         if: steps.media-cache.outputs.cache-hit != 'true'
@@ -61,11 +61,11 @@ jobs:
             mkdir -p "$tmp"
             pdftoppm -jpeg -r 100 -jpegopt quality=68,optimize=y "$src" "$tmp/page"
             n=1
-            for f in "$tmp"/page-*.jpg; do
+            while IFS= read -r f; do
               printf -v num "%03d" "$n"
               mv "$f" "study-pages/${prefix}-${num}.jpg"
               n=$((n+1))
-            done
+            done < <(find "$tmp" -maxdepth 1 -type f -name 'page-*.jpg' | sort -V)
           }
 
           render_pdf /tmp/ielts-pdf/asset-0001.pdf c21
