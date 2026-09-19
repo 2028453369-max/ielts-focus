@@ -528,6 +528,35 @@ const BLACK=JSON.parse(document.getElementById('blackEyesData').textContent);
 const BLACKLISTEN=JSON.parse(document.getElementById('blackListeningData').textContent);
 const CORE=JSON.parse(document.getElementById('coreVocabData').textContent);
 const ORAL=JSON.parse(document.getElementById('oralTopicData').textContent);
+const CLOUD_RELEASE_BASE='https://github.com/2028453369-max/ielts-focus/releases/download/materials-v1/';
+function cloudAsset(name){return CLOUD_RELEASE_BASE+name}
+
+// Cloud replacements for the old local-media paths.
+BLACKLISTEN.introAudio.src=cloudAsset('asset-0028.mp3');
+const pretestSection=BLACKLISTEN.sections.find(x=>x.id==='pretest');
+if(pretestSection&&pretestSection.audio)pretestSection.audio.src=cloudAsset('asset-0029.mp3');
+
+BLACK.pdf=cloudAsset('asset-0276.pdf');
+BLACK.intro.src=cloudAsset('asset-0247.mp3');
+const BE_CLOUD_ASSETS={
+  1:['asset-0248.mp3'],2:['asset-0249.mp3'],3:['asset-0250.mp3'],
+  5:['asset-0251.mp3'],6:['asset-0252.mp3'],7:['asset-0253.mp3'],8:['asset-0254.mp3'],
+  9:['asset-0255.mp3'],10:['asset-0256.mp3'],11:['asset-0257.mp3'],13:['asset-0258.mp3'],14:['asset-0259.mp3'],
+  15:['asset-0260.mp3','asset-0261.mp3','asset-0262.mp3','asset-0263.mp3','asset-0264.mp3','asset-0265.mp3','asset-0266.mp3','asset-0267.mp3','asset-0268.mp3','asset-0269.mp3','asset-0270.mp3','asset-0271.mp3','asset-0272.mp3'],
+  17:['asset-0273.mp3','asset-0274.mp3','asset-0275.mp3']
+};
+BLACK.units.forEach(u=>{
+  const assets=BE_CLOUD_ASSETS[u.unit]||[];
+  u.tracks.forEach((t,i)=>{if(assets[i])t.src=cloudAsset(assets[i])});
+});
+
+const C21_CLOUD_AUDIO={
+  1:{1:['asset-0002.mp3','asset-0003.mp3'],2:['asset-0004.mp3','asset-0005.mp3'],3:['asset-0006.mp3','asset-0007.mp3'],4:['asset-0008.mp3']},
+  2:{1:['asset-0009.mp3'],2:['asset-0010.mp3','asset-0011.mp3'],3:['asset-0012.mp3','asset-0013.mp3'],4:['asset-0014.mp3']},
+  3:{1:['asset-0015.mp3'],2:['asset-0016.mp3','asset-0017.mp3'],3:['asset-0018.mp3','asset-0019.mp3'],4:['asset-0020.mp3']},
+  4:{1:['asset-0021.mp3'],2:['asset-0022.mp3','asset-0023.mp3'],3:['asset-0024.mp3','asset-0025.mp3'],4:['asset-0026.mp3']}
+};
+
 const KEY='ieltsFocusAppV3';
 const DEF={targetMonth:'2027-02',writingDone:{},speakingDone:{},writingDrafts:{},p1Notes:{},p2Notes:{},vocab:[],logs:[],coreMastered:{},coreReview:{},dailyChecks:{},dailySettings:{wordCount:10,listening:15,reading:15,p1Count:3},dailyPlanVersion:2,c21Answers:{},c21Scores:{},blackEyesDone:{},blackListeningDone:{}};
 let state=loadState(),currentW=0,currentP1=0,currentP2=0;
@@ -614,7 +643,7 @@ function revealFlash(){document.getElementById('flashMeaning').classList.remove(
 
 
 // Black Eyes Listening Upper
-let bluIndex=0,bluPdfUrl='https://chatgpt.com/api/library/files/libfile_476f1b8efc58819198aab1c1e355b3f5/download';
+let bluIndex=0,bluPdfUrl=cloudAsset('asset-0027.pdf');
 function bluInfo(){return BLACKLISTEN.sections[bluIndex]}
 function setupBlackListening(){if(!document.getElementById('bluSectionList'))return;renderBluList();renderBlackListening()}
 function renderBluList(){
@@ -741,7 +770,7 @@ let c21TimerState={left:3600,run:false,h:null};
 
 function c21Key(){return `T${c21Test}-${c21Module}`}
 function formatDuration(sec){sec=Math.round(sec||0);return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`}
-function c21Page(page){document.getElementById('c21Pdf').src=`cambridge21/Cambridge-IELTS-21-Academic.pdf#page=${page}&zoom=page-width`}
+function c21Page(page){document.getElementById('c21Pdf').src=`${cloudAsset('asset-0001.pdf')}#page=${page}&zoom=page-width`}
 function setupC21(){
  const tabs=document.getElementById('c21TestTabs');if(!tabs)return;
  tabs.innerHTML=[1,2,3,4].map(t=>`<button class="btn ${t===c21Test?'active':''}" onclick="selectC21Test(${t})">Test ${t}</button>`).join('');
@@ -779,9 +808,29 @@ function renderC21Parts(){
 function loadC21Part(p){
  c21Part=p;renderC21Parts();
  const a=C21.audio[c21Test][p],player=document.getElementById('c21Audio');
- player.src=a.src;player.playbackRate=1;
+ const tracks=((C21_CLOUD_AUDIO[c21Test]||{})[p]||[]).map(cloudAsset);
+ player.pause();
+ player.onended=null;
+ player._cloudTracks=tracks;
+ player._cloudTrackIndex=0;
+ player.playbackRate=1;
+ if(tracks.length){
+  player.src=tracks[0];
+  player.onended=()=>{
+   const next=(player._cloudTrackIndex||0)+1;
+   if(next<player._cloudTracks.length){
+    const rate=player.playbackRate||1;
+    player._cloudTrackIndex=next;
+    player.src=player._cloudTracks[next];
+    player.playbackRate=rate;
+    player.play().catch(()=>{});
+   }
+  };
+ }else{
+  player.removeAttribute('src');player.load();
+ }
  document.getElementById('c21AudioTitle').textContent=`Test ${c21Test} · Listening Part ${p}`;
- document.getElementById('c21AudioDuration').textContent=formatDuration(a.seconds);
+ document.getElementById('c21AudioDuration').textContent=formatDuration(a.seconds)+(tracks.length>1?' · 云端分段连续播放':'');
  c21Page(C21.pages[c21Test].parts[p]);
  renderC21AnswerGrid();
 }
