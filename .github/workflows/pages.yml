@@ -30,15 +30,18 @@ jobs:
         with:
           enablement: true
 
-      - name: Build in-app textbook pages
+      - name: Prepare in-app textbooks and mobile audio
         shell: bash
         run: |
           sudo apt-get update >/dev/null
-          sudo apt-get install -y poppler-utils >/dev/null
-          mkdir -p /tmp/ielts-pdf study-pages
+          sudo apt-get install -y poppler-utils ffmpeg >/dev/null
+          mkdir -p /tmp/ielts-pdf /tmp/ielts-mp3 study-pages media
+
           gh release download materials-v1 --repo "$REPO" --pattern "asset-0001.pdf" --dir /tmp/ielts-pdf
           gh release download materials-v1 --repo "$REPO" --pattern "asset-0027.pdf" --dir /tmp/ielts-pdf
+          gh release download materials-v1 --repo "$REPO" --pattern "asset-0151.pdf" --dir /tmp/ielts-pdf
           gh release download materials-v1 --repo "$REPO" --pattern "asset-0276.pdf" --dir /tmp/ielts-pdf
+          gh release download materials-v1 --repo "$REPO" --pattern "asset-*.mp3" --dir /tmp/ielts-mp3
 
           render_pdf () {
             local src="$1"
@@ -46,7 +49,7 @@ jobs:
             local tmp="/tmp/render-$prefix"
             rm -rf "$tmp"
             mkdir -p "$tmp"
-            pdftoppm -jpeg -r 105 -jpegopt quality=72,optimize=y "$src" "$tmp/page"
+            pdftoppm -jpeg -r 100 -jpegopt quality=68,optimize=y "$src" "$tmp/page"
             n=1
             for f in "$tmp"/page-*.jpg; do
               printf -v num "%03d" "$n"
@@ -57,16 +60,35 @@ jobs:
 
           render_pdf /tmp/ielts-pdf/asset-0001.pdf c21
           render_pdf /tmp/ielts-pdf/asset-0027.pdf blu
+          render_pdf /tmp/ielts-pdf/asset-0151.pdf blu2
           render_pdf /tmp/ielts-pdf/asset-0276.pdf be
+
+          transcode_one () {
+            src="$1"
+            base="$(basename "$src")"
+            out="media/$base"
+            if ! ffmpeg -y -loglevel error -i "$src" -map_metadata -1 -ac 1 -ar 44100 -b:a 64k "$out"; then
+              cp "$src" "$out"
+            fi
+          }
+          export -f transcode_one
+          find /tmp/ielts-mp3 -type f -name '*.mp3' -print0 | xargs -0 -n1 -P4 bash -c 'transcode_one "$0"'
 
           python - <<'PY'
           from pathlib import Path
           from collections import Counter
-          c=Counter(p.name.split("-")[0] for p in Path("study-pages").glob("*.jpg"))
-          print("study pages:", dict(c))
-          assert c["c21"] == 146
-          assert c["blu"] == 278
-          assert c["be"] == 224
+          pages=Counter(p.name.split("-")[0] for p in Path("study-pages").glob("*.jpg"))
+          mp3=list(Path("media").glob("*.mp3"))
+          total=sum(p.stat().st_size for p in mp3)+sum(p.stat().st_size for p in Path("study-pages").glob("*.jpg"))
+          print("study pages:", dict(pages))
+          print("mobile audio:", len(mp3), "files")
+          print("published media bytes:", total)
+          assert pages["c21"] == 146
+          assert pages["blu"] == 278
+          assert pages["be"] >= 160
+          assert pages["blu2"] > 100
+          assert len(mp3) >= 275
+          assert total < 950_000_000, "Published media would exceed safe GitHub Pages size"
           PY
 
       - uses: actions/upload-pages-artifact@v3
