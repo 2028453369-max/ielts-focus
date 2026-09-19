@@ -217,7 +217,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     <div id="beTracksWrap" style="margin-top:14px">
       <h3>对应音频</h3>
       <div class="be-track-grid" id="beTrackGrid"></div>
-      <audio id="beAudio" controls preload="metadata" style="margin-top:12px"></audio>
+      <audio id="beAudio" controls preload="none" style="margin-top:12px"></audio>
       <div class="be-controls">
         <button class="btn small" onclick="beSeek(-5)">-5s</button>
         <button class="btn small" onclick="beRate(.75)">0.75×</button>
@@ -277,7 +277,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     <div id="bluAudioArea" style="margin-top:14px">
       <h3>音频</h3>
       <div id="bluNoAudio" class="note"></div>
-      <audio id="bluAudio" controls preload="metadata"></audio>
+      <audio id="bluAudio" controls preload="none"></audio>
       <div class="be-controls">
         <button class="btn small" onclick="bluSeek(-5)">-5s</button>
         <button class="btn small" onclick="bluRate(.75)">0.75×</button>
@@ -340,7 +340,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
    <div class="card c8">
     <div id="c21AudioWrap">
       <div class="row between"><h3 id="c21AudioTitle">Test 1 · Part 1</h3><span class="badge" id="c21AudioDuration"></span></div>
-      <audio id="c21Audio" controls preload="metadata"></audio>
+      <audio id="c21Audio" controls preload="none"></audio>
       <div class="row" style="margin:8px 0 14px">
         <button class="btn small" onclick="c21Rate(.75)">0.75×</button>
         <button class="btn small" onclick="c21Rate(1)">1×</button>
@@ -348,7 +348,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
         <button class="btn small" onclick="c21Rate(1.5)">1.5×</button>
       </div>
     </div>
-    <iframe id="c21Pdf" style="width:100%;height:690px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
+    <div id="c21PdfMessage" class="prompt" style="margin-bottom:10px">教材不会自动下载。需要时点击“加载当前教材页”。 <button class="btn small outline" onclick="loadC21Pdf()">加载当前教材页</button></div>\n    <iframe id="c21Pdf" class="hidden" style="width:100%;height:690px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
    </div>
 
    <div class="card c12" id="c21AnswerCard">
@@ -472,7 +472,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
    </div>
    <div class="card c12 cloud-player hidden" id="cloudPlayerPanel">
      <div class="row between"><b id="cloudPlayerTitle">音频</b><span class="badge green">在线播放</span></div>
-     <audio id="cloudAudioPlayer" controls preload="metadata" style="margin-top:10px"></audio>
+     <audio id="cloudAudioPlayer" controls preload="none" style="margin-top:10px"></audio>
    </div>
    <div class="card c12">
     <div class="row between"><h3>App 内置学习模块</h3><span class="badge">原有功能保留</span></div>
@@ -503,13 +503,6 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 </main>
 </div>
 <div class="toast" id="toast"></div>
-
-<div id="mediaWarning" class="hidden" style="position:fixed;left:18px;right:18px;bottom:18px;z-index:9999;background:#fff4e5;border:1px solid #e0b36d;border-radius:12px;padding:12px 14px;box-shadow:0 8px 25px rgba(0,0,0,.12);font-size:13px;line-height:1.6">
-  <b>音频文件没有加载到。</b>
-  请不要直接打开聊天里的 HTML 链接。下载完整 ZIP → 解压整个文件夹 → 双击“启动 IELTS Focus.bat”。
-  <button onclick="this.parentElement.classList.add('hidden')" style="float:right;border:0;background:transparent;font-size:18px;cursor:pointer">×</button>
-</div>
-
 
 <script id="blackListeningData" type="application/json">{"introAudio": {"src": "blackeyes-listening-upper/audio/intro.mp3", "seconds": 60.0}, "sections": [{"id": "intro", "title": "IELTS听力考试简介", "printedPage": 1, "pdfPage": 14, "type": "热身", "audio": null}, {"id": "tips", "title": "IELTS听力考试答题技巧", "printedPage": 2, "pdfPage": 15, "type": "热身", "audio": null}, {"id": "basics", "title": "IELTS听力必备知识", "printedPage": 5, "pdfPage": 18, "type": "热身", "audio": null}, {"id": "pretest", "title": "Pretraining Test", "printedPage": 15, "pdfPage": 28, "type": "自我测试", "audio": {"src": "blackeyes-listening-upper/audio/pretraining-test.mp3", "seconds": 2251.8}}, {"id": "preanswer", "title": "Pretraining Test · 快速浏览答案", "printedPage": 19, "pdfPage": 32, "type": "自我测试", "audio": null}, {"id": "preanalysis", "title": "Pretraining Test · 试题解析", "printedPage": 19, "pdfPage": 32, "type": "自我测试", "audio": null}, {"id": "prescript", "title": "Pretraining Test · 听力文本", "printedPage": 21, "pdfPage": 34, "type": "自我测试", "audio": null}, {"id": "u1", "title": "Unit 1 · Letters, Numbers and Numeral Relationships", "printedPage": 29, "pdfPage": 42, "type": "技能训练", "activities": 20, "audio": null}, {"id": "u2", "title": "Unit 2 · Form Filling and Table Completion", "printedPage": 45, "pdfPage": 58, "type": "技能训练", "activities": 20, "audio": null}, {"id": "u3", "title": "Unit 3 · Description and Location", "printedPage": 58, "pdfPage": 71, "type": "技能训练", "activities": 20, "audio": null}, {"id": "u4", "title": "Unit 4 · Answering Questions and Multiple Choice", "printedPage": 77, "pdfPage": 90, "type": "技能训练", "activities": 20, "audio": null}, {"id": "u5", "title": "Unit 5 · Notes Completion and True/False", "printedPage": 98, "pdfPage": 111, "type": "技能训练", "activities": 20, "audio": null}, {"id": "u6", "title": "Unit 6 · Summary", "printedPage": 112, "pdfPage": 125, "type": "技能训练", "activities": 20, "audio": null}, {"id": "achievement", "title": "Achievement Test", "printedPage": 125, "pdfPage": 138, "type": "测试", "audio": null}, {"id": "scripts", "title": "Audio Scripts", "printedPage": 129, "pdfPage": 142, "type": "参考", "audio": null}, {"id": "answers", "title": "Answer Key", "printedPage": 238, "pdfPage": 251, "type": "参考", "audio": null}, {"id": "appendix", "title": "Appendix", "printedPage": 261, "pdfPage": 274, "type": "参考", "audio": null}], "pdfFileName": "黑眼睛听力 第5版 上【我不是考神】.pdf"}</script>
 <script id="blackEyesData" type="application/json">{"intro": {"src": "blackeyes/audio/intro.mp3", "seconds": 64.8}, "units": [{"unit": 1, "title": "Introductions and Greetings", "printedPage": 3, "pdfPage": 8, "tracks": [{"src": "blackeyes/audio/unit-01.mp3", "seconds": 396.2, "label": "Unit 1"}], "note": ""}, {"unit": 2, "title": "How to Start a Conversation", "printedPage": 11, "pdfPage": 16, "tracks": [{"src": "blackeyes/audio/unit-02.mp3", "seconds": 475.9, "label": "Unit 2"}], "note": ""}, {"unit": 3, "title": "Leaving-signals and Saying Goodbye", "printedPage": 19, "pdfPage": 24, "tracks": [{"src": "blackeyes/audio/unit-03.mp3", "seconds": 410.4, "label": "Unit 3"}], "note": ""}, {"unit": 4, "title": "Games (I)", "printedPage": 26, "pdfPage": 31, "tracks": [], "note": "当前上传的音频中没有单独对应这一 Unit 的音轨。"}, {"unit": 5, "title": "Question Techniques and Answering Techniques", "printedPage": 34, "pdfPage": 39, "tracks": [{"src": "blackeyes/audio/unit-05.mp3", "seconds": 374.6, "label": "Unit 5"}], "note": ""}, {"unit": 6, "title": "Conversation Techniques", "printedPage": 44, "pdfPage": 49, "tracks": [{"src": "blackeyes/audio/unit-06.mp3", "seconds": 349.0, "label": "Unit 6"}], "note": ""}, {"unit": 7, "title": "Pair Work (I)", "printedPage": 53, "pdfPage": 58, "tracks": [{"src": "blackeyes/audio/unit-07.mp3", "seconds": 1008.5, "label": "Unit 7"}], "note": ""}, {"unit": 8, "title": "Discussing", "printedPage": 75, "pdfPage": 80, "tracks": [{"src": "blackeyes/audio/unit-08.mp3", "seconds": 534.0, "label": "Unit 8"}], "note": ""}, {"unit": 9, "title": "Apologising", "printedPage": 84, "pdfPage": 89, "tracks": [{"src": "blackeyes/audio/unit-09.mp3", "seconds": 362.4, "label": "Unit 9"}], "note": ""}, {"unit": 10, "title": "Pair Work (II)", "printedPage": 91, "pdfPage": 96, "tracks": [{"src": "blackeyes/audio/unit-10.mp3", "seconds": 313.5, "label": "Unit 10"}], "note": ""}, {"unit": 11, "title": "Complaining", "printedPage": 109, "pdfPage": 114, "tracks": [{"src": "blackeyes/audio/unit-11.mp3", "seconds": 523.2, "label": "Unit 11"}], "note": ""}, {"unit": 12, "title": "Invitations and Suggestions", "printedPage": 114, "pdfPage": 119, "tracks": [], "note": "当前上传的音频中没有单独对应这一 Unit 的音轨。"}, {"unit": 13, "title": "Games (II)", "printedPage": 122, "pdfPage": 127, "tracks": [{"src": "blackeyes/audio/unit-13.mp3", "seconds": 242.3, "label": "Unit 13"}], "note": ""}, {"unit": 14, "title": "Describing People and Objects", "printedPage": 130, "pdfPage": 135, "tracks": [{"src": "blackeyes/audio/unit-14.mp3", "seconds": 571.9, "label": "Unit 14"}], "note": ""}, {"unit": 15, "title": "Telephoning", "printedPage": 142, "pdfPage": 147, "tracks": [{"src": "blackeyes/audio/unit-15-practice-01.mp3", "seconds": 65.3, "label": "Practice 1"}, {"src": "blackeyes/audio/unit-15-practice-02.mp3", "seconds": 100.2, "label": "Practice 2"}, {"src": "blackeyes/audio/unit-15-practice-03.mp3", "seconds": 324.5, "label": "Practice 3"}, {"src": "blackeyes/audio/unit-15-practice-04.mp3", "seconds": 149.9, "label": "Practice 4"}, {"src": "blackeyes/audio/unit-15-practice-05.mp3", "seconds": 84.5, "label": "Practice 5"}, {"src": "blackeyes/audio/unit-15-practice-06.mp3", "seconds": 225.6, "label": "Practice 6"}, {"src": "blackeyes/audio/unit-15-practice-07.mp3", "seconds": 143.8, "label": "Practice 7"}, {"src": "blackeyes/audio/unit-15-practice-08.mp3", "seconds": 50.2, "label": "Practice 8"}, {"src": "blackeyes/audio/unit-15-practice-09.mp3", "seconds": 132.4, "label": "Practice 9"}, {"src": "blackeyes/audio/unit-15-practice-10.mp3", "seconds": 204.0, "label": "Practice 10"}, {"src": "blackeyes/audio/unit-15-practice-11.mp3", "seconds": 94.8, "label": "Practice 11"}, {"src": "blackeyes/audio/unit-15-practice-12.mp3", "seconds": 87.2, "label": "Practice 12"}, {"src": "blackeyes/audio/unit-15-practice-13.mp3", "seconds": 63.6, "label": "Practice 13"}], "note": ""}, {"unit": 16, "title": "Pair Work (III)", "printedPage": 154, "pdfPage": 159, "tracks": [], "note": "这份 PDF 只包含 Unit 16 的前半部分，文件在印刷页 160 结束。"}, {"unit": 17, "title": "Topic Cards", "printedPage": 169, "pdfPage": null, "tracks": [{"src": "blackeyes/audio/unit-17-test-01.mp3", "seconds": 611.1, "label": "Test One"}, {"src": "blackeyes/audio/unit-17-test-02.mp3", "seconds": 636.8, "label": "Test Two"}, {"src": "blackeyes/audio/unit-17-test-03.mp3", "seconds": 602.4, "label": "Test Three"}], "note": "你上传的 PDF 未包含这一 Unit 的教材页面。"}, {"unit": 18, "title": "The Speaking Test of IELTS", "printedPage": 180, "pdfPage": null, "tracks": [], "note": "你上传的 PDF 未包含这一 Unit 的教材页面。"}, {"unit": 19, "title": "Sample Speaking Tests", "printedPage": 192, "pdfPage": null, "tracks": [], "note": "你上传的 PDF 未包含这一 Unit 的教材页面。"}], "pdf": "blackeyes/Black-Eyes-IELTS-Speaking.pdf", "pdfPages": 165}</script>
@@ -574,7 +567,7 @@ function seeded(n,salt){let s=dayKey()+salt,h=2166136261;for(let i=0;i<s.length;
 document.getElementById('dateText').textContent=new Date().toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
 const names={home:'今日学习',writing:'写作 Task 2',speaking:'口语训练',blackeyes:'黑眼睛口语',blacklisten:'黑眼睛听力（上）',cambridge21:'剑21真题',lr:'听力 / 阅读',vocab:'我的生词',corevocab:'核心词汇',oralbook:'口语教材',materials:'资料库',settings:'备份 / 设置'};
 document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
-function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));document.getElementById('pageTitle').textContent=names[id];if(id==='home')renderDailyPlan();if(id==='materials'&&window.IELTSCloudMaterials)IELTSCloudMaterials.load();scrollTo(0,0)}
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));document.getElementById('pageTitle').textContent=names[id];if(id==='home')renderDailyPlan();if(id==='materials'&&window.IELTSCloudMaterials)IELTSCloudMaterials.load();if(id==='blackeyes')setupBlackEyes();if(id==='blacklisten')setupBlackListening();if(id==='cambridge21')setupC21();prepareLazyAudio();scrollTo(0,0)}
 function saveTarget(){state.targetMonth=document.getElementById('targetMonth').value||'2027-02';persist();renderTarget();toast('目标已保存')}
 function renderTarget(){document.getElementById('targetMonth').value=state.targetMonth||'2027-02';const [y,m]=(state.targetMonth||'2027-02').split('-').map(Number),days=Math.max(0,Math.ceil((new Date(y,m-1,1)-new Date())/86400000));document.getElementById('countdown').textContent=days?`距离目标月份约 ${days} 天`:'目标月份已到或已过去'}
 function renderStats(){document.getElementById('statW').textContent=Object.values(state.writingDone).filter(Boolean).length;document.getElementById('statS').textContent=Object.values(state.speakingDone).filter(Boolean).length;document.getElementById('statV').textContent=state.vocab.length;document.getElementById('statL').textContent=state.logs.length;const cm=Object.values(state.coreMastered||{}).filter(Boolean).length;const sc=document.getElementById('statCore');if(sc)sc.textContent=cm;const cp=document.getElementById('coreProgress');if(cp)cp.style.width=Math.min(100,cm/1696*100)+'%'}
@@ -666,17 +659,27 @@ function renderBlackListening(){
  document.getElementById('bluMeta').textContent=`教材印刷页 ${x.printedPage} · PDF 第 ${x.pdfPage} 页${x.activities?` · ${x.activities} 个 Listening Activity`:''}`;
  const player=document.getElementById('bluAudio'),no=document.getElementById('bluNoAudio'),meta=document.getElementById('bluAudioMeta');
  if(x.audio){
-  player.src=x.audio.src;player.classList.remove('hidden');no.textContent='';meta.textContent=`${formatDuration(x.audio.seconds)}`;
+  player.pause();player.removeAttribute('src');player.load();
+  player.dataset.lazySrc=x.audio.src;player.classList.remove('hidden');
+  no.textContent='点击播放器后才加载这一个音频。';meta.textContent=`${formatDuration(x.audio.seconds)}`;
  }else{
-  player.pause();player.removeAttribute('src');player.load();player.classList.add('hidden');
-  no.textContent='当前还没有上传这一部分的对应音频。';
+  player.pause();player.removeAttribute('src');player.load();delete player.dataset.lazySrc;player.classList.add('hidden');
+  no.textContent='当前还没有这一部分的对应音频。';
   meta.textContent='';
  }
  renderBluList();updateBluPdf()
 }
 function updateBluPdf(){
  const x=bluInfo(),frame=document.getElementById('bluPdf'),msg=document.getElementById('bluPdfMessage');
- frame.src=bluPdfUrl+`#page=${x.pdfPage}&zoom=page-width`;frame.classList.remove('hidden');msg.classList.add('hidden')
+ frame.removeAttribute('src');frame.classList.add('hidden');
+ frame.dataset.src=bluPdfUrl+`#page=${x.pdfPage}&zoom=page-width`;
+ msg.classList.remove('hidden');
+ msg.innerHTML=`教材不会自动下载。需要时 <button class="btn small outline" onclick="loadBluPdf()">加载当前教材页</button>`
+}
+function loadBluPdf(){
+ const frame=document.getElementById('bluPdf'),msg=document.getElementById('bluPdfMessage');
+ if(!frame.dataset.src)return;
+ frame.src=frame.dataset.src;frame.classList.remove('hidden');msg.classList.add('hidden')
 }
 function openBluPdfTab(){window.open(bluPdfUrl+`#page=${bluInfo().pdfPage}`,'_blank')}
 function toggleBluDone(){const x=bluInfo();state.blackListeningDone[x.id]=!state.blackListeningDone[x.id];persist();renderBlackListening()}
@@ -722,15 +725,15 @@ function renderBlackEyes(){
 }
 function renderBeTracks(){
  const x=beInfo(),grid=document.getElementById('beTrackGrid'),player=document.getElementById('beAudio');
+ player.pause();player.removeAttribute('src');player.load();
  if(!x.tracks.length){
   grid.innerHTML='<div class="note">当前上传资料中没有这个 Unit 的独立音频。</div>';
-  player.removeAttribute('src');player.load();
   document.getElementById('beAudioMeta').textContent='';
   return
  }
  if(beTrackIndex>=x.tracks.length)beTrackIndex=0;
  grid.innerHTML=x.tracks.map((t,i)=>`<div class="be-track ${i===beTrackIndex?'active':''}" onclick="loadBeTrack(${i})"><b>${esc(t.label)}</b><div class="note">${fmtSec(t.seconds)}</div></div>`).join('');
- loadBeTrack(beTrackIndex,false)
+ document.getElementById('beAudioMeta').textContent='点击上方音轨后再播放；不会预先下载。'
 }
 function loadBeTrack(i,rerender=true){
  const x=beInfo();if(!x.tracks.length)return;beTrackIndex=i;
@@ -743,12 +746,20 @@ function beSeek(sec){const p=document.getElementById('beAudio');if(!p.src)return
 function beRate(r){const p=document.getElementById('beAudio');p.playbackRate=r;toast('速度 '+r+'×')}
 function renderBePdf(){
  const x=beInfo(),frame=document.getElementById('bePdf'),msg=document.getElementById('bePdfMessage');
+ frame.removeAttribute('src');frame.classList.add('hidden');
  if(x.pdfPage){
-  frame.src=`${BLACK.pdf}#page=${x.pdfPage}&zoom=page-width`;frame.classList.remove('hidden');msg.classList.add('hidden')
+  frame.dataset.src=`${BLACK.pdf}#page=${x.pdfPage}&zoom=page-width`;
+  msg.classList.remove('hidden');
+  msg.innerHTML=`教材不会自动下载。需要时 <button class="btn small outline" onclick="loadBePdf()">加载 Unit ${x.unit} 教材页</button>`
  }else{
-  frame.classList.add('hidden');msg.classList.remove('hidden');
-  msg.textContent='你上传的这份 PDF 在印刷页 160 结束，因此没有包含这个 Unit 的教材页面。音频仍可正常使用。'
+  delete frame.dataset.src;msg.classList.remove('hidden');
+  msg.textContent='这份 PDF 没有包含这个 Unit 的教材页面。'
  }
+}
+function loadBePdf(){
+ const frame=document.getElementById('bePdf'),msg=document.getElementById('bePdfMessage');
+ if(!frame.dataset.src)return;
+ frame.src=frame.dataset.src;frame.classList.remove('hidden');msg.classList.add('hidden')
 }
 function openBePdfTab(){const x=beInfo();if(!x.pdfPage)return toast('这份 PDF 没有这个 Unit 的页面');window.open(`${BLACK.pdf}#page=${x.pdfPage}`,'_blank')}
 function toggleBeDone(){state.blackEyesDone[beUnit]=!state.blackEyesDone[beUnit];persist();renderBlackEyes()}
@@ -770,7 +781,7 @@ let c21TimerState={left:3600,run:false,h:null};
 
 function c21Key(){return `T${c21Test}-${c21Module}`}
 function formatDuration(sec){sec=Math.round(sec||0);return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`}
-function c21Page(page){document.getElementById('c21Pdf').src=`${cloudAsset('asset-0001.pdf')}#page=${page}&zoom=page-width`}
+function c21Page(page){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');f.removeAttribute('src');f.classList.add('hidden');f.dataset.src=`${cloudAsset('asset-0001.pdf')}#page=${page}&zoom=page-width`;if(m)m.classList.remove('hidden')}\nfunction loadC21Pdf(){const f=document.getElementById('c21Pdf'),m=document.getElementById('c21PdfMessage');if(!f.dataset.src)return;f.src=f.dataset.src;f.classList.remove('hidden');if(m)m.classList.add('hidden')}
 function setupC21(){
  const tabs=document.getElementById('c21TestTabs');if(!tabs)return;
  tabs.innerHTML=[1,2,3,4].map(t=>`<button class="btn ${t===c21Test?'active':''}" onclick="selectC21Test(${t})">Test ${t}</button>`).join('');
@@ -811,11 +822,12 @@ function loadC21Part(p){
  const tracks=((C21_CLOUD_AUDIO[c21Test]||{})[p]||[]).map(cloudAsset);
  player.pause();
  player.onended=null;
+ player.removeAttribute('src');player.load();
  player._cloudTracks=tracks;
  player._cloudTrackIndex=0;
  player.playbackRate=1;
  if(tracks.length){
-  player.src=tracks[0];
+  player.dataset.lazyPlaylist='1';
   player.onended=()=>{
    const next=(player._cloudTrackIndex||0)+1;
    if(next<player._cloudTracks.length){
@@ -827,7 +839,7 @@ function loadC21Part(p){
    }
   };
  }else{
-  player.removeAttribute('src');player.load();
+  delete player.dataset.lazyPlaylist;
  }
  document.getElementById('c21AudioTitle').textContent=`Test ${c21Test} · Listening Part ${p}`;
  document.getElementById('c21AudioDuration').textContent=formatDuration(a.seconds)+(tracks.length>1?' · 云端分段连续播放':'');
@@ -1099,19 +1111,22 @@ function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileRe
 function clearState(){if(confirm('确定清空全部学习记录吗？')){state=JSON.parse(JSON.stringify(DEF));persist();init();toast('已清空')}}
 
 
-function showMediaWarning(){
- const e=document.getElementById('mediaWarning');
- if(e)e.classList.remove('hidden')
+function prepareLazyAudio(){
+ const blu=document.getElementById('bluAudio');
+ if(blu&&!blu.dataset.lazyBound){
+  const load=()=>{if(!blu.getAttribute('src')&&blu.dataset.lazySrc){blu.src=blu.dataset.lazySrc;blu.load()}};
+  blu.addEventListener('pointerdown',load);blu.addEventListener('keydown',load);blu.dataset.lazyBound='1';
+ }
+ const c21=document.getElementById('c21Audio');
+ if(c21&&!c21.dataset.lazyBound){
+  const load=()=>{if(!c21.getAttribute('src')&&c21._cloudTracks&&c21._cloudTracks.length){c21._cloudTrackIndex=0;c21.src=c21._cloudTracks[0];c21.load()}};
+  c21.addEventListener('pointerdown',load);c21.addEventListener('keydown',load);c21.dataset.lazyBound='1';
+ }
 }
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v=3').catch(()=>{}))}
+function attachMediaErrorChecks(){prepareLazyAudio()}
 
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
-function attachMediaErrorChecks(){
- document.querySelectorAll('audio').forEach(a=>{
-  a.addEventListener('error',showMediaWarning);
- });
-}
-
-function init(){renderTarget();renderStats();renderDailySettings();renderHome();renderWriting();renderP1();renderP2();renderLogs();renderVocab();setupCore();renderCoreVocab();setupOral();setupBlackEyes();setupBlackListening();setupC21();renderDailyPlan();Object.keys(timers).forEach(drawTimer);attachMediaErrorChecks()}
+function init(){renderTarget();renderStats();renderDailySettings();renderHome();renderWriting();renderP1();renderP2();renderLogs();renderVocab();setupCore();renderCoreVocab();setupOral();renderDailyPlan();Object.keys(timers).forEach(drawTimer);attachMediaErrorChecks()}
 init();
 if(window.IELTSCoreStore){IELTSCoreStore.migrateLegacy().then(()=>IELTSCoreStore.set(IELTSCoreStore.STORES.progress,'appState',state)).catch(()=>{})}
 </script>
