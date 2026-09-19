@@ -29,7 +29,9 @@ jobs:
           import subprocess,re,json
           pdf="/tmp/pdf/asset-0151.pdf"
           units=["One","Two","Three","Four","Five","Six"]
+          tests=["Test 1","Test 2","Test 3","Test 4","Test One","Test Two","Test Three","Test Four"]
           results={u:[] for u in units}
+          test_results={t:[] for t in tests}
           for p in range(1,260):
               txt=subprocess.run(["pdftotext","-f",str(p),"-l",str(p),"-layout",pdf,"-"],capture_output=True,text=True,errors="ignore").stdout
               norm=" ".join(txt.split())
@@ -37,5 +39,9 @@ jobs:
               for u in units:
                   if re.search(rf"\bUnit\s+{u}\b", norm, re.I):
                       results[u].append({"page":p,"head":head[:260]})
+              for t in tests:
+                  if re.search(rf"\b{re.escape(t)}\b", norm, re.I):
+                      test_results[t].append({"page":p,"head":head[:260]})
           print("UNIT_CANDIDATES_JSON="+json.dumps(results,ensure_ascii=False))
+          print("TEST_CANDIDATES_JSON="+json.dumps(test_results,ensure_ascii=False))
           PY
