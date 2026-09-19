@@ -666,7 +666,7 @@ function revealFlash(){document.getElementById('flashMeaning').classList.remove(
 
 // Black Eyes Listening · actual uploaded library
 let bluIndex=0,bluTrackIndex=0,bluGroups=[],bluLibraryLoading=false;
-let bluViewPage=1,bluPagePrefix='blu',bluPageTotal=278;
+let bluViewPage=1,bluPagePrefix='blu',bluPageTotal=278,bluPageGroupId='';
 
 function bluNatural(a,b){return String(a).localeCompare(String(b),undefined,{numeric:true,sensitivity:'base'})}
 function bluInfo(){return bluGroups[bluIndex]||null}
@@ -733,12 +733,21 @@ function renderBluList(){
  }).join('');
 }
 
-function selectBlu(i){bluIndex=i;bluTrackIndex=0;renderBlackListening()}
+function selectBlu(i){bluIndex=i;bluTrackIndex=0;bluPageGroupId='';renderBlackListening()}
 
 function bluPdfStart(g,track){
  if(!g)return {prefix:'blu',page:1,total:278};
- if(g.volume==='下')return {prefix:'blu2',page:1,total:null};
  const p=g.parent;
+ if(g.volume==='下'){
+  let page=1;
+  if(/Unit One/i.test(p))page=11;
+  else if(/Unit Two/i.test(p))page=22;
+  else if(/Unit Three/i.test(p))page=37;
+  else if(/Unit Four/i.test(p))page=46;
+  else if(/Unit Five/i.test(p))page=62;
+  else if(/Unit Six/i.test(p))page=78;
+  return {prefix:'blu2',page,total:259};
+ }
  let page=14;
  if(/Unit One/i.test(p))page=42;
  else if(/Unit Two/i.test(p))page=58;
@@ -749,6 +758,15 @@ function bluPdfStart(g,track){
  else if(/Achievement/i.test(p))page=138;
  if(track&&/Pretraining Test/i.test(track.name))page=28;
  return {prefix:'blu',page,total:278};
+}
+
+function syncBluPdfToGroup(force=false){
+ const g=bluInfo();if(!g)return;
+ if(!force&&bluPageGroupId===g.id)return;
+ const track=g.tracks[bluTrackIndex]||g.tracks[0]||null;
+ const page=bluPdfStart(g,track);
+ bluPagePrefix=page.prefix;bluPageTotal=page.total;bluViewPage=page.page;bluPageGroupId=g.id;
+ renderBluPage()
 }
 
 function renderBluTracks(){
@@ -768,9 +786,11 @@ function bindBluTrack(autoplay=false){
  player.onerror=()=>{document.getElementById('bluNoAudio').textContent='这个音频暂时加载失败，请刷新后重试。'};
  player.oncanplay=()=>{document.getElementById('bluNoAudio').textContent=''};
  document.getElementById('bluAudioMeta').textContent=t.name.replace(/\.mp3$/i,'')+' · 已就绪';
- const page=bluPdfStart(g,t);
- bluPagePrefix=page.prefix;bluPageTotal=page.total;bluViewPage=page.page;
- renderBluPage();
+ if(autoplay&&/Pretraining Test/i.test(t.name)){
+  const page=bluPdfStart(g,t);
+  bluPagePrefix=page.prefix;bluPageTotal=page.total;bluViewPage=page.page;bluPageGroupId=g.id;
+  renderBluPage();
+ }
  if(autoplay)player.play().catch(()=>{})
 }
 
@@ -789,6 +809,7 @@ function renderBlackListening(){
  document.getElementById('bluDoneBtn').textContent=done?'取消完成':'标记完成';
  document.getElementById('bluMeta').textContent=g.tracks.length+' 个音频 · 来自你上传的资料';
  document.getElementById('bluNoAudio').textContent='';
+ syncBluPdfToGroup();
  renderBluList();renderBluTracks();bindBluTrack(false)
 }
 
