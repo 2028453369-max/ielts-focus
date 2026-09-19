@@ -217,7 +217,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     <div id="beTracksWrap" style="margin-top:14px">
       <h3>对应音频</h3>
       <div class="be-track-grid" id="beTrackGrid"></div>
-      <audio id="beAudio" controls preload="none" style="margin-top:12px"></audio>
+      <audio id="beAudio" controls preload="metadata" style="margin-top:12px"></audio>
       <div class="be-controls">
         <button class="btn small" onclick="beSeek(-5)">-5s</button>
         <button class="btn small" onclick="beRate(.75)">0.75×</button>
@@ -277,7 +277,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
     <div id="bluAudioArea" style="margin-top:14px">
       <h3>音频</h3>
       <div id="bluNoAudio" class="note"></div>
-      <audio id="bluAudio" controls preload="none"></audio>
+      <audio id="bluAudio" controls preload="metadata"></audio>
       <div class="be-controls">
         <button class="btn small" onclick="bluSeek(-5)">-5s</button>
         <button class="btn small" onclick="bluRate(.75)">0.75×</button>
@@ -340,7 +340,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
    <div class="card c8">
     <div id="c21AudioWrap">
       <div class="row between"><h3 id="c21AudioTitle">Test 1 · Part 1</h3><span class="badge" id="c21AudioDuration"></span></div>
-      <button class="btn small primary" onclick="playC21Current()" style="margin-bottom:8px">▶ 播放当前 Part</button>\n      <audio id="c21Audio" controls preload="none"></audio>
+      <audio id="c21Audio" controls preload="metadata"></audio>
       <div class="row" style="margin:8px 0 14px">
         <button class="btn small" onclick="c21Rate(.75)">0.75×</button>
         <button class="btn small" onclick="c21Rate(1)">1×</button>
@@ -348,7 +348,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
         <button class="btn small" onclick="c21Rate(1.5)">1.5×</button>
       </div>
     </div>
-    <div id="c21PdfMessage" class="prompt" style="margin-bottom:10px">教材不会自动下载。需要时点击“加载当前教材页”。 <button class="btn small outline" onclick="loadC21Pdf()">加载当前教材页</button></div>\n    <iframe id="c21Pdf" class="hidden" style="width:100%;height:690px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
+    <div id="c21PdfMessage" class="prompt" style="margin-bottom:10px">教材已连接。 <button class="btn small outline" onclick="loadC21Pdf()">查看当前教材页</button></div>\n    <iframe id="c21Pdf" class="hidden" style="width:100%;height:690px;border:1px solid var(--line);border-radius:13px;background:#fff"></iframe>
    </div>
 
    <div class="card c12" id="c21AnswerCard">
@@ -472,7 +472,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
    </div>
    <div class="card c12 cloud-player hidden" id="cloudPlayerPanel">
      <div class="row between"><b id="cloudPlayerTitle">音频</b><span class="badge green">在线播放</span></div>
-     <audio id="cloudAudioPlayer" controls preload="none" style="margin-top:10px"></audio>
+     <audio id="cloudAudioPlayer" controls preload="metadata" style="margin-top:10px"></audio>
    </div>
    <div class="card c12">
     <div class="row between"><h3>App 内置学习模块</h3><span class="badge">原有功能保留</span></div>
@@ -660,10 +660,12 @@ function renderBlackListening(){
  const player=document.getElementById('bluAudio'),no=document.getElementById('bluNoAudio'),meta=document.getElementById('bluAudioMeta');
  const playBtn=document.getElementById('bluPlayBtn');
  if(x.audio){
-  player.pause();player.removeAttribute('src');
-  player.dataset.lazySrc=x.audio.src;player.classList.remove('hidden');
-  if(playBtn)playBtn.classList.remove('hidden');
-  no.textContent='本节有音频，点击“播放本节音频”即可。';meta.textContent=`${formatDuration(x.audio.seconds)}`;
+  player.pause();
+  if(player.getAttribute('src')!==x.audio.src)player.src=x.audio.src;
+  player.playbackRate=1;player.classList.remove('hidden');
+  delete player.dataset.lazySrc;
+  if(playBtn)playBtn.classList.add('hidden');
+  no.textContent='';meta.textContent=`${formatDuration(x.audio.seconds)} · 已就绪`;
  }else{
   player.pause();player.removeAttribute('src');delete player.dataset.lazySrc;player.classList.add('hidden');
   if(playBtn)playBtn.classList.add('hidden');
@@ -677,7 +679,7 @@ function updateBluPdf(){
  frame.removeAttribute('src');frame.classList.add('hidden');
  frame.dataset.src=bluPdfUrl+`#page=${x.pdfPage}&zoom=page-width`;
  msg.classList.remove('hidden');
- msg.innerHTML=`教材不会自动下载。需要时 <button class="btn small outline" onclick="loadBluPdf()">加载当前教材页</button>`
+ msg.innerHTML=`教材已连接。<button class="btn small outline" onclick="loadBluPdf()">查看当前教材页</button>`
 }
 function loadBluPdf(){
  const frame=document.getElementById('bluPdf'),msg=document.getElementById('bluPdfMessage');
@@ -736,15 +738,19 @@ function renderBlackEyes(){
 }
 function renderBeTracks(){
  const x=beInfo(),grid=document.getElementById('beTrackGrid'),player=document.getElementById('beAudio');
- player.pause();player.removeAttribute('src');
+ player.pause();
  if(!x.tracks.length){
+  player.removeAttribute('src');
   grid.innerHTML='<div class="note">当前上传资料中没有这个 Unit 的独立音频。</div>';
   document.getElementById('beAudioMeta').textContent='';
   return
  }
  if(beTrackIndex>=x.tracks.length)beTrackIndex=0;
- grid.innerHTML=x.tracks.map((t,i)=>`<button class="be-track ${i===beTrackIndex?'active':''}" onclick="loadBeTrack(${i})"><b>▶ ${esc(t.label)}</b><div class="note">${fmtSec(t.seconds)}</div></button>`).join('');
- document.getElementById('beAudioMeta').textContent='点一个音轨就播放该音频；不会下载其他音频。'
+ const current=x.tracks[beTrackIndex];
+ if(player.getAttribute('src')!==current.src)player.src=current.src;
+ player.playbackRate=1;
+ grid.innerHTML=x.tracks.map((t,i)=>`<button class="be-track ${i===beTrackIndex?'active':''}" onclick="loadBeTrack(${i})"><b>${esc(t.label)}</b><div class="note">${fmtSec(t.seconds)}</div></button>`).join('');
+ document.getElementById('beAudioMeta').textContent=`${current.label} · ${fmtSec(current.seconds)} · 已就绪`
 }
 function loadBeTrack(i){
  const x=beInfo();if(!x.tracks.length)return;beTrackIndex=i;
@@ -762,7 +768,7 @@ function renderBePdf(){
  if(x.pdfPage){
   frame.dataset.src=`${BLACK.pdf}#page=${x.pdfPage}&zoom=page-width`;
   msg.classList.remove('hidden');
-  msg.innerHTML=`教材不会自动下载。需要时 <button class="btn small outline" onclick="loadBePdf()">加载 Unit ${x.unit} 教材页</button>`
+  msg.innerHTML=`教材已连接。<button class="btn small outline" onclick="loadBePdf()">查看 Unit ${x.unit} 教材页</button>`
  }else{
   delete frame.dataset.src;msg.classList.remove('hidden');
   msg.textContent='这份 PDF 没有包含这个 Unit 的教材页面。'
@@ -835,11 +841,11 @@ function loadC21Part(p){
  const tracks=((C21_CLOUD_AUDIO[c21Test]||{})[p]||[]).map(cloudAsset);
  player.pause();
  player.onended=null;
- player.removeAttribute('src');player.load();
  player._cloudTracks=tracks;
  player._cloudTrackIndex=0;
  player.playbackRate=1;
  if(tracks.length){
+  player.src=tracks[0];
   player.dataset.lazyPlaylist='1';
   player.onended=()=>{
    const next=(player._cloudTrackIndex||0)+1;
@@ -858,15 +864,6 @@ function loadC21Part(p){
  document.getElementById('c21AudioDuration').textContent=formatDuration(a.seconds)+(tracks.length>1?' · 云端分段连续播放':'');
  c21Page(C21.pages[c21Test].parts[p]);
  renderC21AnswerGrid();
-}
-function playC21Current(){
- const player=document.getElementById('c21Audio');
- if(!player._cloudTracks||!player._cloudTracks.length)return;
- if(!player.getAttribute('src')){
-  player._cloudTrackIndex=0;
-  player.src=player._cloudTracks[0];
- }
- player.play().catch(()=>{})
 }
 function c21Rate(r){const a=document.getElementById('c21Audio');a.playbackRate=r;toast('速度 '+r+'×')}
 function renderC21AnswerGrid(){
