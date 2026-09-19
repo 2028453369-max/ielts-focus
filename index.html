@@ -340,7 +340,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
    <div class="card c8">
     <div id="c21AudioWrap">
       <div class="row between"><h3 id="c21AudioTitle">Test 1 · Part 1</h3><span class="badge" id="c21AudioDuration"></span></div>
-      <audio id="c21Audio" controls preload="none"></audio>
+      <button class="btn small primary" onclick="playC21Current()" style="margin-bottom:8px">▶ 播放当前 Part</button>\n      <audio id="c21Audio" controls preload="none"></audio>
       <div class="row" style="margin:8px 0 14px">
         <button class="btn small" onclick="c21Rate(.75)">0.75×</button>
         <button class="btn small" onclick="c21Rate(1)">1×</button>
@@ -658,12 +658,15 @@ function renderBlackListening(){
  document.getElementById('bluDoneBtn').textContent=state.blackListeningDone[x.id]?'取消完成':'标记完成';
  document.getElementById('bluMeta').textContent=`教材印刷页 ${x.printedPage} · PDF 第 ${x.pdfPage} 页${x.activities?` · ${x.activities} 个 Listening Activity`:''}`;
  const player=document.getElementById('bluAudio'),no=document.getElementById('bluNoAudio'),meta=document.getElementById('bluAudioMeta');
+ const playBtn=document.getElementById('bluPlayBtn');
  if(x.audio){
-  player.pause();player.removeAttribute('src');player.load();
+  player.pause();player.removeAttribute('src');
   player.dataset.lazySrc=x.audio.src;player.classList.remove('hidden');
-  no.textContent='点击播放器后才加载这一个音频。';meta.textContent=`${formatDuration(x.audio.seconds)}`;
+  if(playBtn)playBtn.classList.remove('hidden');
+  no.textContent='本节有音频，点击“播放本节音频”即可。';meta.textContent=`${formatDuration(x.audio.seconds)}`;
  }else{
-  player.pause();player.removeAttribute('src');player.load();delete player.dataset.lazySrc;player.classList.add('hidden');
+  player.pause();player.removeAttribute('src');delete player.dataset.lazySrc;player.classList.add('hidden');
+  if(playBtn)playBtn.classList.add('hidden');
   no.textContent='当前还没有这一部分的对应音频。';
   meta.textContent='';
  }
@@ -683,6 +686,14 @@ function loadBluPdf(){
 }
 function openBluPdfTab(){window.open(bluPdfUrl+`#page=${bluInfo().pdfPage}`,'_blank')}
 function toggleBluDone(){const x=bluInfo();state.blackListeningDone[x.id]=!state.blackListeningDone[x.id];persist();renderBlackListening()}
+function playBluCurrent(){
+ const p=document.getElementById('bluAudio');
+ const x=bluInfo();
+ if(!x||!x.audio)return;
+ p.src=x.audio.src;p.classList.remove('hidden');p.playbackRate=1;
+ p.play().catch(()=>{});
+ document.getElementById('bluAudioMeta').textContent=`${formatDuration(x.audio.seconds)} · 云端播放`;
+}
 function bluSeek(sec){const p=document.getElementById('bluAudio');if(!p.src)return;p.currentTime=Math.max(0,Math.min(p.duration||999999,p.currentTime+sec))}
 function bluRate(r){const p=document.getElementById('bluAudio');p.playbackRate=r;toast('速度 '+r+'×')}
 function playBluIntro(){
@@ -725,22 +736,23 @@ function renderBlackEyes(){
 }
 function renderBeTracks(){
  const x=beInfo(),grid=document.getElementById('beTrackGrid'),player=document.getElementById('beAudio');
- player.pause();player.removeAttribute('src');player.load();
+ player.pause();player.removeAttribute('src');
  if(!x.tracks.length){
   grid.innerHTML='<div class="note">当前上传资料中没有这个 Unit 的独立音频。</div>';
   document.getElementById('beAudioMeta').textContent='';
   return
  }
  if(beTrackIndex>=x.tracks.length)beTrackIndex=0;
- grid.innerHTML=x.tracks.map((t,i)=>`<div class="be-track ${i===beTrackIndex?'active':''}" onclick="loadBeTrack(${i})"><b>${esc(t.label)}</b><div class="note">${fmtSec(t.seconds)}</div></div>`).join('');
- document.getElementById('beAudioMeta').textContent='点击上方音轨后再播放；不会预先下载。'
+ grid.innerHTML=x.tracks.map((t,i)=>`<button class="be-track ${i===beTrackIndex?'active':''}" onclick="loadBeTrack(${i})"><b>▶ ${esc(t.label)}</b><div class="note">${fmtSec(t.seconds)}</div></button>`).join('');
+ document.getElementById('beAudioMeta').textContent='点一个音轨就播放该音频；不会下载其他音频。'
 }
-function loadBeTrack(i,rerender=true){
+function loadBeTrack(i){
  const x=beInfo();if(!x.tracks.length)return;beTrackIndex=i;
  const t=x.tracks[i],player=document.getElementById('beAudio');
+ document.querySelectorAll('#beTrackGrid .be-track').forEach((el,n)=>el.classList.toggle('active',n===i));
  player.src=t.src;player.playbackRate=1;
- document.getElementById('beAudioMeta').textContent=`${t.label} · ${fmtSec(t.seconds)}`;
- if(rerender)renderBeTracks()
+ document.getElementById('beAudioMeta').textContent=`${t.label} · ${fmtSec(t.seconds)} · 云端播放`;
+ player.play().catch(()=>{})
 }
 function beSeek(sec){const p=document.getElementById('beAudio');if(!p.src)return;p.currentTime=Math.max(0,Math.min(p.duration||999999,p.currentTime+sec))}
 function beRate(r){const p=document.getElementById('beAudio');p.playbackRate=r;toast('速度 '+r+'×')}
@@ -846,6 +858,15 @@ function loadC21Part(p){
  document.getElementById('c21AudioDuration').textContent=formatDuration(a.seconds)+(tracks.length>1?' · 云端分段连续播放':'');
  c21Page(C21.pages[c21Test].parts[p]);
  renderC21AnswerGrid();
+}
+function playC21Current(){
+ const player=document.getElementById('c21Audio');
+ if(!player._cloudTracks||!player._cloudTracks.length)return;
+ if(!player.getAttribute('src')){
+  player._cloudTrackIndex=0;
+  player.src=player._cloudTracks[0];
+ }
+ player.play().catch(()=>{})
 }
 function c21Rate(r){const a=document.getElementById('c21Audio');a.playbackRate=r;toast('速度 '+r+'×')}
 function renderC21AnswerGrid(){
@@ -1115,12 +1136,12 @@ function clearState(){if(confirm('确定清空全部学习记录吗？')){state=
 function prepareLazyAudio(){
  const blu=document.getElementById('bluAudio');
  if(blu&&!blu.dataset.lazyBound){
-  const load=()=>{if(!blu.getAttribute('src')&&blu.dataset.lazySrc){blu.src=blu.dataset.lazySrc;blu.load()}};
+  const load=()=>{if(!blu.getAttribute('src')&&blu.dataset.lazySrc)blu.src=blu.dataset.lazySrc};
   blu.addEventListener('pointerdown',load);blu.addEventListener('keydown',load);blu.dataset.lazyBound='1';
  }
  const c21=document.getElementById('c21Audio');
  if(c21&&!c21.dataset.lazyBound){
-  const load=()=>{if(!c21.getAttribute('src')&&c21._cloudTracks&&c21._cloudTracks.length){c21._cloudTrackIndex=0;c21.src=c21._cloudTracks[0];c21.load()}};
+  const load=()=>{if(!c21.getAttribute('src')&&c21._cloudTracks&&c21._cloudTracks.length){c21._cloudTrackIndex=0;c21.src=c21._cloudTracks[0]}};
   c21.addEventListener('pointerdown',load);c21.addEventListener('keydown',load);c21.dataset.lazyBound='1';
  }
 }
